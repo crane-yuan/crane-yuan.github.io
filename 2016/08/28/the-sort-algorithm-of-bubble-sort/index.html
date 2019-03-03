@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="如题。"/>
+
+
+
+
+  <meta name="keywords" content="sort, algorithm, CornerCat" />
+
+
+
+
+
+  <meta name="google-site-verification" content="cTwCB-oVxflZBdr9iwZkcN2IsrSchykrhDWdlf8AhK8" />
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="CornerCat">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.1" />
+
+
+
+<link rel="canonical" href="https://craneyuan.github.io/2016/08/28/the-sort-algorithm-of-bubble-sort/"/>
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1" />
+
+
+
+  
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93890480-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93890480-1');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
+</script>
+
+    <title> 常用排序算法总结1一一冒泡排序 - CornerCat </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">CornerCat</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">CornerCat</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          常用排序算法总结1一一冒泡排序
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-08-28
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/算法/">算法</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
+<p>冒泡排序（英语：Bubble Sort）是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
+</blockquote>
+<p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521872975/blog/lsts2aa5n0mbvrtpdrl1.gif" alt="冒泡排序过程"></p>
+<h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><p>冒泡排序算法的运作如下：</p>
+<ul>
+<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
+<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</li>
+</ul>
+<p>伪代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+</pre></td><td class="code"><pre><span class="line">function bubble_sort (array, length) &#123;</span>
+<span class="line">    var i, j;</span>
+<span class="line">    for(i from 0 to length-1)&#123;</span>
+<span class="line">        for(j from 0 to length-1-i)&#123;</span>
+<span class="line">            if (array[j] &gt; array[j+1])</span>
+<span class="line">                swap(array[j], array[j+1])</span>
+<span class="line">        &#125;</span>
+<span class="line">    &#125;</span>
+<span class="line">&#125;</span>
+</pre></td></tr></table></figure></p>
+<h2 id="代码实现（java）"><a href="#代码实现（java）" class="headerlink" title="代码实现（java）"></a>代码实现（java）</h2><h3 id="一般实现"><a href="#一般实现" class="headerlink" title="一般实现"></a>一般实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+<span class="line">14</span>
+<span class="line">15</span>
+<span class="line">16</span>
+<span class="line">17</span>
+<span class="line">18</span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 冒泡排序简单实现</span></span>
+<span class="line"><span class="comment"> *</span></span>
+<span class="line"><span class="comment"> * <span class="doctag">@param</span>: nums</span></span>
+<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
+<span class="line"><span class="comment"> */</span></span>
+<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span></span>
+<span class="line"><span class="function"></span>&#123;</span>
+<span class="line">    <span class="keyword">int</span> tmp;</span>
+<span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span>
+<span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nums.length - i - <span class="number">1</span>; j++) &#123;</span>
+<span class="line">            <span class="keyword">if</span> (nums[j] &gt; nums[j + <span class="number">1</span>]) &#123;</span>
+<span class="line">                tmp = nums[j];</span>
+<span class="line">                nums[j] = nums[j + <span class="number">1</span>];</span>
+<span class="line">                nums[j + <span class="number">1</span>] = tmp;</span>
+<span class="line">            &#125;</span>
+<span class="line">        &#125;</span>
+<span class="line">    &#125;</span>
+<span class="line">&#125;</span>
+</pre></td></tr></table></figure>
+<h3 id="通用实现"><a href="#通用实现" class="headerlink" title="通用实现"></a>通用实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+<span class="line">14</span>
+<span class="line">15</span>
+<span class="line">16</span>
+<span class="line">17</span>
+<span class="line">18</span>
+<span class="line">19</span>
+<span class="line">20</span>
+<span class="line">21</span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 冒泡排序的简单实现(支持泛型)</span></span>
+<span class="line"><span class="comment"> * </span></span>
+<span class="line"><span class="comment"> * <span class="doctag">@param</span>: &lt;E&gt;</span></span>
+<span class="line"><span class="comment"> * <span class="doctag">@param</span>: comparable</span></span>
+<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
+<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
+<span class="line"><span class="comment"> */</span></span>
+<span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function"><span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(</span></span></span>
+<span class="line"><span class="function"><span class="params">            E[] comparable)</span></span></span>
+<span class="line"><span class="function"></span>&#123;</span>
+<span class="line">    E tmpE;</span>
+<span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; comparable.length; i++) &#123;</span>
+<span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; comparable.length - i - <span class="number">1</span>; j++) &#123;</span>
+<span class="line">            <span class="keyword">if</span> (comparable[j].compareTo(comparable[j + <span class="number">1</span>]) &gt; <span class="number">0</span>) &#123;</span>
+<span class="line">                tmpE = comparable[j];</span>
+<span class="line">                comparable[j] = comparable[j + <span class="number">1</span>];</span>
+<span class="line">                comparable[j + <span class="number">1</span>] = tmpE;</span>
+<span class="line">            &#125;</span>
+<span class="line">        &#125;</span>
+<span class="line">    &#125;</span>
+<span class="line">&#125;</span>
+</pre></td></tr></table></figure>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="https://zh.wikipedia.org/wiki/排序算法" target="_blank" rel="noopener">排序算法</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/冒泡排序#JAVA" target="_blank" rel="noopener">冒泡排序</a></li>
+</ul>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://craneyuan.github.io">craneyuan</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://craneyuan.github.io/2016/08/28/the-sort-algorithm-of-bubble-sort/">https://craneyuan.github.io/2016/08/28/the-sort-algorithm-of-bubble-sort/</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/sort/">sort</a>
+            
+              <a href="/tags/algorithm/">algorithm</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/08/28/the-sort-algorithm-of-select-sort/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">常用排序算法总结2一一选择排序</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/08/24/the-summary-of-constructor-and-modifier/">
+        <span class="next-text nav-default">Java中访问修饰符和构造函数的一点总结</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+  <div class="social-links">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">craneyuan</span>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+  </span>
+<!-- Google Web Translate -->
+<span>
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'zh-CN', includedLanguages: 'en,zh-CN,zh-TW', gaTrack: true, gaId: 'UA-93890480-1'}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://craneyuan.github.io/2016/08/28/the-sort-algorithm-of-bubble-sort/';
+        this.page.identifier = '2016/08/28/the-sort-algorithm-of-bubble-sort/';
+        this.page.title = '常用排序算法总结1一一冒泡排序';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//crane-yuan.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>

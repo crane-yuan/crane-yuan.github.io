@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="本文介绍了如何在 Hexo 中添加「多说评论」，很不幸「多说评论」目前已经不能用了（官方已经停止维护了），笔者已经转到使用国外的「Disqus」评论系统了。"/>
+
+
+
+
+  <meta name="keywords" content="Hexo, CornerCat" />
+
+
+
+
+
+  <meta name="google-site-verification" content="cTwCB-oVxflZBdr9iwZkcN2IsrSchykrhDWdlf8AhK8" />
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="CornerCat">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.1" />
+
+
+
+<link rel="canonical" href="https://craneyuan.github.io/2016/03/24/hexo-04-add-duoshuo-discuss/"/>
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1" />
+
+
+
+  
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93890480-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93890480-1');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
+</script>
+
+    <title> Hexo优化（4）：添加多说评论最近评论 - CornerCat </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">CornerCat</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">CornerCat</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Hexo优化（4）：添加多说评论最近评论
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-03-24
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        <h2 id="安装多说评论系统"><a href="#安装多说评论系统" class="headerlink" title="安装多说评论系统"></a>安装多说评论系统</h2><p>实际上landscape-plus主题上已经集成了多说评论系统，我们只需要添加duoshuo_shortname到两个配置文件就行了。</p>
+<p>多说的shortname就是你注册多说时的用户名。</p>
+<p>接下来在博客根目录下的配置文件和主题下的配置文件_config.yml中加入如下代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment"># Duoshuo</span></span>
+<span class="line">duoshuo_shortname: XXX</span>
+</pre></td></tr></table></figure>
+<h2 id="添加多说最近评论"><a href="#添加多说最近评论" class="headerlink" title="添加多说最近评论"></a>添加多说最近评论</h2><p>以landscape-plus主题为例：</p>
+<p>在landscape-plus\layout_widget\目录下新建recent_comments.ejs文件，内容如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+</pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (theme.duoshuo_shortname)&#123; %&gt;</span>
+<span class="line">&lt;div class=<span class="string">"widget-wrap"</span>&gt;</span>
+<span class="line">  &lt;h3 class=<span class="string">"widget-title"</span>&gt;&lt;%= __(<span class="string">'最近评论'</span>) %&gt;&lt;/h3&gt;</span>
+<span class="line">&lt;div class=<span class="string">"widget"</span>&gt;</span>
+<span class="line">&lt;ul class=<span class="string">"ds-recent-comments"</span> data-num-items=<span class="string">"5"</span> data-show-avatars=<span class="string">"1"</span> data-show-time=<span class="string">"1"</span> data-show-title=<span class="string">"1"</span> data-show-admin=<span class="string">"1"</span> data-excerpt-length=<span class="string">"70"</span>&gt;&lt;/ul&gt;</span>
+<span class="line">&lt;/div&gt;</span>
+<span class="line">  &lt;/div&gt;</span>
+<span class="line">&lt;% &#125; %&gt;</span>
+</pre></td></tr></table></figure>
+<p>注：其中上述代码第5行<code>&lt;ul class=&quot;ds-recent-comments&quot; data-num-items=&quot;5&quot; data-show-avatars=&quot;1&quot; data-show-time=&quot;1&quot; data-show-title=&quot;1&quot; data-show-admin=&quot;1&quot; data-excerpt-length=&quot;70&quot;&gt;&lt;/ul&gt;</code>按照官方提示可以自行修改：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+</pre></td><td class="code"><pre><span class="line">//以下参数均为可选</span>
+<span class="line">data-num-items=<span class="string">"10"</span>     //显示最新评论的条数，最大支持200条</span>
+<span class="line">data-show-avatars=<span class="string">"1"</span>   //是否显示头像，1：显示，0：不显示</span>
+<span class="line">data-show-time=<span class="string">"1"</span>      //是否显示时间，1：显示，0：不显示</span>
+<span class="line">data-show-title=<span class="string">"0"</span>     //是否显示标题，1：显示，0：不显示</span>
+<span class="line">data-show-admin=<span class="string">"1"</span>     //是否显示管理员的评论，1：显示，0：不显示</span>
+<span class="line">data-excerpt-length=<span class="string">"70"</span>//最大显示评论汉字数</span>
+</pre></td></tr></table></figure>
+<p>然后在landscape-plus目录下的_config.yml下的widgets中添加recent_comments：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+</pre></td><td class="code"><pre><span class="line">widgets:</span>
+<span class="line">- category</span>
+<span class="line">- recent_posts</span>
+<span class="line">- archive</span>
+<span class="line">- tagcloud</span>
+<span class="line">- tag</span>
+<span class="line">- links</span>
+<span class="line">- recent_comments</span>
+</pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.jianshu.com/p/05289a4bc8b2#" target="_blank" rel="noopener">如何搭建一个独立博客</a></p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://craneyuan.github.io">craneyuan</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://craneyuan.github.io/2016/03/24/hexo-04-add-duoshuo-discuss/">https://craneyuan.github.io/2016/03/24/hexo-04-add-duoshuo-discuss/</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Hexo/">Hexo</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/03/25/hexo-05-add-site-statistics/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Hexo优化（5）：添加网站访问统计</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/03/24/hexo-03-colourful-tag-cloud/">
+        <span class="next-text nav-default">Hexo优化（3）：彩色标签云</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+  <div class="social-links">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">craneyuan</span>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+  </span>
+<!-- Google Web Translate -->
+<span>
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'zh-CN', includedLanguages: 'en,zh-CN,zh-TW', gaTrack: true, gaId: 'UA-93890480-1'}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://craneyuan.github.io/2016/03/24/hexo-04-add-duoshuo-discuss/';
+        this.page.identifier = '2016/03/24/hexo-04-add-duoshuo-discuss/';
+        this.page.title = 'Hexo优化（4）：添加多说评论最近评论';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//crane-yuan.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>

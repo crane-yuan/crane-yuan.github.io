@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="如题。"/>
+
+
+
+
+  <meta name="keywords" content="uml, CornerCat" />
+
+
+
+
+
+  <meta name="google-site-verification" content="cTwCB-oVxflZBdr9iwZkcN2IsrSchykrhDWdlf8AhK8" />
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="CornerCat">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.1" />
+
+
+
+<link rel="canonical" href="https://craneyuan.github.io/2016/08/02/the-relationship-of-uml-class/"/>
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1" />
+
+
+
+  
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93890480-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93890480-1');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
+</script>
+
+    <title> UML类之间的六大关系总结 - CornerCat </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">CornerCat</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">CornerCat</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          UML类之间的六大关系总结
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-08-02
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/Java平台/">Java平台</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        <h2 id="在UML类图中，常见的有以下几种关系"><a href="#在UML类图中，常见的有以下几种关系" class="headerlink" title="在UML类图中，常见的有以下几种关系:"></a>在UML类图中，常见的有以下几种关系:</h2><ul>
+<li>泛化（Generalization）</li>
+<li>实现（Realization）</li>
+<li>关联（Association)</li>
+<li>聚合（Aggregation）</li>
+<li>组合(Composition)</li>
+<li>依赖(Dependency)</li>
+</ul>
+<p>各种关系的强弱顺序：</p>
+<p><strong>泛化= 实现&gt; 组合&gt; 聚合&gt; 关联&gt; 依赖</strong></p>
+<h2 id="泛化（Generalization）："><a href="#泛化（Generalization）：" class="headerlink" title="泛化（Generalization）："></a>泛化（Generalization）：</h2><p>类之间的继承关系用泛化。</p>
+<p>【箭头指向】：带三角箭头的实线，箭头指向父类</p>
+<p> <img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521873252/blog/bgypavn4afoa3p6enyrj.jpg" alt="泛化"></p>
+<h2 id="实现（Realization）"><a href="#实现（Realization）" class="headerlink" title="实现（Realization）"></a>实现（Realization）</h2><p>类实现接口的关系使用实现。</p>
+<p>【箭头指向】：带三角箭头的虚线，箭头指向接口</p>
+<p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521873286/blog/rhsoclwf6nqqwb8prlzg.jpg" alt="Realization"></p>
+<h2 id="关联（Association"><a href="#关联（Association" class="headerlink" title="关联（Association)"></a>关联（Association)</h2><p>类之间的拥有关系用关联。</p>
+<p>【箭头及指向】：带普通箭头的实心线，指向被拥有者</p>
+<p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521873316/blog/gilhimkbdoquwsijwgep.jpg" alt="Association"></p>
+<h2 id="聚合（Aggregation）"><a href="#聚合（Aggregation）" class="headerlink" title="聚合（Aggregation）"></a>聚合（Aggregation）</h2><p>聚合是一种弱的整体与部分的关系，整体可以脱离部分而单独存在。</p>
+<p>【箭头及指向】：带空心菱形的实心线，菱形指向整体</p>
+<p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521873344/blog/aflh0zijvujt6yrpn27v.jpg" alt="Aggregation"></p>
+<h2 id="组合-Composition"><a href="#组合-Composition" class="headerlink" title="组合(Composition)"></a>组合(Composition)</h2><p>组合是一种强的整体与部分的关系，整体不可脱离部分而存在。</p>
+<p>【箭头及指向】：带实心菱形的实线，菱形指向整体</p>
+<p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521873373/blog/sco73yha04z7sj7lidc6.jpg" alt="Composition"></p>
+<h2 id="依赖-Dependency"><a href="#依赖-Dependency" class="headerlink" title="依赖(Dependency)"></a>依赖(Dependency)</h2><p>依赖是一种使用的关系。</p>
+<p>【箭头及指向】：带箭头的虚线，指向被使用者</p>
+<p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521873396/blog/xogmqiwvlo1tle7ljxcu.jpg" alt="Dependency"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>一个完整的uml类图。</p>
+<p> <img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521873422/blog/wm7p67qohskj3pjbptdl.jpg" alt="完整uml图"></p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://craneyuan.github.io">craneyuan</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://craneyuan.github.io/2016/08/02/the-relationship-of-uml-class/">https://craneyuan.github.io/2016/08/02/the-relationship-of-uml-class/</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/uml/">uml</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/08/04/java-date-calendar/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Java中的Date和Calendar的常用用法</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/07/31/the-max-sub-sum/">
+        <span class="next-text nav-default">最大子串和</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+  <div class="social-links">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">craneyuan</span>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+  </span>
+<!-- Google Web Translate -->
+<span>
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'zh-CN', includedLanguages: 'en,zh-CN,zh-TW', gaTrack: true, gaId: 'UA-93890480-1'}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://craneyuan.github.io/2016/08/02/the-relationship-of-uml-class/';
+        this.page.identifier = '2016/08/02/the-relationship-of-uml-class/';
+        this.page.title = 'UML类之间的六大关系总结';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//crane-yuan.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>

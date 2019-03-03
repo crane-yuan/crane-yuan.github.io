@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="如题。"/>
+
+
+
+
+  <meta name="keywords" content="sort, algorithm, CornerCat" />
+
+
+
+
+
+  <meta name="google-site-verification" content="cTwCB-oVxflZBdr9iwZkcN2IsrSchykrhDWdlf8AhK8" />
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="CornerCat">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.1" />
+
+
+
+<link rel="canonical" href="https://craneyuan.github.io/2016/09/05/the-sort-algorithm-of-radix-sort/"/>
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1" />
+
+
+
+  
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93890480-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93890480-1');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
+</script>
+
+    <title> 常用排序算法总结8一一基数排序 - CornerCat </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">CornerCat</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">CornerCat</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          常用排序算法总结8一一基数排序
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-09-05
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/算法/">算法</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
+<p>基数排序（英语：Radix Sort）是一种非比较型整数排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别比较。由于整数也可以表达字符串（比如名字或日期）和特定格式的浮点数，所以基数排序也不是只能使用于整数。</p>
+</blockquote>
+<p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521870769/blog/tzz66ougy2grbcnbiluf.jpg" alt="基数排序过程"></p>
+<h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><ul>
+<li>将所有待比较数值（正整数）统一为同样的数位长度，数位较短的数前面补零。</li>
+<li>然后，从最低位开始，依次进行一次排序。</li>
+<li>这样从最低位排序一直到最高位排序完成以后，数列就变成一个有序序列。</li>
+</ul>
+<p>基数排序的方式可以采用<strong><em>LSD</em></strong>（Least significant digital）或<strong><em>MSD</em></strong>（Most significant digital），LSD的排序方式由键值的最右边开始，而MSD则相反，由键值的最左边开始。</p>
+<blockquote>
+<p>注意本次演示采用LSD的方式实现</p>
+</blockquote>
+<h2 id="代码实现（java）"><a href="#代码实现（java）" class="headerlink" title="代码实现（java）"></a>代码实现（java）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+<span class="line">14</span>
+<span class="line">15</span>
+<span class="line">16</span>
+<span class="line">17</span>
+<span class="line">18</span>
+<span class="line">19</span>
+<span class="line">20</span>
+<span class="line">21</span>
+<span class="line">22</span>
+<span class="line">23</span>
+<span class="line">24</span>
+<span class="line">25</span>
+<span class="line">26</span>
+<span class="line">27</span>
+<span class="line">28</span>
+<span class="line">29</span>
+<span class="line">30</span>
+<span class="line">31</span>
+<span class="line">32</span>
+<span class="line">33</span>
+<span class="line">34</span>
+<span class="line">35</span>
+<span class="line">36</span>
+<span class="line">37</span>
+<span class="line">38</span>
+<span class="line">39</span>
+<span class="line">40</span>
+<span class="line">41</span>
+<span class="line">42</span>
+<span class="line">43</span>
+<span class="line">44</span>
+<span class="line">45</span>
+<span class="line">46</span>
+<span class="line">47</span>
+<span class="line">48</span>
+<span class="line">49</span>
+<span class="line">50</span>
+<span class="line">51</span>
+<span class="line">52</span>
+<span class="line">53</span>
+<span class="line">54</span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 基数排序的简单实现，目前只能排序正整数</span></span>
+<span class="line"><span class="comment"> *</span></span>
+<span class="line"><span class="comment"> * <span class="doctag">@param</span>: nums</span></span>
+<span class="line"><span class="comment"> * <span class="doctag">@return</span>: int[]</span></span>
+<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
+<span class="line"><span class="comment"> */</span></span>
+<span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] radixSort(<span class="keyword">int</span>[] nums)</span>
+<span class="line">&#123;</span>
+<span class="line">    <span class="keyword">int</span> BASE_NUM = <span class="number">10</span>; <span class="comment">// 整数基数</span></span>
+<span class="line">    <span class="keyword">int</span> len = nums.length;</span>
+<span class="line">    <span class="keyword">int</span>[] buffer = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span>
+<span class="line"></span>
+<span class="line">    <span class="keyword">int</span> maxValue = nums[<span class="number">0</span>], exp = <span class="number">1</span>;</span>
+<span class="line"></span>
+<span class="line">    <span class="comment">// 找出nums数组中最大的数</span></span>
+<span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</span>
+<span class="line">        <span class="keyword">if</span> (nums[i] &gt; maxValue) &#123;</span>
+<span class="line">            maxValue = nums[i];</span>
+<span class="line">        &#125;</span>
+<span class="line">    &#125;</span>
+<span class="line"></span>
+<span class="line">    <span class="keyword">while</span> (maxValue / exp &gt; <span class="number">0</span>) &#123;</span>
+<span class="line">        <span class="keyword">int</span>[] bucket = <span class="keyword">new</span> <span class="keyword">int</span>[BASE_NUM];</span>
+<span class="line"></span>
+<span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; bucket.length; i++) &#123;</span>
+<span class="line">            bucket[i] = <span class="number">0</span>;</span>
+<span class="line">        &#125;</span>
+<span class="line"></span>
+<span class="line">        <span class="comment">// 从数的低位开始进行桶排序</span></span>
+<span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span>
+<span class="line">            bucket[(nums[i] / exp) % BASE_NUM]++;</span>
+<span class="line">        &#125;</span>
+<span class="line"></span>
+<span class="line">        <span class="comment">// 按照当前位给nums排序</span></span>
+<span class="line">        <span class="comment">// 确定各个数对应的大概位置buket[(nums[i] / exp) % BASE]的值</span></span>
+<span class="line">        <span class="comment">// 即为新位置的下标</span></span>
+<span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; BASE_NUM; i++) &#123;</span>
+<span class="line">            bucket[i] += bucket[i - <span class="number">1</span>];</span>
+<span class="line">        &#125;</span>
+<span class="line"></span>
+<span class="line">        <span class="comment">// 按当前位进行排序存入到新数组</span></span>
+<span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span>
+<span class="line">            <span class="keyword">int</span> index = (nums[i] / exp) % BASE_NUM;</span>
+<span class="line">            buffer[--bucket[(nums[i] / exp) % BASE_NUM]] = nums[i];</span>
+<span class="line">        &#125;</span>
+<span class="line"></span>
+<span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span>
+<span class="line">            nums[i] = buffer[i];</span>
+<span class="line">        &#125;</span>
+<span class="line"></span>
+<span class="line">        exp *= BASE_NUM;</span>
+<span class="line">    &#125;</span>
+<span class="line">    <span class="keyword">return</span> nums;</span>
+<span class="line">&#125;</span>
+</pre></td></tr></table></figure>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="https://wikipedia.org/wiki/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F#C" target="_blank" rel="noopener">基数排序</a></li>
+</ul>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://craneyuan.github.io">craneyuan</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://craneyuan.github.io/2016/09/05/the-sort-algorithm-of-radix-sort/">https://craneyuan.github.io/2016/09/05/the-sort-algorithm-of-radix-sort/</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/sort/">sort</a>
+            
+              <a href="/tags/algorithm/">algorithm</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/09/16/remove-sorted-array-duplicated-value/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">去除已排序数组中的重复元素</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/09/04/the-sort-algorithm-of-heap-sort/">
+        <span class="next-text nav-default">常用排序算法总结7一一堆排序</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+  <div class="social-links">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">craneyuan</span>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+  </span>
+<!-- Google Web Translate -->
+<span>
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'zh-CN', includedLanguages: 'en,zh-CN,zh-TW', gaTrack: true, gaId: 'UA-93890480-1'}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://craneyuan.github.io/2016/09/05/the-sort-algorithm-of-radix-sort/';
+        this.page.identifier = '2016/09/05/the-sort-algorithm-of-radix-sort/';
+        this.page.title = '常用排序算法总结8一一基数排序';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//crane-yuan.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>

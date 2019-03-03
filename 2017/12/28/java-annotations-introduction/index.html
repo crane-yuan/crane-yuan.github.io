@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="本文介绍了 Java 中的注解的基本概念及常见的应用场景。"/>
+
+
+
+
+  <meta name="keywords" content="Java, CornerCat" />
+
+
+
+
+
+  <meta name="google-site-verification" content="cTwCB-oVxflZBdr9iwZkcN2IsrSchykrhDWdlf8AhK8" />
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="CornerCat">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.1" />
+
+
+
+<link rel="canonical" href="https://craneyuan.github.io/2017/12/28/java-annotations-introduction/"/>
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1" />
+
+
+
+  
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93890480-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93890480-1');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
+</script>
+
+    <title> Java 注解介绍 - CornerCat </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">CornerCat</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">CornerCat</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Java 注解介绍
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-12-28
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/Java平台/">Java平台</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
+<p>Java注解又称Java标注，是Java语言5.0版本开始支持加入源代码的特殊语法元数据（元数据 Metadata：描述数据的数据）。</p>
+</blockquote>
+<p>Java语言中的类、方法、变量、参数和包等都可以被标注。和Javadoc不同，Java标注可以通过反射获取标注内容。在编译器生成类文件时，标注可以被嵌入到字节码中。Java虚拟机可以保留标注内容，在运行时可以获取到标注内容。 当然它也支持自定义Java标注</p>
+<h2 id="内置的注解"><a href="#内置的注解" class="headerlink" title="内置的注解"></a>内置的注解</h2><p>Java 5 定义了一套注解，共有 7 个，3 个在 java.lang 中，剩下 4 个在 java.lang.annotation 中。</p>
+<h3 id="作用在代码的注解（java-lang包中）"><a href="#作用在代码的注解（java-lang包中）" class="headerlink" title="作用在代码的注解（java.lang包中）"></a>作用在代码的注解（java.lang包中）</h3><ul>
+<li>@Override - 检查该方法是否是重载方法。如果发现其父类，或者是引用的接口中并没有该方法时，会报编译错误。</li>
+<li>@Deprecated - 标记过时方法。如果使用该方法，会报编译警告。</li>
+<li>@SuppressWarnings - 指示编译器去忽略注解中声明的警告。</li>
+</ul>
+<h3 id="作用在其他注解的注解-或者说-元注解，java-lang-annotation包中"><a href="#作用在其他注解的注解-或者说-元注解，java-lang-annotation包中" class="headerlink" title="作用在其他注解的注解(或者说 元注解，java.lang.annotation包中)"></a>作用在其他注解的注解(或者说 元注解，java.lang.annotation包中)</h3><ul>
+<li>@Retention - 标识这个注解怎么保存，是只在代码中，还是编入class文件中，或者是在运行时可以通过反射访问。</li>
+<li>@Documented - 标记这些注解是否包含在用户文档中。</li>
+<li>@Target - 标记这个注解应该是哪种 Java 成员。</li>
+<li>@Inherited - 标记这个注解是继承于哪个注解类(默认 注解并没有继承于任何子类)</li>
+</ul>
+<h3 id="从-Java-7-开始，额外添加了-3-个注解"><a href="#从-Java-7-开始，额外添加了-3-个注解" class="headerlink" title="从 Java 7 开始，额外添加了 3 个注解"></a>从 Java 7 开始，额外添加了 3 个注解</h3><ul>
+<li>@SafeVarargs - Java 7 开始支持，忽略任何使用参数为泛型变量的方法或构造函数调用产生的警告。</li>
+<li>@FunctionalInterface - Java 8 开始支持，标识一个匿名函数或函数式接口。</li>
+<li>@Repeatable - Java 8 开始支持，标识某注解可以在同一个声明上使用多次。</li>
+</ul>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>注解可以用于许多不同的目的，最常见的是：</p>
+<ul>
+<li>给编译器提供信息：编译器可以使用注解来产生警告，甚至根据不同的规则产生错误。 这种用法的一个例子是Java 8 的 @FunctionalInterface 注解。 这使编译器验证注释类，并检查它是否是一个正确的功能接口。</li>
+<li>文档化：软件应用程序可以使用注解来测量代码的质量，如FindBugs或PMD，或者像Jenkins，Jira或Teamcity一样自动生成报告。</li>
+<li>代码生成：使用注解可以使用代码中存在的元数据信息自动生成代码或XML文件。 JAXB库就是一个很好的例子。</li>
+<li>运行时处理：在运行时检查的注解可用于不同的目标，如单元测试（Junit），依赖注入（Spring），验证，日志记录（Log4J），数据访问（Hibernate）等。</li>
+</ul>
+<h2 id="实际例子"><a href="#实际例子" class="headerlink" title="实际例子"></a>实际例子</h2><p>讲个 <a href="https://docs.oracle.com/javase/1.5.0/docs/guide/language/annotations.html" target="_blank" rel="noopener">Java 官方提供的例子</a>，用注解实现简单的测试框架。</p>
+<h3 id="MyTest-注解"><a href="#MyTest-注解" class="headerlink" title="@MyTest 注解"></a>@MyTest 注解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+</pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.annotation.ElementType;</span>
+<span class="line"><span class="keyword">import</span> java.lang.annotation.Retention;</span>
+<span class="line"><span class="keyword">import</span> java.lang.annotation.RetentionPolicy;</span>
+<span class="line"><span class="keyword">import</span> java.lang.annotation.Target;</span>
+<span class="line"></span>
+<span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span>
+<span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span>
+<span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyTest &#123;</span>
+<span class="line"></span>
+<span class="line">&#125;</span>
+</pre></td></tr></table></figure>
+<h3 id="FooTest-测试类"><a href="#FooTest-测试类" class="headerlink" title="FooTest 测试类"></a>FooTest 测试类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+<span class="line">14</span>
+<span class="line">15</span>
+<span class="line">16</span>
+<span class="line">17</span>
+<span class="line">18</span>
+<span class="line">19</span>
+<span class="line">20</span>
+<span class="line">21</span>
+<span class="line">22</span>
+<span class="line">23</span>
+<span class="line">24</span>
+<span class="line">25</span>
+<span class="line">26</span>
+<span class="line">27</span>
+<span class="line">28</span>
+<span class="line">29</span>
+<span class="line">30</span>
+<span class="line">31</span>
+<span class="line">32</span>
+</pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FooTest</span> </span>&#123;</span>
+<span class="line"></span>
+<span class="line">    <span class="meta">@MyTest</span></span>
+<span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">m1</span><span class="params">()</span> </span>&#123;</span>
+<span class="line">    &#125;</span>
+<span class="line"></span>
+<span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">m2</span><span class="params">()</span> </span>&#123;</span>
+<span class="line">    &#125;</span>
+<span class="line"></span>
+<span class="line">    <span class="meta">@MyTest</span></span>
+<span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">m3</span><span class="params">()</span> </span>&#123;</span>
+<span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Boom"</span>);</span>
+<span class="line">    &#125;</span>
+<span class="line"></span>
+<span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">m4</span><span class="params">()</span> </span>&#123;</span>
+<span class="line">    &#125;</span>
+<span class="line"></span>
+<span class="line">    <span class="meta">@MyTest</span></span>
+<span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">m5</span><span class="params">()</span> </span>&#123;</span>
+<span class="line">    &#125;</span>
+<span class="line"></span>
+<span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">m6</span><span class="params">()</span> </span>&#123;</span>
+<span class="line">    &#125;</span>
+<span class="line"></span>
+<span class="line">    <span class="meta">@MyTest</span></span>
+<span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">m7</span><span class="params">()</span> </span>&#123;</span>
+<span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Crash"</span>);</span>
+<span class="line">    &#125;</span>
+<span class="line"></span>
+<span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">m8</span><span class="params">()</span> </span>&#123;</span>
+<span class="line">    &#125;</span>
+<span class="line">&#125;</span>
+</pre></td></tr></table></figure>
+<h3 id="RunMyTests-测试执行类"><a href="#RunMyTests-测试执行类" class="headerlink" title="RunMyTests 测试执行类"></a>RunMyTests 测试执行类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+<span class="line">14</span>
+<span class="line">15</span>
+<span class="line">16</span>
+<span class="line">17</span>
+<span class="line">18</span>
+<span class="line">19</span>
+<span class="line">20</span>
+<span class="line">21</span>
+<span class="line">22</span>
+<span class="line">23</span>
+<span class="line">24</span>
+<span class="line">25</span>
+<span class="line">26</span>
+</pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span>
+<span class="line"></span>
+<span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RunMyTests</span> </span>&#123;</span>
+<span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span>
+<span class="line">        <span class="keyword">int</span> passed = <span class="number">0</span>;</span>
+<span class="line">        <span class="keyword">int</span> failed = <span class="number">0</span>;</span>
+<span class="line"></span>
+<span class="line">        <span class="keyword">if</span> (args.length &lt; <span class="number">1</span>) &#123;</span>
+<span class="line">            System.out.println(<span class="string">"please give test class."</span>);</span>
+<span class="line">            System.exit(<span class="number">1</span>);</span>
+<span class="line">        &#125;</span>
+<span class="line"></span>
+<span class="line">        <span class="keyword">for</span> (Method method : Class.forName(args[<span class="number">0</span>]).getMethods()) &#123;</span>
+<span class="line">            <span class="keyword">if</span> (method.isAnnotationPresent(MyTest.class)) &#123;</span>
+<span class="line">                <span class="keyword">try</span> &#123;</span>
+<span class="line">                    method.invoke(<span class="keyword">null</span>);</span>
+<span class="line">                    passed++;</span>
+<span class="line">                &#125; <span class="keyword">catch</span> (Throwable ex) &#123;</span>
+<span class="line">                    System.out.printf(<span class="string">"Test %s failed: %s %n"</span>, method, ex.getCause());</span>
+<span class="line">                    failed++;</span>
+<span class="line">                &#125;</span>
+<span class="line">            &#125;</span>
+<span class="line">        &#125;</span>
+<span class="line">        System.out.printf(<span class="string">"Passed: %d, Failed %d%n"</span>, passed, failed);</span>
+<span class="line">    &#125;</span>
+<span class="line">&#125;</span>
+</pre></td></tr></table></figure>
+<h3 id="编译、运行测试执行类"><a href="#编译、运行测试执行类" class="headerlink" title="编译、运行测试执行类"></a>编译、运行测试执行类</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+</pre></td><td class="code"><pre><span class="line">&gt; javac FooTest.java MyTest.java RunMyTests.java</span>
+<span class="line">&gt; java RunMyTests FooTest</span>
+<span class="line">Test public static void FooTest.m3() failed: java.lang.RuntimeException: Boom</span>
+<span class="line">Test public static void FooTest.m7() failed: java.lang.RuntimeException: Crash</span>
+<span class="line">Passed: 2, Failed 2</span>
+</pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://www.javacodegeeks.com/2014/11/java-annotations-tutorial.html" target="_blank" rel="noopener">Java Annotations Tutorial – The ULTIMATE Guide (PDF Download)</a></li>
+<li><a href="https://www.jcp.org/aboutJava/communityprocess/final/jsr175/index.html" target="_blank" rel="noopener">JSR 175 A metadata facility for the Java programming Language</a></li>
+<li><a href="https://jcp.org/en/jsr/detail?id=250" target="_blank" rel="noopener">JSR 250 Common Annotations for the Java Platform</a></li>
+<li><a href="http://zhangchuzhao.site/2016/09/23/java-annotation/" target="_blank" rel="noopener">Java 注解深入理解</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/annotations/" target="_blank" rel="noopener">Lesson: Annotations</a></li>
+</ul>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://craneyuan.github.io">craneyuan</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://craneyuan.github.io/2017/12/28/java-annotations-introduction/">https://craneyuan.github.io/2017/12/28/java-annotations-introduction/</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Java/">Java</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/01/11/spring-boot-aop-custom-annotation/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">使用Spring Boot的AOP处理自定义注解</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/03/25/greasyfork-introduction/">
+        <span class="next-text nav-default">Greasy Fork 用户脚本简介</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+  <div class="social-links">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">craneyuan</span>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+  </span>
+<!-- Google Web Translate -->
+<span>
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'zh-CN', includedLanguages: 'en,zh-CN,zh-TW', gaTrack: true, gaId: 'UA-93890480-1'}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://craneyuan.github.io/2017/12/28/java-annotations-introduction/';
+        this.page.identifier = '2017/12/28/java-annotations-introduction/';
+        this.page.title = 'Java 注解介绍';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//crane-yuan.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>

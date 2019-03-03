@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="如题。"/>
+
+
+
+
+  <meta name="keywords" content="Java, CornerCat" />
+
+
+
+
+
+  <meta name="google-site-verification" content="cTwCB-oVxflZBdr9iwZkcN2IsrSchykrhDWdlf8AhK8" />
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="CornerCat">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.1" />
+
+
+
+<link rel="canonical" href="https://craneyuan.github.io/2016/08/24/the-summary-of-constructor-and-modifier/"/>
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1" />
+
+
+
+  
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93890480-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93890480-1');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
+</script>
+
+    <title> Java中访问修饰符和构造函数的一点总结 - CornerCat </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">CornerCat</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">CornerCat</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Java中访问修饰符和构造函数的一点总结
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-08-24
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/Java平台/">Java平台</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        <h2 id="Java访问修饰符"><a href="#Java访问修饰符" class="headerlink" title="Java访问修饰符"></a>Java访问修饰符</h2><table>
+<thead>
+<tr>
+<th>访问修饰符</th>
+<th>作用范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>完全开发</td>
+</tr>
+<tr>
+<td>private</td>
+<td>只能本类访问</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>同包及子类访问</td>
+</tr>
+<tr>
+<td>default(无修饰符时)</td>
+<td>同包访问</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Java用于类的修饰符（2个）和限定符（2个）"><a href="#Java用于类的修饰符（2个）和限定符（2个）" class="headerlink" title="Java用于类的修饰符（2个）和限定符（2个）"></a>Java用于类的修饰符（2个）和限定符（2个）</h2><table>
+<thead>
+<tr>
+<th>访问修饰符</th>
+<th>作用范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>完全开发</td>
+</tr>
+<tr>
+<td>default(无)</td>
+<td>同包访问</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注意：内部类可以拥有更多的访问修饰符</p>
+</blockquote>
+<hr>
+<table>
+<thead>
+<tr>
+<th>限定符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abstract</td>
+<td>指定为抽象类</td>
+</tr>
+<tr>
+<td>final</td>
+<td>指定为最终类，不可被继承</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Java用于成员变量的修饰符"><a href="#Java用于成员变量的修饰符" class="headerlink" title="Java用于成员变量的修饰符"></a>Java用于成员变量的修饰符</h2><ul>
+<li>public</li>
+<li>protected </li>
+<li>private </li>
+<li>static </li>
+<li>final</li>
+<li>transient </li>
+<li>volatile</li>
+</ul>
+<p>限定词含义：<br>|限定符|描述|<br>|—|—|<br>|static| 类属性，可通过类名直接调用|<br>|final|该成员不能被重写，即定义常量|<br>|transient| 不序列化|<br>|volatile |可被多个线程访问 （同步变量）|</p>
+<h2 id="Java用于成员方法的修饰符"><a href="#Java用于成员方法的修饰符" class="headerlink" title="Java用于成员方法的修饰符"></a>Java用于成员方法的修饰符</h2><ul>
+<li>public</li>
+<li>protected </li>
+<li>private </li>
+<li>static </li>
+<li>final</li>
+<li>abstract</li>
+<li>native</li>
+<li>synchronized</li>
+</ul>
+<p>限定词含义：<br>|限定符|描述|<br>|—|—|<br>|static|类(静态)方法，可通过类名直接调用|<br>|final|方法不能被重写|<br>|native| 集成其它语言的代码 本地方法|<br>|abstract|抽象方法，没有方法体|<br>|synchronized|控制多个并发线程的访问 （同步方法）|</p>
+<h2 id="构造函数的一些注意事项"><a href="#构造函数的一些注意事项" class="headerlink" title="构造函数的一些注意事项"></a>构造函数的一些注意事项</h2><blockquote>
+<p>在 Java 中，无论是 explicit 还是 implicit 方式，都要求在子类的构造方法中调用其父类的构造方法。</p>
+</blockquote>
+<p>如果父类无构造方法（其实是一个默认无参的构造方法），那么子类的构造方法中会自动进行调用；如果 父类有自己的构造方法（这时父类不会有默认无参的构造方法），那么在子类的构造方法中，必须要调用父类的某个构造方法，而且必须是在构造方法的第一个语句 中进行调用。 究其原因，想必是 Java 语言设计者，要求子类有责任保证它所继承的父类尽快进入到一个稳定、完整的状态中。试想，如果没有这个约束，那么子类的某个继承自父类的方法可能会使用到父类中的一些变量，而这些变量并没有进行初始化，从而产生一些难以预料的后果。 </p>
+<ul>
+<li><p>构造函数必须满足的语法规则：方法名必须与类名相同；不要声明返回类型；不能被static、final、synchronized、abstract、native等修饰。</p>
+</li>
+<li><p>构造方法可以被重载，来表达对象的多种初始化行为。在重载构造方法中可以使用this语句来调用其他构造方法，使用时应该注意：如果在构造方法中使用了this语句，则必须作为构造方法的第一条语句；只能在一个构造方法中用this语句来调用类的其他构造方法，而不能在成员方法中调用类的构造方法；只能通过this语句来调用其他构造方法，不能通过方法名来直接调用构造方法。</p>
+</li>
+<li><p>在java中，如果用户定义的类中没有提供任何构造方法，java语言会自动提供一个默认的构造方法，该默认构造方法没有参数，用public修饰，且方法体为空。当然，程序中也可以显示的定义默认构造方法。</p>
+</li>
+<li><p>如果类中显示定义了一个或多个构造方法，并且所有的构造方法都带有参数，那么这个类就失去了java语言为其准备的默认构造方法，此时若使用该类的默认构造方法（即不含参数的构造方法）时就是编译出错。</p>
+</li>
+<li><p>父类的构造方法不能被子类继承，但是，在子类的构造方法中可以通过super语句调用父类的构造方法。使用super语句应该注意：在子类的构造方法中使用super语句，它必须作为第一条语句。</p>
+</li>
+<li><p>在创建子类的对象时，java虚拟机首先执行父类的构造方法，然后再执行子类的构造方法，在多级继承的情况下，将从继承树的最上层得父类开始，依次执行各个类的构造方法，这可以保证子类对象从所有直接或间接父类中继承的实例变量都被正确的初始化。</p>
+</li>
+<li><p>如果子类的构造方法中没有用super语句显示调用父类的构造方法，那么通过这个构造方法创建子类对象时，java虚拟机会自动先调用父类的默认构造方法，而此时若父类没有默认构造方法时，就是编译出错。<br>例如</p>
+</li>
+</ul>
+<pre><code>class A //该类定义了含参数的构造方法，就失去了默认的无参的构造方法
+{
+
+    int i;
+
+    A(int i) {
+
+        this.i=i*2;
+
+    }
+
+}
+public class B extends A
+{
+
+    B(int i) {//该构造方法没有super显示调用父类的构造方法，将自动调用父类的默认构造方法，而父类A没有默认构造方法，这里将编译错误
+
+        System.out.println(i);
+
+    }
+
+    public static void main(String[] args) {
+
+        B b=new B(2);
+
+    }
+
+}
+</code></pre><ul>
+<li><p>构造方法被调用的几种方式：</p>
+<ul>
+<li>当前类的其他构造方法通过this语句调用它；</li>
+<li>当前类的子类的构造方法通过super语句调用它；</li>
+<li>在程序中通过new语句调用它。</li>
+</ul>
+</li>
+<li><p>构造方法可以处于public、protected、private和默认四种访问级别之一。当构造方法为private级别时，意味着只能在当前类访问它，不能被继承，不能被其他程序用new创建实例对象。可以对比其他几种修饰符的作用：abstract修饰的类，不允许被实例化，这点和private修饰构造方法相同，但abstract修饰的类可以被继承，拥有子类，可以创建子类的实例；final类禁止被继承，这点和private修饰构造方法相同，但是final类可以用new创建实例对象。</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://craneyuan.github.io">craneyuan</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://craneyuan.github.io/2016/08/24/the-summary-of-constructor-and-modifier/">https://craneyuan.github.io/2016/08/24/the-summary-of-constructor-and-modifier/</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Java/">Java</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/08/28/the-sort-algorithm-of-bubble-sort/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">常用排序算法总结1一一冒泡排序</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/08/23/the-ways-of-copy-file/">
+        <span class="next-text nav-default">Java文件拷贝的几种实现方案</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+  <div class="social-links">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">craneyuan</span>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+  </span>
+<!-- Google Web Translate -->
+<span>
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'zh-CN', includedLanguages: 'en,zh-CN,zh-TW', gaTrack: true, gaId: 'UA-93890480-1'}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://craneyuan.github.io/2016/08/24/the-summary-of-constructor-and-modifier/';
+        this.page.identifier = '2016/08/24/the-summary-of-constructor-and-modifier/';
+        this.page.title = 'Java中访问修饰符和构造函数的一点总结';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//crane-yuan.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>

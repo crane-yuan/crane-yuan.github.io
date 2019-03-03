@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="如题。"/>
+
+
+
+
+  <meta name="keywords" content="sort, algorithm, CornerCat" />
+
+
+
+
+
+  <meta name="google-site-verification" content="cTwCB-oVxflZBdr9iwZkcN2IsrSchykrhDWdlf8AhK8" />
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="CornerCat">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.1" />
+
+
+
+<link rel="canonical" href="https://craneyuan.github.io/2016/08/28/the-sort-algorithm-of-select-sort/"/>
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1" />
+
+
+
+  
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93890480-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93890480-1');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
+</script>
+
+    <title> 常用排序算法总结2一一选择排序 - CornerCat </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">CornerCat</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">CornerCat</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          常用排序算法总结2一一选择排序
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-08-28
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/算法/">算法</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
+<p>选择排序（英语：Selection sort）是一种简单直观的排序算法。它首先在未排序的序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
+</blockquote>
+<p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521872863/blog/ycjwfucucvgowsx1fd00.gif" alt="选择排序演示动画"></p>
+<p>选择排序的主要优点与数据移动有关。如果某个元素位于正确的最终位置上，则它不会被移动。选择排序每次交换一对元素，它们当中至少有一个将被移到其最终位置上，因此对n个元素的表进行排序总共进行至多n-1次交换。在所有的完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。</p>
+<h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><p>选择排序算法的运作如下：</p>
+<ul>
+<li>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置</li>
+<li>然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。</li>
+<li>以此类推，直到所有元素均排序完毕。</li>
+</ul>
+<p>伪代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+<span class="line">14</span>
+</pre></td><td class="code"><pre><span class="line">selection_sort(array, length)</span>
+<span class="line">&#123;</span>
+<span class="line">    var i, j, min, temp;</span>
+<span class="line">    for (i = 0; i &lt; length - 1; i++) &#123;</span>
+<span class="line">		// 记录当前最小元素的位置</span>
+<span class="line">        min = i;</span>
+<span class="line">        for (j = i + 1; j &lt; length; j++)</span>
+<span class="line">            if (array[min] &gt; array[j])</span>
+<span class="line">                min = j;</span>
+<span class="line">        temp = array[min];</span>
+<span class="line">        array[min] = array[i];</span>
+<span class="line">        array[i] = temp;</span>
+<span class="line">    &#125;</span>
+<span class="line">&#125;</span>
+</pre></td></tr></table></figure>
+<p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521872907/blog/ai7fzn2szplbboiz6wem.gif" alt="选择排序演示动画二"></p>
+<h2 id="代码实现（java）"><a href="#代码实现（java）" class="headerlink" title="代码实现（java）"></a>代码实现（java）</h2><h3 id="一般实现"><a href="#一般实现" class="headerlink" title="一般实现"></a>一般实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+<span class="line">14</span>
+<span class="line">15</span>
+<span class="line">16</span>
+<span class="line">17</span>
+<span class="line">18</span>
+<span class="line">19</span>
+<span class="line">20</span>
+<span class="line">21</span>
+<span class="line">22</span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 选择排序的简单实现</span></span>
+<span class="line"><span class="comment"> *</span></span>
+<span class="line"><span class="comment"> * <span class="doctag">@param</span>: nums</span></span>
+<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
+<span class="line"><span class="comment"> */</span></span>
+<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span></span>
+<span class="line"><span class="function"></span>&#123;</span>
+<span class="line">    <span class="keyword">int</span> temp;</span>
+<span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> currentPlace = <span class="number">0</span>; currentPlace &lt; nums.length - <span class="number">1</span>; currentPlace++) &#123;</span>
+<span class="line">        <span class="keyword">int</span> smallest = nums[currentPlace + <span class="number">1</span>];</span>
+<span class="line">        <span class="keyword">int</span> smallestAt = currentPlace + <span class="number">1</span>;</span>
+<span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> check = currentPlace; check &lt; nums.length; check++) &#123;</span>
+<span class="line">            <span class="keyword">if</span> (nums[check] &lt; smallest) &#123;</span>
+<span class="line">                smallestAt = check;</span>
+<span class="line">                smallest = nums[check];</span>
+<span class="line">            &#125;</span>
+<span class="line">        &#125;</span>
+<span class="line">        temp = nums[currentPlace];</span>
+<span class="line">        nums[currentPlace] = nums[smallestAt];</span>
+<span class="line">        nums[smallestAt] = temp;</span>
+<span class="line">    &#125;</span>
+<span class="line">&#125;</span>
+</pre></td></tr></table></figure>
+<h3 id="通用实现"><a href="#通用实现" class="headerlink" title="通用实现"></a>通用实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+<span class="line">14</span>
+<span class="line">15</span>
+<span class="line">16</span>
+<span class="line">17</span>
+<span class="line">18</span>
+<span class="line">19</span>
+<span class="line">20</span>
+<span class="line">21</span>
+<span class="line">22</span>
+<span class="line">23</span>
+<span class="line">24</span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 选择排序的简单实现（支持泛型）</span></span>
+<span class="line"><span class="comment"> *</span></span>
+<span class="line"><span class="comment"> * <span class="doctag">@param</span>: comparable</span></span>
+<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
+<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
+<span class="line"><span class="comment"> */</span></span>
+<span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function"><span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(</span></span></span>
+<span class="line"><span class="function"><span class="params">            E[] comparable)</span></span></span>
+<span class="line"><span class="function"></span>&#123;</span>
+<span class="line">    E temp;</span>
+<span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> currentPlace = <span class="number">0</span>; currentPlace &lt; comparable.length - <span class="number">1</span>; currentPlace++) &#123;</span>
+<span class="line">        E smallest = comparable[currentPlace + <span class="number">1</span>];</span>
+<span class="line">        <span class="keyword">int</span> smallestAt = currentPlace + <span class="number">1</span>;</span>
+<span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> check = currentPlace; check &lt; comparable.length; check++) &#123;</span>
+<span class="line">            <span class="keyword">if</span> (comparable[check].compareTo(smallest) &lt; <span class="number">0</span>) &#123;</span>
+<span class="line">                smallestAt = check;</span>
+<span class="line">                smallest = comparable[check];</span>
+<span class="line">            &#125;</span>
+<span class="line">        &#125;</span>
+<span class="line">        temp = comparable[currentPlace];</span>
+<span class="line">        comparable[currentPlace] = comparable[smallestAt];</span>
+<span class="line">        comparable[smallestAt] = temp;</span>
+<span class="line">    &#125;</span>
+<span class="line">&#125;</span>
+</pre></td></tr></table></figure>
+<h2 id="算法复杂度分析"><a href="#算法复杂度分析" class="headerlink" title="算法复杂度分析"></a>算法复杂度分析</h2><ul>
+<li>选择排序的<strong><em>交换操作</em></strong>介于0和(n-1)次之间。选择排序的<strong><em>比较操作</em></strong>为n(n-1)/2次之间。选择排序的<strong><em>赋值操作</em></strong>介于0和3(n-1)次之间。</li>
+<li>比较次数O(n^2)，比较次数与关键字的初始状态无关，总的比较次数N=(n-1)+(n-2)+…+1=n(n-1)/2。交换次数O(n)，最好情况是，已经有序，交换0次；最坏情况是，逆序，交换n-1次。交换次数比冒泡排序较少，由于交换所需CPU时间比比较所需的CPU时间多，值较小时，选择排序比冒泡排序快。</li>
+<li>原地操作几乎是选择排序的唯一优点，当空间复杂度（space complexity）要求较高时，可以考虑选择排序；实际适用的场合非常罕见。</li>
+</ul>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<li><a href="https://zh.wikipedia.org/wiki/选择排序" target="_blank" rel="noopener">选择排序</a></li>
+</ul>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://craneyuan.github.io">craneyuan</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://craneyuan.github.io/2016/08/28/the-sort-algorithm-of-select-sort/">https://craneyuan.github.io/2016/08/28/the-sort-algorithm-of-select-sort/</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/sort/">sort</a>
+            
+              <a href="/tags/algorithm/">algorithm</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/08/29/the-sort-algorithm-of-insert-sort/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">常用排序算法总结3一一插入排序</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/08/28/the-sort-algorithm-of-bubble-sort/">
+        <span class="next-text nav-default">常用排序算法总结1一一冒泡排序</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+  <div class="social-links">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">craneyuan</span>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+  </span>
+<!-- Google Web Translate -->
+<span>
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'zh-CN', includedLanguages: 'en,zh-CN,zh-TW', gaTrack: true, gaId: 'UA-93890480-1'}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://craneyuan.github.io/2016/08/28/the-sort-algorithm-of-select-sort/';
+        this.page.identifier = '2016/08/28/the-sort-algorithm-of-select-sort/';
+        this.page.title = '常用排序算法总结2一一选择排序';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//crane-yuan.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>

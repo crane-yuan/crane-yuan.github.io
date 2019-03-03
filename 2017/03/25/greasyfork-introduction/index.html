@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="本文介绍了一款强大的浏览器增强插件 Greasy Fork，可以用来编写自定义 JavaScript 脚本来控制页面。"/>
+
+
+
+
+  <meta name="keywords" content="插件, CornerCat" />
+
+
+
+
+
+  <meta name="google-site-verification" content="cTwCB-oVxflZBdr9iwZkcN2IsrSchykrhDWdlf8AhK8" />
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="CornerCat">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.1" />
+
+
+
+<link rel="canonical" href="https://craneyuan.github.io/2017/03/25/greasyfork-introduction/"/>
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1" />
+
+
+
+  
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93890480-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93890480-1');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
+</script>
+
+    <title> Greasy Fork 用户脚本简介 - CornerCat </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">CornerCat</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">CornerCat</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Greasy Fork 用户脚本简介
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-03-25
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/杂项/">杂项</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        <h2 id="Greasy-Fork-简介"><a href="#Greasy-Fork-简介" class="headerlink" title="Greasy Fork 简介"></a><a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">Greasy Fork 简介</a></h2><blockquote>
+<p>用户脚本为您增强对浏览体验的控制权。在安装之后，它们可自动为您访问的网站添加功能，或使其更加易用、更加清新。在 Greasy Fork 上的用户脚本是由其他用户编写并向全世界发表的，您可以免费和轻松地安装。</p>
+</blockquote>
+<h2 id="如何使用-Greasy-Fork"><a href="#如何使用-Greasy-Fork" class="headerlink" title="如何使用 Greasy Fork"></a>如何使用 Greasy Fork</h2><h3 id="第一步：安装一个用户脚本管理器"><a href="#第一步：安装一个用户脚本管理器" class="headerlink" title="第一步：安装一个用户脚本管理器"></a>第一步：安装一个用户脚本管理器</h3><p>要使用用户脚本，您首先需要安装一个用户脚本管理器。根据您使用的浏览器不同，可用的用户脚本管理器也有所不同。</p>
+<ul>
+<li><a href="http://tampermonkey.net/" target="_blank" rel="noopener">Tampermonkey</a>，支持Chrome, Firefox, Microsoft Edge, Safari, Opera Next, Maxthon</li>
+<li><a href="https://addons.mozilla.org/firefox/addon/greasemonkey/" target="_blank" rel="noopener">Greasemonkey</a>，支持Firefox</li>
+</ul>
+<h3 id="第二步：安装一个用户脚本"><a href="#第二步：安装一个用户脚本" class="headerlink" title="第二步：安装一个用户脚本"></a>第二步：安装一个用户脚本</h3><p><a href="https://greasyfork.org/zh-CN/scripts" target="_blank" rel="noopener">浏览此网站</a> 查找您想尝试的用户脚本。</p>
+<p>在您找到想要的用户脚本后，点击用户脚本页面上绿色的安装按钮，您的用户脚本管理器将询问您是否安装。</p>
+<h3 id="第三步：使用用户脚本"><a href="#第三步：使用用户脚本" class="headerlink" title="第三步：使用用户脚本"></a>第三步：使用用户脚本</h3><p>转至用户脚本适用的网站。它应该已自动启动和生效。在试用用户脚本后，您可以返回用户脚本页面，给用户脚本的作者留下反馈。</p>
+<h2 id="「新浪微博一键清空」脚本分享"><a href="#「新浪微博一键清空」脚本分享" class="headerlink" title="「新浪微博一键清空」脚本分享"></a><a href="https://greasyfork.org/zh-CN/scripts/25697-新浪微博一键清空" target="_blank" rel="noopener">「新浪微博一键清空」</a>脚本分享</h2><p>清空您发过的所有微博，目前没有备份功能，慎用！</p>
+<p>项目地址：<a href="https://github.com/crane-yuan/delmyweibo" target="_blank" rel="noopener">https://github.com/crane-yuan/delmyweibo</a></p>
+<h3 id="演示动画"><a href="#演示动画" class="headerlink" title="演示动画"></a>演示动画</h3><p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521870142/blog/qav3p4kc5nok6n6inj8s.gif" alt="删除微博脚本演示动画"></p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://craneyuan.github.io">craneyuan</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://craneyuan.github.io/2017/03/25/greasyfork-introduction/">https://craneyuan.github.io/2017/03/25/greasyfork-introduction/</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/插件/">插件</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/12/28/java-annotations-introduction/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Java 注解介绍</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/03/15/chinese-copywriting-guidelines/">
+        <span class="next-text nav-default">中文文案排版指北</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+  <div class="social-links">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">craneyuan</span>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+  </span>
+<!-- Google Web Translate -->
+<span>
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'zh-CN', includedLanguages: 'en,zh-CN,zh-TW', gaTrack: true, gaId: 'UA-93890480-1'}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://craneyuan.github.io/2017/03/25/greasyfork-introduction/';
+        this.page.identifier = '2017/03/25/greasyfork-introduction/';
+        this.page.title = 'Greasy Fork 用户脚本简介';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//crane-yuan.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>

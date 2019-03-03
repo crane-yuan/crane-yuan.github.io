@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Java 中有「goto」吗？如果不了解可以看看本篇文章。"/>
+
+
+
+
+  <meta name="keywords" content="Java, CornerCat" />
+
+
+
+
+
+  <meta name="google-site-verification" content="cTwCB-oVxflZBdr9iwZkcN2IsrSchykrhDWdlf8AhK8" />
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="CornerCat">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.1" />
+
+
+
+<link rel="canonical" href="https://craneyuan.github.io/2016/08/30/the-reserved-word-of-goto/"/>
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1" />
+
+
+
+  
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93890480-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93890480-1');
+</script>
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
+</script>
+
+    <title> Java中被搁置的“goto”保留字 - CornerCat </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">CornerCat</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">CornerCat</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Java中被搁置的“goto”保留字
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-08-30
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/Java平台/">Java平台</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        <p>goto语句一直被人所诟病，说它使得代码结构复杂化，但是语言设计者们还是没有放弃goto这个功能强大的语句。Java以面向对象所著称也没能够放弃goto，而是把它当做保留字，但是并未在语言中得到正式使用。</p>
+<p>然而，从Java的break和continue这两个关键字的身上，我们依然能够看出一些goto的影子。</p>
+<p>下面是《Thinking In Java 4th》中关于“goto”的介绍：</p>
+<blockquote>
+<h3 id="臭名昭著的“goto”"><a href="#臭名昭著的“goto”" class="headerlink" title="臭名昭著的“goto”"></a>臭名昭著的“goto”</h3><p>goto 关键字很早就在程序设计语言中出现。事实上，goto 是汇编语言的程序控制结构的始祖：“若条件A，则跳到这里；否则跳到那里”。若阅读由几乎所有编译器生成的汇编代码，就会发现程序控制里包含了许多<br>跳转。然而，goto 是在源码的级别跳转的，所以招致了不好的声誉。若程序总是从一个地方跳到另一个地方，还有什么办法能识别代码的流程呢？随着Edsger Dijkstra 著名的“Goto 有害”论的问世，goto 便从此<br>失宠。</p>
+</blockquote>
+<p>事实上，真正的问题并不在于使用goto，而在于goto 的滥用。而且在一些少见的情况下，goto 是组织控制流程的最佳手段。</p>
+<p>尽管goto 仍是Java 的一个保留字，但并未在语言中得到正式使用；Java 没有goto。<strong><em>然而，在break 和continue 这两个关键字的身上，我们仍然能看出一些goto 的影子。</em></strong>它并不属于一次跳转，而是中断循环语句的一种方法。之所以把它们纳入goto 问题中一起讨论，是由于它们使用了相同的机制：标签。</p>
+<h2 id="Java中的标签"><a href="#Java中的标签" class="headerlink" title="Java中的标签"></a>Java中的标签</h2><p>“标签”是后面跟一个冒号的标识符，就象下面这样：<br><code>label1:</code></p>
+<p><strong><em>对Java 来说，唯一用到标签的地方是在循环语句之前。</em></strong>进一步说，它实际需要紧靠在循环语句的前方——在标签和循环之间置入任何语句都是不明智的。而在循环之前设置标签的唯一理由是：我们希望在其中嵌套另<br>一个循环或者一个开关。这是由于break 和continue 关键字通常只中断当前循环，但若随同标签使用，它们就会中断到存在标签的地方。如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+</pre></td><td class="code"><pre><span class="line">label1:</span>
+<span class="line">外部循环&#123;</span>
+<span class="line">内部循环&#123;</span>
+<span class="line">//...</span>
+<span class="line">break; //1</span>
+<span class="line">//...</span>
+<span class="line">continue; //2</span>
+<span class="line">//...</span>
+<span class="line">continue label1; //3</span>
+<span class="line">//...</span>
+<span class="line">break label1; //4</span>
+<span class="line">&#125;</span>
+<span class="line">&#125;</span>
+</pre></td></tr></table></figure>
+<p>在条件1 中，break 中断内部循环，并在外部循环结束。在条件2 中，continue 移回内部循环的起始处。但在条件3 中，continue label1 却同时中断内部循环以及外部循环，并移至label1 处。随后，它实际是继续循环，但却从外部循环开始。在条件4 中，break label1 也会中断所有循环，并回到label1 处，但并不重新进入循环。也就是说，它实际是完全中止了两个循环。</p>
+<h2 id="代码测试（java）"><a href="#代码测试（java）" class="headerlink" title="代码测试（java）"></a>代码测试（java）</h2><blockquote>
+<p>一下代码均已在jdk1.6版本中测试通过</p>
+</blockquote>
+<h3 id="break语句测试"><a href="#break语句测试" class="headerlink" title="break语句测试"></a>break语句测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+</pre></td><td class="code"><pre><span class="line">public static void testLabel()</span>
+<span class="line">&#123;</span>
+<span class="line">    for (int i = 0; i &lt; 2; i++) &#123;</span>
+<span class="line">        System.out.println(&quot;L1----&quot;+i);</span>
+<span class="line">        for (int j = 0; j &lt; 4; j++) &#123;</span>
+<span class="line">            if (j == 2) &#123;</span>
+<span class="line">                break;</span>
+<span class="line">            &#125;</span>
+<span class="line">            System.out.println(&quot;--------L2---&quot;+j);</span>
+<span class="line">        &#125;</span>
+<span class="line">    &#125;</span>
+<span class="line">&#125;</span>
+</pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+</pre></td><td class="code"><pre><span class="line">L1----0</span>
+<span class="line">--------L2---0</span>
+<span class="line">--------L2---1</span>
+<span class="line">L1----1</span>
+<span class="line">--------L2---0</span>
+<span class="line">--------L2---1</span>
+</pre></td></tr></table></figure>
+<p>这个代码中break直接中断内部的for循环。</p>
+<h3 id="break-label语句测试"><a href="#break-label语句测试" class="headerlink" title="break+label语句测试"></a>break+label语句测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+</pre></td><td class="code"><pre><span class="line">public static void testLabel3()</span>
+<span class="line">&#123;</span>
+<span class="line">label1:</span>
+<span class="line">    for (int i = 0; i &lt; 2; i++) &#123;</span>
+<span class="line">        System.out.println(&quot;L1----&quot;+i);</span>
+<span class="line">        for (int j = 0; j &lt; 4; j++) &#123;</span>
+<span class="line">            if (j == 2) &#123;</span>
+<span class="line">                break label1;</span>
+<span class="line">            &#125;</span>
+<span class="line">            System.out.println(&quot;--------L2---&quot;+j);</span>
+<span class="line">        &#125;</span>
+<span class="line">    &#125;</span>
+<span class="line">&#125;</span>
+</pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+</pre></td><td class="code"><pre><span class="line">L1----0</span>
+<span class="line">--------L2---0</span>
+<span class="line">--------L2---1</span>
+</pre></td></tr></table></figure>
+<p>在这个代码中break中断标签label1处的外部for循环。</p>
+<h3 id="continue语句测试"><a href="#continue语句测试" class="headerlink" title="continue语句测试"></a>continue语句测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+</pre></td><td class="code"><pre><span class="line">public static void testLabel2() &#123;</span>
+<span class="line">		for (int i = 0; i &lt; 2; i++) &#123;</span>
+<span class="line">			System.out.println(&quot;L1----&quot;+i);</span>
+<span class="line">			for (int j = 0; j &lt; 4; j++) &#123;</span>
+<span class="line">				if (j == 2) &#123;</span>
+<span class="line">					continue;</span>
+<span class="line">				&#125;</span>
+<span class="line">				System.out.println(&quot;--------L2---&quot;+j);</span>
+<span class="line">			&#125;</span>
+<span class="line">		&#125;</span>
+<span class="line">	&#125;</span>
+</pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+</pre></td><td class="code"><pre><span class="line">L1----0</span>
+<span class="line">--------L2---0</span>
+<span class="line">--------L2---1</span>
+<span class="line">--------L2---3</span>
+<span class="line">L1----1</span>
+<span class="line">--------L2---0</span>
+<span class="line">--------L2---1</span>
+<span class="line">--------L2---3</span>
+</pre></td></tr></table></figure>
+<p>在这个代码中continue中断掉内部的for循环后继续执行内部for循环。</p>
+<h3 id="continue-label语句测试"><a href="#continue-label语句测试" class="headerlink" title="continue+label语句测试"></a>continue+label语句测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+<span class="line">9</span>
+<span class="line">10</span>
+<span class="line">11</span>
+<span class="line">12</span>
+<span class="line">13</span>
+</pre></td><td class="code"><pre><span class="line">public static void testLabel4()</span>
+<span class="line">&#123;</span>
+<span class="line">label1:</span>
+<span class="line">    for (int i = 0; i &lt; 2; i++) &#123;</span>
+<span class="line">        System.out.println(&quot;L1----&quot;+i);</span>
+<span class="line">        for (int j = 0; j &lt; 4; j++) &#123;</span>
+<span class="line">            if (j == 2) &#123;</span>
+<span class="line">                continue label1;</span>
+<span class="line">            &#125;</span>
+<span class="line">            System.out.println(&quot;--------L2---&quot;+j);</span>
+<span class="line">        &#125;</span>
+<span class="line">    &#125;</span>
+<span class="line">&#125;</span>
+</pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+</pre></td><td class="code"><pre><span class="line">L1----0</span>
+<span class="line">--------L2---0</span>
+<span class="line">--------L2---1</span>
+<span class="line">L1----1</span>
+<span class="line">--------L2---0</span>
+<span class="line">--------L2---1</span>
+</pre></td></tr></table></figure>
+<p>在这个代码中continue中断掉内部的for循环后继续执行跳到标签label1处的外部for循环，继续执行。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="https://craneyuan.github.io">craneyuan</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="https://craneyuan.github.io/2016/08/30/the-reserved-word-of-goto/">https://craneyuan.github.io/2016/08/30/the-reserved-word-of-goto/</a>
+    </p>
+    <p class="copyright-item">
+      <span>License: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Java/">Java</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/09/02/the-sort-algorithm-of-shell-sort/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">常用排序算法总结5一一希尔排序</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/08/30/the-sort-algorithm-of-merge-sort/">
+        <span class="next-text nav-default">常用排序算法总结4一一归并排序</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+  <div class="social-links">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">craneyuan</span>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+  </span>
+<!-- Google Web Translate -->
+<span>
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'zh-CN', includedLanguages: 'en,zh-CN,zh-TW', gaTrack: true, gaId: 'UA-93890480-1'}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  <script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://craneyuan.github.io/2016/08/30/the-reserved-word-of-goto/';
+        this.page.identifier = '2016/08/30/the-reserved-word-of-goto/';
+        this.page.title = 'Java中被搁置的“goto”保留字';
+    };
+    (function() {
+    var d = document, s = d.createElement('script');
+
+    s.src = '//crane-yuan.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();  
+  </script>
+
+  
+
+  
+
+
+
+    
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>
