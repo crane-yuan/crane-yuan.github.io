@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="最近想着刷刷算法题，提升下思维能力（准备面试），所以就写了这篇「算法入门」文章，不过大部分是摘抄的，目前还没有达到提纲挈领的水平。"/>
+  <meta name="description" content="最近想着刷刷算法题，提升下思维能力（准备面试），所以就写了这篇「算法入门」，不过大部分是摘抄的，目前还没有达到提纲挈领的水平。"/>
 
 
 
@@ -203,10 +203,10 @@
 
     <div class="post-content">
       
-        <p>最近在研究算法，发现其实算法也并不是特别难，只要抓住算法的核心思想，再静下心来，都可以自己实现的。在计算机领域，有一些常见的而且又经常使用的算法，这些算法我们应该掌握，比如常见的排序算法；还有一些算法就是特定领域中经常使用的算法了，这些算法我们只有必须使用时再去学习使用就行了，比如图像处理中的快速傅里叶变换算法。</p>
+        <p>最近在研究算法，发现其实算法也并不是特别难，只要抓住算法的核心思想，再静下心来，都可以自己实现的。在计算机领域，有一些常见的而且又经常使用的算法，这些算法我们应该掌握，比如常见的排序算法；还有一些算法就是特定领域中经常使用的算法了，这些算法我们可以在必须使用时再去学习就行了，比如图像处理中的快速傅里叶变换算法。</p>
 <h2 id="算法定义"><a href="#算法定义" class="headerlink" title="算法定义"></a>算法定义</h2><p>让我们来看看算法的定义吧。（以下定义摘自中文维基百科）</p>
 <blockquote>
-<p>在数学和计算机科学/算学之中，算法/演算法/算则法（Algorithm）为一个计算的具体步骤，常用于计算、数据处理和自动推理。精确而言，算法是一个表示为有限长列表的有效方法。算法应包含清晰定义的指令用于计算函数。</p>
+<p>在数学和计算机科学/算学之中，算法/演算法/算则法（algorithm）为一个计算的具体步骤，常用于计算、数据处理和自动推理。精确而言，算法是一个表示为有限长列表的有效方法。算法应包含清晰定义的指令用于计算函数。</p>
 <p>算法中的指令描述的是一个计算，当其运行时能从一个初始状态和初始输入（可能为空）开始，经过一系列有限而清晰定义的状态最终产生输出并停止于一个终态。一个状态到另一个状态的转移不一定是确定的。随机化算法在内的一些算法，包含了一些随机输入。</p>
 <p>形式化算法的概念部分源自尝试解决希尔伯特提出的判定问题，并在其后尝试定义有效计算性或者有效方法中成形。这些尝试包括库尔特·哥德尔、雅克·埃尔布朗和斯蒂芬·科尔·克莱尼分别于1930年、1934年和1935年提出的递归函数，阿隆佐·邱奇于1936年提出的λ演算，1936年Emil Leon Post的Formulation 1和艾伦·图灵1937年提出的图灵机。即使在当前，依然常有直觉想法难以定义为形式化算法的情况。</p>
 </blockquote>
@@ -248,8 +248,8 @@
 <li>递归方法</li>
 <li>迭代方法</li>
 </ul>
-<p>好了讲了这么多理论，还是用一个例子来解释下算法到底是什么。</p>
-<h2 id="求最大公约算法"><a href="#求最大公约算法" class="headerlink" title="求最大公约算法"></a>求最大公约算法</h2><h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><p>求两个自然数的最大公约数 设两个变量M和N</p>
+<p>好了，讲了这么多理论，还是用一个例子来解释下算法到底是什么。</p>
+<h2 id="求最大公约算法"><a href="#求最大公约算法" class="headerlink" title="求最大公约算法"></a>求最大公约算法</h2><h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><p>求两个自然数的最大公约数，设两个变量M和N</p>
 <h3 id="解题步骤："><a href="#解题步骤：" class="headerlink" title="解题步骤："></a>解题步骤：</h3><p>1.如果M &lt; N，则交换M和N<br>2.M被N除，得到余数R<br>3.判断R＝0，正确则N即为“最大公约数”，否则下一步<br>4.将N赋值给M，将R赋值给N，重做第一步。</p>
 <h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
 <span class="line">2</span>
@@ -339,13 +339,13 @@
     
       <a class="prev" href="/2016/08/23/the-way-to-release-resources/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">Java中资源关闭的处理方式</span>
+        <span class="prev-text nav-default">\[译\]Java中资源关闭的处理方式</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
     
     
-      <a class="next" href="/2016/08/20/the-shortcut-of-myeclipse/">
-        <span class="next-text nav-default">Myeclipse快捷键收录</span>
+      <a class="next" href="/2016/08/17/the-difference-between-scanner-and-bufferreader-class-in-java/">
+        <span class="next-text nav-default">\[译\]Java中Scanner类和BufferReader类之间的区别</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>

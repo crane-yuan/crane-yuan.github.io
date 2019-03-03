@@ -22,7 +22,7 @@
 
 
 
-  <meta name="keywords" content="Java, CornerCat" />
+  <meta name="keywords" content="java, CornerCat" />
 
 
 
@@ -266,7 +266,19 @@
 <span class="line">System.out.println(cal.getTime());</span>
 </pre></td></tr></table></figure>
 <p>算出给定日期是属于星期几</p>
-<p>```<br>Calendarcal = Calendar.getInstance();<br>cal.set(2016,08,01);<br>String[] strDays = new String[] { “SUNDAY”, “MONDAY”, “TUESDAY”,<br>                                  “WEDNESDAY”, “THURSDAY”, “FRIDAY”, “SATURDAY”<br>                                };<br>System.out.println(strDays[cal.get(Calendar.DAY_OF_WEEK) - 1]);</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+</pre></td><td class="code"><pre><span class="line">Calendarcal = Calendar.getInstance();</span>
+<span class="line">cal.set(<span class="number">2016</span>,<span class="number">08</span>,<span class="number">01</span>);</span>
+<span class="line">String[] strDays = <span class="keyword">new</span> String[] &#123; <span class="string">"SUNDAY"</span>, <span class="string">"MONDAY"</span>, <span class="string">"TUESDAY"</span>,</span>
+<span class="line">                                  <span class="string">"WEDNESDAY"</span>, <span class="string">"THURSDAY"</span>, <span class="string">"FRIDAY"</span>, <span class="string">"SATURDAY"</span></span>
+<span class="line">                                &#125;;</span>
+<span class="line">System.out.println(strDays[cal.get(Calendar.DAY_OF_WEEK) - <span class="number">1</span>]);</span>
+</pre></td></tr></table></figure>
 
       
     </div>
@@ -302,7 +314,7 @@
         
           <div class="post-tags">
             
-              <a href="/tags/Java/">Java</a>
+              <a href="/tags/java/">java</a>
             
           </div>
         

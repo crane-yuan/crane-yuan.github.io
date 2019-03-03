@@ -22,7 +22,7 @@
 
 
 
-  <meta name="keywords" content="Java, CornerCat" />
+  <meta name="keywords" content="java, how-to, CornerCat" />
 
 
 
@@ -98,7 +98,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
 </script>
 
-    <title> Java中资源关闭的处理方式 - CornerCat </title>
+    <title> \[译\]Java中资源关闭的处理方式 - CornerCat </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -178,7 +178,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          Java中资源关闭的处理方式
+          \[译\]Java中资源关闭的处理方式
         
       </h1>
 
@@ -203,7 +203,11 @@
 
     <div class="post-content">
       
-        <p>本文就关于IO资源的处理问题，提出三种方案。</p>
+        <p>原文链接：<a href="http://www.programcreek.com/2013/12/should-close-be-put-in-finally-block-or-not/" target="_blank" rel="noopener">should-close-be-put-in-finally-block-or-not</a></p>
+<p>译者：craneyuan</p>
+<p>[ 转载请保留原文出处、译者和译文链接。]</p>
+<hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文就关于IO资源的处理问题，提出三种方案。</p>
 <ul>
 <li>close()放在try块中</li>
 <li>close()放在finally块中</li>
@@ -277,11 +281,8 @@
 <span class="line">&#125;</span>
 </pre></td></tr></table></figure>
 <p>这种方式可能是最好的，Java官方推荐使用这种方式，但是，使用的前提是你的jdk版本在1.7以上。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>因为不管什么情况下(异常或者非异常)资源都必须关闭，在jdk1.6之前，应该把close()放在finally块中，以确保资源的正确释放。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>因为不管什么情况下（异常或者非异常）资源都必须关闭，在jdk1.6之前，应该把close()放在finally块中，以确保资源的正确释放。</p>
 <p>如果使用jdk1.7以上的版本，推荐使用<a href="http://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html" target="_blank" rel="noopener">try-with-resources</a>语句。</p>
-<p>原文链接：<a href="http://www.programcreek.com/2013/12/should-close-be-put-in-finally-block-or-not/" target="_blank" rel="noopener">should-close-be-put-in-finally-block-or-not</a></p>
-<p>翻译：crane-yuan</p>
-<p>[ 转载请保留原文出处、译者和译文链接。]</p>
 
       
     </div>
@@ -317,7 +318,9 @@
         
           <div class="post-tags">
             
-              <a href="/tags/Java/">Java</a>
+              <a href="/tags/java/">java</a>
+            
+              <a href="/tags/how-to/">how-to</a>
             
           </div>
         
@@ -451,7 +454,7 @@ function googleTranslateElementInit() {
     var disqus_config = function () {
         this.page.url = 'https://craneyuan.github.io/2016/08/23/the-way-to-release-resources/';
         this.page.identifier = '2016/08/23/the-way-to-release-resources/';
-        this.page.title = 'Java中资源关闭的处理方式';
+        this.page.title = '\[译\]Java中资源关闭的处理方式';
     };
     (function() {
     var d = document, s = d.createElement('script');

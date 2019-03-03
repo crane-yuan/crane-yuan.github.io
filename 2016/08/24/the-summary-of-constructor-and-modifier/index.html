@@ -22,7 +22,7 @@
 
 
 
-  <meta name="keywords" content="Java, CornerCat" />
+  <meta name="keywords" content="java, CornerCat" />
 
 
 
@@ -239,7 +239,7 @@
 <tbody>
 <tr>
 <td>public</td>
-<td>完全开发</td>
+<td>完全开放</td>
 </tr>
 <tr>
 <td>default(无)</td>
@@ -265,7 +265,7 @@
 </tr>
 <tr>
 <td>final</td>
-<td>指定为最终类，不可被继承</td>
+<td>指定为终态类，不可被继承</td>
 </tr>
 </tbody>
 </table>
@@ -278,7 +278,33 @@
 <li>transient </li>
 <li>volatile</li>
 </ul>
-<p>限定词含义：<br>|限定符|描述|<br>|—|—|<br>|static| 类属性，可通过类名直接调用|<br>|final|该成员不能被重写，即定义常量|<br>|transient| 不序列化|<br>|volatile |可被多个线程访问 （同步变量）|</p>
+<p>限定词含义：</p>
+<table>
+<thead>
+<tr>
+<th>限定符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>static</td>
+<td>类属性，可通过类名直接调用</td>
+</tr>
+<tr>
+<td>final</td>
+<td>该成员不能被重写，即定义常量</td>
+</tr>
+<tr>
+<td>transient</td>
+<td>不序列化</td>
+</tr>
+<tr>
+<td>volatile</td>
+<td>可被多个线程访问 （同步变量）</td>
+</tr>
+</tbody>
+</table>
 <h2 id="Java用于成员方法的修饰符"><a href="#Java用于成员方法的修饰符" class="headerlink" title="Java用于成员方法的修饰符"></a>Java用于成员方法的修饰符</h2><ul>
 <li>public</li>
 <li>protected </li>
@@ -289,11 +315,11 @@
 <li>native</li>
 <li>synchronized</li>
 </ul>
-<p>限定词含义：<br>|限定符|描述|<br>|—|—|<br>|static|类(静态)方法，可通过类名直接调用|<br>|final|方法不能被重写|<br>|native| 集成其它语言的代码 本地方法|<br>|abstract|抽象方法，没有方法体|<br>|synchronized|控制多个并发线程的访问 （同步方法）|</p>
+<p>限定词含义：<br>|限定符|描述|<br>| — | — |<br>|static|类(静态)方法，可通过类名直接调用|<br>|final|方法不能被重写|<br>|native| 集成其它语言的代码 本地方法|<br>|abstract|抽象方法，没有方法体|<br>|synchronized|控制多个并发线程的访问 （同步方法）|</p>
 <h2 id="构造函数的一些注意事项"><a href="#构造函数的一些注意事项" class="headerlink" title="构造函数的一些注意事项"></a>构造函数的一些注意事项</h2><blockquote>
-<p>在 Java 中，无论是 explicit 还是 implicit 方式，都要求在子类的构造方法中调用其父类的构造方法。</p>
+<p>在 Java 中，无论是 explicit（显式的） 还是 implicit（隐式的）方式，都要求在子类的构造方法中调用其父类的构造方法。</p>
 </blockquote>
-<p>如果父类无构造方法（其实是一个默认无参的构造方法），那么子类的构造方法中会自动进行调用；如果 父类有自己的构造方法（这时父类不会有默认无参的构造方法），那么在子类的构造方法中，必须要调用父类的某个构造方法，而且必须是在构造方法的第一个语句 中进行调用。 究其原因，想必是 Java 语言设计者，要求子类有责任保证它所继承的父类尽快进入到一个稳定、完整的状态中。试想，如果没有这个约束，那么子类的某个继承自父类的方法可能会使用到父类中的一些变量，而这些变量并没有进行初始化，从而产生一些难以预料的后果。 </p>
+<p>如果父类无构造方法（其实是一个默认无参的构造方法），那么子类的构造方法中会自动进行调用；如果父类有自己的构造方法（这时父类不会有默认无参的构造方法），那么在子类的构造方法中，必须要调用父类的某个构造方法，而且必须是在构造方法的第一个语句 中进行调用。 究其原因，想必是 Java 语言设计者，要求子类有责任保证它所继承的父类尽快进入到一个稳定、完整的状态中。试想，如果没有这个约束，那么子类的某个继承自父类的方法可能会使用到父类中的一些变量，而这些变量并没有进行初始化，从而产生一些难以预料的后果。 </p>
 <ul>
 <li><p>构造函数必须满足的语法规则：方法名必须与类名相同；不要声明返回类型；不能被static、final、synchronized、abstract、native等修饰。</p>
 </li>
@@ -312,31 +338,20 @@
 </ul>
 <pre><code>class A //该类定义了含参数的构造方法，就失去了默认的无参的构造方法
 {
-
     int i;
-
     A(int i) {
-
         this.i=i*2;
-
     }
-
 }
 public class B extends A
 {
-
-    B(int i) {//该构造方法没有super显示调用父类的构造方法，将自动调用父类的默认构造方法，而父类A没有默认构造方法，这里将编译错误
-
+    B(int i) {
+        //该构造方法没有super显示调用父类的构造方法，将自动调用父类的默认构造方法，而父类A没有默认构造方法，这里将编译错误
         System.out.println(i);
-
     }
-
     public static void main(String[] args) {
-
         B b=new B(2);
-
     }
-
 }
 </code></pre><ul>
 <li><p>构造方法被调用的几种方式：</p>
@@ -384,7 +399,7 @@ public class B extends A
         
           <div class="post-tags">
             
-              <a href="/tags/Java/">Java</a>
+              <a href="/tags/java/">java</a>
             
           </div>
         

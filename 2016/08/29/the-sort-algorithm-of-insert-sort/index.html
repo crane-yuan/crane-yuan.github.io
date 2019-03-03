@@ -204,7 +204,7 @@
     <div class="post-content">
       
         <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
-<p>插入排序（英语：Insertion Sort）是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p>
+<p>插入排序（英文：insertion Sort）是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p>
 </blockquote>
 <p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521872768/blog/a8gxde7srvn5wqtzkcva.gif" alt="插入排序演示动画1"></p>
 <h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><p>插入排序算法的运作如下：</p>
@@ -242,7 +242,7 @@
 <span class="line">&#125;</span>
 </pre></td></tr></table></figure>
 <p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521872817/blog/m2ww9jltfvwl3xltbzre.gif" alt="插入排序动画演示2"></p>
-<h2 id="代码实现（java）"><a href="#代码实现（java）" class="headerlink" title="代码实现（java）"></a>代码实现（java）</h2><h3 id="一般实现"><a href="#一般实现" class="headerlink" title="一般实现"></a>一般实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<h2 id="代码实现（java）"><a href="#代码实现（java）" class="headerlink" title="代码实现（java）"></a>代码实现（java）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
 <span class="line">2</span>
 <span class="line">3</span>
 <span class="line">4</span>
@@ -256,16 +256,10 @@
 <span class="line">12</span>
 <span class="line">13</span>
 <span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 插入排序的简单实现</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: nums</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 插入排序的简单实现</span></span>
 <span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span></span>
-<span class="line"><span class="function"></span>&#123;</span>
+<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span>
 <span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span>
 <span class="line">        <span class="keyword">int</span> value = nums[i];</span>
 <span class="line">        <span class="keyword">int</span> j = i - <span class="number">1</span>;</span>
@@ -274,45 +268,6 @@
 <span class="line">            j = j - <span class="number">1</span>;</span>
 <span class="line">        &#125;</span>
 <span class="line">        nums[j + <span class="number">1</span>] = value;</span>
-<span class="line">    &#125;</span>
-<span class="line">&#125;</span>
-</pre></td></tr></table></figure>
-<h3 id="通用实现"><a href="#通用实现" class="headerlink" title="通用实现"></a>通用实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 插入排序的简单实现（支持泛型）</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: nums</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
-<span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function"><span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(</span></span></span>
-<span class="line"><span class="function"><span class="params">            E[] comparable)</span></span></span>
-<span class="line"><span class="function"></span>&#123;</span>
-<span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; comparable.length; i++) &#123;</span>
-<span class="line">        E value = comparable[i];</span>
-<span class="line">        <span class="keyword">int</span> j = i - <span class="number">1</span>;</span>
-<span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; comparable[j].compareTo(value) &gt; <span class="number">0</span>) &#123;</span>
-<span class="line">            comparable[j + <span class="number">1</span>] = comparable[j];</span>
-<span class="line">            j = j - <span class="number">1</span>;</span>
-<span class="line">        &#125;</span>
-<span class="line">        comparable[j + <span class="number">1</span>] = value;</span>
 <span class="line">    &#125;</span>
 <span class="line">&#125;</span>
 </pre></td></tr></table></figure>

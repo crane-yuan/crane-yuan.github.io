@@ -78,16 +78,14 @@
       
         <categories>
             
-            <category> Spec </category>
+            <category> 规范 </category>
             
         </categories>
         
         
         <tags>
             
-            <tag> Java </tag>
-            
-            <tag> JPA </tag>
+            <tag> java </tag>
             
         </tags>
         
@@ -134,7 +132,7 @@
         
         <tags>
             
-            <tag> Java </tag>
+            <tag> java </tag>
             
             <tag> best-practice </tag>
             
@@ -374,7 +372,7 @@
         
         <tags>
             
-            <tag> Hexo </tag>
+            <tag> hexo </tag>
             
         </tags>
         
@@ -383,7 +381,7 @@
     <entry>
       <title><![CDATA[使用Spring Boot的AOP处理自定义注解]]></title>
       <url>https://craneyuan.github.io/2018/01/11/spring-boot-aop-custom-annotation/</url>
-      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一篇文章<a href="https://crane-yuan.github.io/2017/12/28/java-annotations-introduction/" target="_blank" rel="noopener">Java 注解介绍</a>讲解了下Java注解的基本使用方式，并且通过自定义注解实现了一个简单的测试工具；本篇文章将介绍如何使用Spring Boot的AOP来简化处理自定义注解，并将通过实现一个简单的方法执行时间统计工具为样例来讲解这些内容。</p>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一篇文章<a href="https://craneyuan.github.io/2017/12/28/java-annotations-introduction/">Java 注解介绍</a>讲解了下Java注解的基本使用方式，并且通过自定义注解实现了一个简单的测试工具；本篇文章将介绍如何使用Spring Boot的AOP来简化处理自定义注解，并将通过实现一个简单的方法执行时间统计工具为样例来讲解这些内容。</p>
 <h2 id="AOP概念"><a href="#AOP概念" class="headerlink" title="AOP概念"></a>AOP概念</h2><blockquote>
 <p>面向侧面的程序设计（aspect-oriented programming，AOP，又译作面向方面的程序设计、观点导向编程、剖面导向程序设计）是计算机科学中的一个术语，指一种程序设计范型。该范型以一种称为侧面（aspect，又译作方面）的语言构造为基础，侧面是一种新的模块化机制，用来描述分散在对象、类或函数中的横切关注点（crosscutting concern）。</p>
 </blockquote>
@@ -674,7 +672,7 @@
         
         <tags>
             
-            <tag> Java </tag>
+            <tag> java </tag>
             
         </tags>
         
@@ -880,7 +878,7 @@
         
         <tags>
             
-            <tag> Java </tag>
+            <tag> java </tag>
             
         </tags>
         
@@ -914,7 +912,7 @@
         
         <tags>
             
-            <tag> 插件 </tag>
+            <tag> plugin </tag>
             
         </tags>
         
@@ -1219,12 +1217,6 @@
         </categories>
         
         
-        <tags>
-            
-            <tag> 排版 </tag>
-            
-        </tags>
-        
     </entry>
     
     <entry>
@@ -1387,7 +1379,7 @@
         
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> leetcode </tag>
             
             <tag> algorithm </tag>
             
@@ -1410,12 +1402,8 @@
 <span class="line">9</span>
 <span class="line">10</span>
 <span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 单链表定义</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@author</span>: crane-yuan</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@date</span>: 2016-9-17 下午12:11:13</span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/** </span></span>
+<span class="line"><span class="comment"> * 单链表定义</span></span>
 <span class="line"><span class="comment"> */</span></span>
 <span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</span>
 <span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> val;</span>
@@ -1445,22 +1433,18 @@
 <span class="line">17</span>
 <span class="line">18</span>
 <span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 单链表反转</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span> head</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span> ListNode</span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 单链表反转</span></span>
 <span class="line"><span class="comment"> */</span></span>
 <span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ListNode <span class="title">reverseList</span><span class="params">(ListNode head)</span> </span>&#123;</span>
 <span class="line">    <span class="keyword">if</span> (head == <span class="keyword">null</span>) &#123;</span>
 <span class="line">        <span class="keyword">return</span> head;</span>
 <span class="line">    &#125;</span>
-<span class="line">    ListNode prev = <span class="keyword">null</span> ;</span>
+<span class="line">    ListNode prev = <span class="keyword">null</span>;</span>
 <span class="line">    ListNode current = head;</span>
-<span class="line">    ListNode next = <span class="keyword">null</span> ;</span>
+<span class="line">    ListNode next = <span class="keyword">null</span>;</span>
 <span class="line">    <span class="keyword">while</span> (current != <span class="keyword">null</span>) &#123;</span>
-<span class="line">        next = current.next ;</span>
+<span class="line">        next = current.next;</span>
 <span class="line">        current.next = prev;</span>
 <span class="line">        prev = current;</span>
 <span class="line">        current = next;</span>
@@ -1523,16 +1507,8 @@
 <span class="line">50</span>
 <span class="line">51</span>
 <span class="line">52</span>
-<span class="line">53</span>
-<span class="line">54</span>
-<span class="line">55</span>
-<span class="line">56</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 单链表反转，反转指定区间内的节点</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span> head</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span> m</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span> n</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span> ListNode</span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 单链表反转，反转指定区间内的节点</span></span>
 <span class="line"><span class="comment"> */</span></span>
 <span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ListNode <span class="title">reverseBetween</span><span class="params">(ListNode head, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span>
 <span class="line">    <span class="comment">// 合法性检测</span></span>
@@ -1551,7 +1527,7 @@
 <span class="line">    ListNode second = first;</span>
 <span class="line">    ListNode third = first;</span>
 <span class="line">    ListNode current = first;</span>
-<span class="line">    <span class="keyword">int</span>  i = <span class="number">0</span>;</span>
+<span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span>
 <span class="line">    <span class="keyword">while</span> (current != <span class="keyword">null</span>) &#123;</span>
 <span class="line">        i++;</span>
 <span class="line">        <span class="keyword">if</span> (i == m - <span class="number">1</span>) &#123;</span>
@@ -1561,18 +1537,18 @@
 <span class="line">            second = current;</span>
 <span class="line">        &#125;</span>
 <span class="line">        <span class="keyword">if</span> (i == n) &#123;</span>
-<span class="line">            third = current.next ;</span>
-<span class="line">            <span class="keyword">break</span> ;</span>
+<span class="line">            third = current.next;</span>
+<span class="line">            <span class="keyword">break</span>;</span>
 <span class="line">        &#125;</span>
-<span class="line">        current = current.next ;</span>
+<span class="line">        current = current.next;</span>
 <span class="line">    &#125;</span>
 <span class="line">    <span class="comment">// 进行中间second段的reverse</span></span>
 <span class="line">    current = second;</span>
 <span class="line">    ListNode prev = third;</span>
-<span class="line">    ListNode next =  <span class="keyword">null</span> ;</span>
+<span class="line">    ListNode next = <span class="keyword">null</span>;</span>
 <span class="line">    <span class="keyword">while</span> (current != third) &#123;</span>
-<span class="line">        next = current. next ;</span>
-<span class="line">        current. next  = prev;</span>
+<span class="line">        next = current.next;</span>
+<span class="line">        current.next = prev;</span>
 <span class="line">        prev = current;</span>
 <span class="line">        current = next;</span>
 <span class="line">    &#125;</span>
@@ -1598,7 +1574,7 @@
         
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> leetcode </tag>
             
             <tag> algorithm </tag>
             
@@ -1744,7 +1720,7 @@
         
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> leetcode </tag>
             
             <tag> algorithm </tag>
             
@@ -1828,7 +1804,7 @@
         
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> leetcode </tag>
             
             <tag> algorithm </tag>
             
@@ -1840,7 +1816,7 @@
       <title><![CDATA[常用排序算法总结8一一基数排序]]></title>
       <url>https://craneyuan.github.io/2016/09/05/the-sort-algorithm-of-radix-sort/</url>
       <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
-<p>基数排序（英语：Radix Sort）是一种非比较型整数排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别比较。由于整数也可以表达字符串（比如名字或日期）和特定格式的浮点数，所以基数排序也不是只能使用于整数。</p>
+<p>基数排序（英文：radix Sort）是一种非比较型整数排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别比较。由于整数也可以表达字符串（比如名字或日期）和特定格式的浮点数，所以基数排序也不是只能使用于整数。</p>
 </blockquote>
 <p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521870769/blog/tzz66ougy2grbcnbiluf.jpg" alt="基数排序过程"></p>
 <h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><ul>
@@ -1902,18 +1878,10 @@
 <span class="line">48</span>
 <span class="line">49</span>
 <span class="line">50</span>
-<span class="line">51</span>
-<span class="line">52</span>
-<span class="line">53</span>
-<span class="line">54</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 基数排序的简单实现，目前只能排序正整数</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: nums</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: int[]</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 基数排序的简单实现，目前只能排序正整数</span></span>
 <span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] radixSort(<span class="keyword">int</span>[] nums)</span>
-<span class="line">&#123;</span>
+<span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] radixSort(<span class="keyword">int</span>[] nums) &#123;</span>
 <span class="line">    <span class="keyword">int</span> BASE_NUM = <span class="number">10</span>; <span class="comment">// 整数基数</span></span>
 <span class="line">    <span class="keyword">int</span> len = nums.length;</span>
 <span class="line">    <span class="keyword">int</span>[] buffer = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span>
@@ -1962,7 +1930,7 @@
 <span class="line">&#125;</span>
 </pre></td></tr></table></figure>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
-<li><a href="https://wikipedia.org/wiki/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F#C" target="_blank" rel="noopener">基数排序</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/基数排序" target="_blank" rel="noopener">基数排序</a></li>
 </ul>
 ]]></content>
       
@@ -1988,7 +1956,7 @@
       <url>https://craneyuan.github.io/2016/09/04/the-sort-algorithm-of-heap-sort/</url>
       <content type="html"><![CDATA[<p>在了解堆排序之前，我们有必要清楚“什么是堆呢？”。</p>
 <blockquote>
-<p>堆（英语：Heap）是计算机科学中一类特殊的数据结构的统称。<strong><em>堆通常是一个可以被看做一棵树的数组对象。</em></strong>在队列中，调度程序反复提取队列中第一个作业并运行，因为实际情况中某些时间较短的任务将等待很长时间才能结束，或者某些不短小，但具有重要性的作业，同样应当具有优先权。堆即为解决此类问题设计的一种数据结构。</p>
+<p>堆（英文：heap）是计算机科学中一类特殊的数据结构的统称。<strong><em>堆通常是一个可以被看做一棵树的数组对象。</em></strong>在队列中，调度程序反复提取队列中第一个作业并运行，因为实际情况中某些时间较短的任务将等待很长时间才能结束，或者某些不短小，但具有重要性的作业，同样应当具有优先权。堆即为解决此类问题设计的一种数据结构。</p>
 </blockquote>
 <p>堆的逻辑定义：<br><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521870976/blog/aolnikhrecm3o25auqzb.png" alt="堆的逻辑定义"></p>
 <p>堆的实现通过构造二叉堆（英语：binary heap），实为二叉树的一种；由于其应用的普遍性，当不加限定时，均指该数据结构的这种实现。这种数据结构具有以下性质。</p>
@@ -2079,18 +2047,10 @@
 <span class="line">57</span>
 <span class="line">58</span>
 <span class="line">59</span>
-<span class="line">60</span>
-<span class="line">61</span>
-<span class="line">62</span>
-<span class="line">63</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 堆排序的简单实现</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: a</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 堆排序的简单实现</span></span>
 <span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(<span class="keyword">int</span>[] a)</span></span></span>
-<span class="line"><span class="function"></span>&#123;</span>
+<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(<span class="keyword">int</span>[] a)</span> </span>&#123;</span>
 <span class="line">    <span class="keyword">int</span> count = a.length;</span>
 <span class="line"></span>
 <span class="line">    <span class="comment">// first place a in max-heap order</span></span>
@@ -2111,8 +2071,7 @@
 <span class="line">    &#125;</span>
 <span class="line">&#125;</span>
 <span class="line"></span>
-<span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">heapify</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> count)</span></span></span>
-<span class="line"><span class="function"></span>&#123;</span>
+<span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">heapify</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> count)</span> </span>&#123;</span>
 <span class="line">    <span class="comment">// start is assigned the index in a of the last parent node</span></span>
 <span class="line">    <span class="keyword">int</span> start = (count - <span class="number">2</span>) / <span class="number">2</span>; <span class="comment">// binary heap</span></span>
 <span class="line"></span>
@@ -2126,8 +2085,7 @@
 <span class="line">    <span class="comment">// after sifting down the root all nodes/elements are in heap order</span></span>
 <span class="line">&#125;</span>
 <span class="line"></span>
-<span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">siftDown</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span></span></span>
-<span class="line"><span class="function"></span>&#123;</span>
+<span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">siftDown</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span>
 <span class="line">    <span class="comment">// end represents the limit of how far down the heap to sift</span></span>
 <span class="line">    <span class="keyword">int</span> root = start;</span>
 <span class="line"></span>
@@ -2135,15 +2093,17 @@
 <span class="line">        <span class="keyword">int</span> child = root * <span class="number">2</span> + <span class="number">1</span>; <span class="comment">// root*2+1 points to the left child</span></span>
 <span class="line">        <span class="comment">// if the child has a sibling and the child's value is less than its</span></span>
 <span class="line">        <span class="comment">// sibling's...</span></span>
-<span class="line">        <span class="keyword">if</span> (child + <span class="number">1</span> &lt;= end &amp;&amp; a[child] &lt; a[child + <span class="number">1</span>])</span>
+<span class="line">        <span class="keyword">if</span> (child + <span class="number">1</span> &lt;= end &amp;&amp; a[child] &lt; a[child + <span class="number">1</span>]) &#123;</span>
 <span class="line">            child = child + <span class="number">1</span>; <span class="comment">// ... then point to the right child instead</span></span>
+<span class="line">        &#125;</span>
 <span class="line">        <span class="keyword">if</span> (a[root] &lt; a[child]) &#123; <span class="comment">// out of max-heap order</span></span>
 <span class="line">            <span class="keyword">int</span> tmp = a[root];</span>
 <span class="line">            a[root] = a[child];</span>
 <span class="line">            a[child] = tmp;</span>
 <span class="line">            root = child; <span class="comment">// repeat to continue sifting down the child now</span></span>
-<span class="line">        &#125; <span class="keyword">else</span></span>
+<span class="line">        &#125; <span class="keyword">else</span> &#123;</span>
 <span class="line">            <span class="keyword">return</span>;</span>
+<span class="line">        &#125;</span>
 <span class="line">    &#125;</span>
 <span class="line">&#125;</span>
 </pre></td></tr></table></figure>
@@ -2174,10 +2134,10 @@
       <title><![CDATA[常用排序算法总结6一一快速排序]]></title>
       <url>https://craneyuan.github.io/2016/09/03/the-sort-algorithm-of-quick-sort/</url>
       <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
-<p>快速排序（英语：Quick Sort），又称划分交换排序（partition-exchange sort），一种排序算法，最早由东尼·霍尔提出。在平均状况下，排序n个项目要Ο(n log n)次比较。在最坏状况下则需要Ο(n2)次比较，但这种状况并不常见。事实上，快速排序通常明显比其他Ο(n log n)算法更快，因为它的内部循环（inner loop）可以在大部分的架构上很有效率地被实现出来。</p>
+<p>快速排序（英文：quick Sort），又称划分交换排序（partition-exchange sort），一种排序算法，最早由东尼·霍尔提出。在平均状况下，排序n个项目要Ο(n log n)次比较。在最坏状况下则需要Ο(n2)次比较，但这种状况并不常见。事实上，快速排序通常明显比其他Ο(n log n)算法更快，因为它的内部循环（inner loop）可以在大部分的架构上很有效率地被实现出来。</p>
 </blockquote>
 <p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521871052/blog/dnwug2dzi4wanknfet31.gif" alt="快速排序演示动画1"></p>
-<h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><p>快速排序使用分治法（Divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists）。</p>
+<h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><p>快速排序使用分治法（divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists）。</p>
 <p>步骤为：</p>
 <ul>
 <li>从数列中挑出一个元素，称为”基准”（pivot），</li>
@@ -2245,17 +2205,10 @@
 <span class="line">31</span>
 <span class="line">32</span>
 <span class="line">33</span>
-<span class="line">34</span>
-<span class="line">35</span>
-<span class="line">36</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 快速排序，递归版</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: &lt;E&gt;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: arr</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: List&lt;E&gt;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 快速排序，递归版</span></span>
 <span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function">List&lt;E&gt; <span class="title">quickSort</span><span class="params">( List&lt;E&gt; arr)</span> </span>&#123;</span>
+<span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function">List&lt;E&gt; <span class="title">quickSort</span><span class="params">(List&lt;E&gt; arr)</span> </span>&#123;</span>
 <span class="line">    <span class="keyword">if</span> (!arr.isEmpty()) &#123;</span>
 <span class="line">        E pivot = arr.get(<span class="number">0</span>); <span class="comment">// This pivot can change to get faster results</span></span>
 <span class="line"></span>
@@ -2265,12 +2218,13 @@
 <span class="line"></span>
 <span class="line">        <span class="comment">// Partition</span></span>
 <span class="line">        <span class="keyword">for</span> (E i : arr) &#123;</span>
-<span class="line">            <span class="keyword">if</span> (i.compareTo(pivot) &lt; <span class="number">0</span>)</span>
+<span class="line">            <span class="keyword">if</span> (i.compareTo(pivot) &lt; <span class="number">0</span>) &#123;</span>
 <span class="line">                less.add(i);</span>
-<span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (i.compareTo(pivot) &gt; <span class="number">0</span>)</span>
+<span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i.compareTo(pivot) &gt; <span class="number">0</span>) &#123;</span>
 <span class="line">                more.add(i);</span>
-<span class="line">            <span class="keyword">else</span></span>
+<span class="line">            &#125; <span class="keyword">else</span> &#123;</span>
 <span class="line">                pivotList.add(i);</span>
+<span class="line">            &#125;</span>
 <span class="line">        &#125;</span>
 <span class="line"></span>
 <span class="line">        <span class="comment">// Recursively sort sublists</span></span>
@@ -2311,7 +2265,7 @@
       <title><![CDATA[常用排序算法总结5一一希尔排序]]></title>
       <url>https://craneyuan.github.io/2016/09/02/the-sort-algorithm-of-shell-sort/</url>
       <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
-<p>希尔排序（英语：Shell sort），也称递减增量排序算法，是插入排序的一种更高效的改进版本。希尔排序是非稳定排序算法。</p>
+<p>希尔排序（英文：shell sort），也称递减增量排序算法，是插入排序的一种更高效的改进版本。希尔排序是非稳定排序算法。</p>
 </blockquote>
 <p>希尔排序是基于插入排序的以下两点性质而提出改进方法的：</p>
 <ul>
@@ -2350,17 +2304,10 @@
 <span class="line">19</span>
 <span class="line">20</span>
 <span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 希尔排序</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: nums</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 希尔排序</span></span>
 <span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shellSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span></span>
-<span class="line"><span class="function"></span>&#123;</span>
+<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shellSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span>
 <span class="line">    <span class="keyword">int</span> gap = <span class="number">1</span>, i, j, len = nums.length;</span>
 <span class="line">    <span class="keyword">int</span> temp;</span>
 <span class="line">    <span class="comment">// 选择步长</span></span>
@@ -2371,8 +2318,9 @@
 <span class="line">    <span class="keyword">for</span> (; gap &gt; <span class="number">0</span>; gap /= <span class="number">3</span>) &#123;</span>
 <span class="line">        <span class="keyword">for</span> (i = gap; i &lt; len; i++) &#123;</span>
 <span class="line">            temp = nums[i];</span>
-<span class="line">            <span class="keyword">for</span> (j = i - gap; j &gt;= <span class="number">0</span> &amp;&amp; nums[j] &gt; temp; j -= gap)</span>
+<span class="line">            <span class="keyword">for</span> (j = i - gap; j &gt;= <span class="number">0</span> &amp;&amp; nums[j] &gt; temp; j -= gap) &#123;</span>
 <span class="line">                nums[j + gap] = nums[j];</span>
+<span class="line">            &#125;</span>
 <span class="line">            nums[j + gap] = temp;</span>
 <span class="line">        &#125;</span>
 <span class="line">    &#125;</span>
@@ -2615,7 +2563,7 @@
         
         <tags>
             
-            <tag> Java </tag>
+            <tag> java </tag>
             
         </tags>
         
@@ -2625,7 +2573,7 @@
       <title><![CDATA[常用排序算法总结4一一归并排序]]></title>
       <url>https://craneyuan.github.io/2016/08/30/the-sort-algorithm-of-merge-sort/</url>
       <content type="html"><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><blockquote>
-<p>归并排序（英语：Merge sort），是创建在归并操作上的一种有效的排序算法，效率为O(n log n)。<br><strong>归并操作</strong>（merge），也叫归并算法，指的是将两个已经排序的序列合并成一个序列的操作。归并排序算法依赖归并操作。</p>
+<p>归并排序（英文：merge sort），是创建在归并操作上的一种有效的排序算法，效率为O(n log n)。<br><strong>归并操作</strong>（merge），也叫归并算法，指的是将两个已经排序的序列合并成一个序列的操作。归并排序算法依赖归并操作。</p>
 </blockquote>
 <p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521872711/blog/bwt19rrqdrfpokicdhsd.gif" alt="归并排序算法演示动画"></p>
 <h2 id="递归法"><a href="#递归法" class="headerlink" title="递归法"></a>递归法</h2><p>原理如下（假设序列共有n个元素）：</p>
@@ -2696,66 +2644,60 @@
 <span class="line">53</span>
 <span class="line">54</span>
 <span class="line">55</span>
-<span class="line">56</span>
-<span class="line">57</span>
-<span class="line">58</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 归并排序，递归版</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: &lt;E&gt;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: m</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: List&lt;E&gt;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 归并排序，递归版</span></span>
 <span class="line"><span class="comment"> */</span></span>
 <span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function">List&lt;E&gt; <span class="title">mergeSort</span><span class="params">(List&lt;E&gt; m)</span> </span>&#123;</span>
-<span class="line">	<span class="keyword">if</span> (m.size() &lt;= <span class="number">1</span>)</span>
-<span class="line">		<span class="keyword">return</span> m;</span>
+<span class="line">    <span class="keyword">if</span> (m.size() &lt;= <span class="number">1</span>) &#123;</span>
+<span class="line">        <span class="keyword">return</span> m;</span>
+<span class="line">    &#125;</span>
 <span class="line"></span>
-<span class="line">	<span class="keyword">int</span> middle = m.size() / <span class="number">2</span>;</span>
-<span class="line">	List&lt;E&gt; left = m.subList(<span class="number">0</span>, middle);</span>
-<span class="line">	List&lt;E&gt; right = m.subList(middle, m.size());</span>
+<span class="line">    <span class="keyword">int</span> middle = m.size() / <span class="number">2</span>;</span>
+<span class="line">    List&lt;E&gt; left = m.subList(<span class="number">0</span>, middle);</span>
+<span class="line">    List&lt;E&gt; right = m.subList(middle, m.size());</span>
 <span class="line"></span>
-<span class="line">	right = mergeSort(right);</span>
-<span class="line">	left = mergeSort(left);</span>
-<span class="line">	List&lt;E&gt; result = merge(left, right);</span>
+<span class="line">    right = mergeSort(right);</span>
+<span class="line">    left = mergeSort(left);</span>
+<span class="line">    List&lt;E&gt; result = merge(left, right);</span>
 <span class="line"></span>
-<span class="line">	<span class="keyword">return</span> result;</span>
+<span class="line">    <span class="keyword">return</span> result;</span>
 <span class="line">&#125;</span>
 <span class="line"></span>
 <span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function">List&lt;E&gt; <span class="title">merge</span><span class="params">(List&lt;E&gt; left, List&lt;E&gt; right)</span> </span>&#123;</span>
-<span class="line">	List&lt;E&gt; result = <span class="keyword">new</span> ArrayList&lt;E&gt;();</span>
-<span class="line">	Iterator&lt;E&gt; it1 = left.iterator();</span>
-<span class="line">	Iterator&lt;E&gt; it2 = right.iterator();</span>
+<span class="line">    List&lt;E&gt; result = <span class="keyword">new</span> ArrayList&lt;E&gt;();</span>
+<span class="line">    Iterator&lt;E&gt; it1 = left.iterator();</span>
+<span class="line">    Iterator&lt;E&gt; it2 = right.iterator();</span>
 <span class="line"></span>
-<span class="line">	E x = it1.next();</span>
-<span class="line">	E y = it2.next();</span>
-<span class="line">	<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span>
-<span class="line">		<span class="comment">// change the direction of this comparison to change the direction</span></span>
-<span class="line">		<span class="comment">// of the sort</span></span>
-<span class="line">		<span class="keyword">if</span> (x.compareTo(y) &lt;= <span class="number">0</span>) &#123;</span>
-<span class="line">			result.add(x);</span>
-<span class="line">			<span class="keyword">if</span> (it1.hasNext()) &#123;</span>
-<span class="line">				x = it1.next();</span>
-<span class="line">			&#125; <span class="keyword">else</span> &#123;</span>
-<span class="line">				result.add(y);</span>
-<span class="line">				<span class="keyword">while</span> (it2.hasNext()) &#123;</span>
-<span class="line">					result.add(it2.next());</span>
-<span class="line">				&#125;</span>
-<span class="line">				<span class="keyword">break</span>;</span>
-<span class="line">			&#125;</span>
-<span class="line">		&#125; <span class="keyword">else</span> &#123;</span>
-<span class="line">			result.add(y);</span>
-<span class="line">			<span class="keyword">if</span> (it2.hasNext()) &#123;</span>
-<span class="line">				y = it2.next();</span>
-<span class="line">			&#125; <span class="keyword">else</span> &#123;</span>
-<span class="line">				result.add(x);</span>
-<span class="line">				<span class="keyword">while</span> (it1.hasNext()) &#123;</span>
-<span class="line">					result.add(it1.next());</span>
-<span class="line">				&#125;</span>
-<span class="line">				<span class="keyword">break</span>;</span>
-<span class="line">			&#125;</span>
-<span class="line">		&#125;</span>
-<span class="line">	&#125;</span>
-<span class="line">	<span class="keyword">return</span> result;</span>
+<span class="line">    E x = it1.next();</span>
+<span class="line">    E y = it2.next();</span>
+<span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span>
+<span class="line">        <span class="comment">// change the direction of this comparison to change the direction</span></span>
+<span class="line">        <span class="comment">// of the sort</span></span>
+<span class="line">        <span class="keyword">if</span> (x.compareTo(y) &lt;= <span class="number">0</span>) &#123;</span>
+<span class="line">            result.add(x);</span>
+<span class="line">            <span class="keyword">if</span> (it1.hasNext()) &#123;</span>
+<span class="line">                x = it1.next();</span>
+<span class="line">            &#125; <span class="keyword">else</span> &#123;</span>
+<span class="line">                result.add(y);</span>
+<span class="line">                <span class="keyword">while</span> (it2.hasNext()) &#123;</span>
+<span class="line">                    result.add(it2.next());</span>
+<span class="line">                &#125;</span>
+<span class="line">                <span class="keyword">break</span>;</span>
+<span class="line">            &#125;</span>
+<span class="line">        &#125; <span class="keyword">else</span> &#123;</span>
+<span class="line">            result.add(y);</span>
+<span class="line">            <span class="keyword">if</span> (it2.hasNext()) &#123;</span>
+<span class="line">                y = it2.next();</span>
+<span class="line">            &#125; <span class="keyword">else</span> &#123;</span>
+<span class="line">                result.add(x);</span>
+<span class="line">                <span class="keyword">while</span> (it1.hasNext()) &#123;</span>
+<span class="line">                    result.add(it1.next());</span>
+<span class="line">                &#125;</span>
+<span class="line">                <span class="keyword">break</span>;</span>
+<span class="line">            &#125;</span>
+<span class="line">        &#125;</span>
+<span class="line">    &#125;</span>
+<span class="line">    <span class="keyword">return</span> result;</span>
 <span class="line">&#125;</span>
 </pre></td></tr></table></figure>
 <h3 id="迭代版"><a href="#迭代版" class="headerlink" title="迭代版"></a>迭代版</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
@@ -2791,49 +2733,39 @@
 <span class="line">31</span>
 <span class="line">32</span>
 <span class="line">33</span>
-<span class="line">34</span>
-<span class="line">35</span>
-<span class="line">36</span>
-<span class="line">37</span>
-<span class="line">38</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 归并排序，迭代版</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: nums</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
-<span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span>
-<span class="line">	<span class="keyword">int</span> len = nums.length;</span>
-<span class="line">	<span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span>
-<span class="line">	<span class="keyword">int</span> block, start;</span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment">     * 归并排序，迭代版</span></span>
+<span class="line"><span class="comment">     */</span></span>
+<span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span>
+<span class="line">        <span class="keyword">int</span> len = nums.length;</span>
+<span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span>
+<span class="line">        <span class="keyword">int</span> block, start;</span>
 <span class="line"></span>
-<span class="line">	<span class="keyword">for</span> (block = <span class="number">1</span>; block &lt; len*<span class="number">2</span>; block *= <span class="number">2</span>) &#123;</span>
-<span class="line">		<span class="keyword">for</span> (start = <span class="number">0</span>; start &lt; len; start += <span class="number">2</span> * block) &#123;</span>
-<span class="line">			<span class="keyword">int</span> low = start;</span>
-<span class="line">			<span class="keyword">int</span> mid = (start + block) &lt; len ? (start + block) : len;</span>
-<span class="line">			<span class="keyword">int</span> high = (start + <span class="number">2</span> * block) &lt; len ? (start + <span class="number">2</span> * block)</span>
-<span class="line">					: len;</span>
-<span class="line">			<span class="comment">// 两个块的起始下标及结束下标</span></span>
-<span class="line">			<span class="keyword">int</span> start1 = low, end1 = mid;</span>
-<span class="line">			<span class="keyword">int</span> start2 = mid, end2 = high;</span>
-<span class="line">			<span class="comment">// 开始对两个block进行归并排序</span></span>
-<span class="line">			<span class="keyword">while</span> (start1 &lt; end1 &amp;&amp; start2 &lt; end2) &#123;</span>
-<span class="line">				result[low++] = nums[start1] &lt; nums[start2] ? nums[start1++]</span>
-<span class="line">						: nums[start2++];</span>
-<span class="line">			&#125;</span>
-<span class="line">			<span class="keyword">while</span> (start1 &lt; end1) &#123;</span>
-<span class="line">				result[low++] = nums[start1++];</span>
-<span class="line">			&#125;</span>
-<span class="line">			<span class="keyword">while</span> (start2 &lt; end2) &#123;</span>
-<span class="line">				result[low++] = nums[start2++];</span>
-<span class="line">			&#125;</span>
-<span class="line">		&#125;</span>
-<span class="line">		<span class="keyword">int</span>[] temp = nums;</span>
-<span class="line">		nums = result;</span>
-<span class="line">		result = temp;</span>
-<span class="line">	&#125;</span>
-<span class="line">	result = nums;</span>
-<span class="line">&#125;</span>
+<span class="line">        <span class="keyword">for</span> (block = <span class="number">1</span>; block &lt; len * <span class="number">2</span>; block *= <span class="number">2</span>) &#123;</span>
+<span class="line">            <span class="keyword">for</span> (start = <span class="number">0</span>; start &lt; len; start += <span class="number">2</span> * block) &#123;</span>
+<span class="line">                <span class="keyword">int</span> low = start;</span>
+<span class="line">                <span class="keyword">int</span> mid = (start + block) &lt; len ? (start + block) : len;</span>
+<span class="line">                <span class="keyword">int</span> high = (start + <span class="number">2</span> * block) &lt; len ? (start + <span class="number">2</span> * block) : len;</span>
+<span class="line">                <span class="comment">// 两个块的起始下标及结束下标</span></span>
+<span class="line">                <span class="keyword">int</span> start1 = low, end1 = mid;</span>
+<span class="line">                <span class="keyword">int</span> start2 = mid, end2 = high;</span>
+<span class="line">                <span class="comment">// 开始对两个block进行归并排序</span></span>
+<span class="line">                <span class="keyword">while</span> (start1 &lt; end1 &amp;&amp; start2 &lt; end2) &#123;</span>
+<span class="line">                    result[low++] = nums[start1] &lt; nums[start2] ? nums[start1++] : nums[start2++];</span>
+<span class="line">                &#125;</span>
+<span class="line">                <span class="keyword">while</span> (start1 &lt; end1) &#123;</span>
+<span class="line">                    result[low++] = nums[start1++];</span>
+<span class="line">                &#125;</span>
+<span class="line">                <span class="keyword">while</span> (start2 &lt; end2) &#123;</span>
+<span class="line">                    result[low++] = nums[start2++];</span>
+<span class="line">                &#125;</span>
+<span class="line">            &#125;</span>
+<span class="line">            <span class="keyword">int</span>[] temp = nums;</span>
+<span class="line">            nums = result;</span>
+<span class="line">            result = temp;</span>
+<span class="line">        &#125;</span>
+<span class="line">        result = nums;</span>
+<span class="line">    &#125;</span>
 </pre></td></tr></table></figure>
 <h2 id="算法复杂度分析"><a href="#算法复杂度分析" class="headerlink" title="算法复杂度分析"></a>算法复杂度分析</h2><p>比较操作的次数介于(n*logn)/2(n log n)/2和n*logn?n+1。 赋值操作的次数是 n*logn。归并算法的空间复杂度为：O(n)。</p>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
@@ -2862,7 +2794,7 @@
       <title><![CDATA[常用排序算法总结3一一插入排序]]></title>
       <url>https://craneyuan.github.io/2016/08/29/the-sort-algorithm-of-insert-sort/</url>
       <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
-<p>插入排序（英语：Insertion Sort）是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p>
+<p>插入排序（英文：insertion Sort）是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p>
 </blockquote>
 <p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521872768/blog/a8gxde7srvn5wqtzkcva.gif" alt="插入排序演示动画1"></p>
 <h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><p>插入排序算法的运作如下：</p>
@@ -2900,7 +2832,7 @@
 <span class="line">&#125;</span>
 </pre></td></tr></table></figure>
 <p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521872817/blog/m2ww9jltfvwl3xltbzre.gif" alt="插入排序动画演示2"></p>
-<h2 id="代码实现（java）"><a href="#代码实现（java）" class="headerlink" title="代码实现（java）"></a>代码实现（java）</h2><h3 id="一般实现"><a href="#一般实现" class="headerlink" title="一般实现"></a>一般实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<h2 id="代码实现（java）"><a href="#代码实现（java）" class="headerlink" title="代码实现（java）"></a>代码实现（java）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
 <span class="line">2</span>
 <span class="line">3</span>
 <span class="line">4</span>
@@ -2914,16 +2846,10 @@
 <span class="line">12</span>
 <span class="line">13</span>
 <span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 插入排序的简单实现</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: nums</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 插入排序的简单实现</span></span>
 <span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span></span>
-<span class="line"><span class="function"></span>&#123;</span>
+<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span>
 <span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span>
 <span class="line">        <span class="keyword">int</span> value = nums[i];</span>
 <span class="line">        <span class="keyword">int</span> j = i - <span class="number">1</span>;</span>
@@ -2932,45 +2858,6 @@
 <span class="line">            j = j - <span class="number">1</span>;</span>
 <span class="line">        &#125;</span>
 <span class="line">        nums[j + <span class="number">1</span>] = value;</span>
-<span class="line">    &#125;</span>
-<span class="line">&#125;</span>
-</pre></td></tr></table></figure>
-<h3 id="通用实现"><a href="#通用实现" class="headerlink" title="通用实现"></a>通用实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 插入排序的简单实现（支持泛型）</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: nums</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
-<span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function"><span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(</span></span></span>
-<span class="line"><span class="function"><span class="params">            E[] comparable)</span></span></span>
-<span class="line"><span class="function"></span>&#123;</span>
-<span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; comparable.length; i++) &#123;</span>
-<span class="line">        E value = comparable[i];</span>
-<span class="line">        <span class="keyword">int</span> j = i - <span class="number">1</span>;</span>
-<span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; comparable[j].compareTo(value) &gt; <span class="number">0</span>) &#123;</span>
-<span class="line">            comparable[j + <span class="number">1</span>] = comparable[j];</span>
-<span class="line">            j = j - <span class="number">1</span>;</span>
-<span class="line">        &#125;</span>
-<span class="line">        comparable[j + <span class="number">1</span>] = value;</span>
 <span class="line">    &#125;</span>
 <span class="line">&#125;</span>
 </pre></td></tr></table></figure>
@@ -3001,7 +2888,7 @@
       <title><![CDATA[常用排序算法总结2一一选择排序]]></title>
       <url>https://craneyuan.github.io/2016/08/28/the-sort-algorithm-of-select-sort/</url>
       <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
-<p>选择排序（英语：Selection sort）是一种简单直观的排序算法。它首先在未排序的序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
+<p>选择排序（英文：selection sort）是一种简单直观的排序算法。它首先在未排序的序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
 </blockquote>
 <p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521872863/blog/ycjwfucucvgowsx1fd00.gif" alt="选择排序演示动画"></p>
 <p>选择排序的主要优点与数据移动有关。如果某个元素位于正确的最终位置上，则它不会被移动。选择排序每次交换一对元素，它们当中至少有一个将被移到其最终位置上，因此对n个元素的表进行排序总共进行至多n-1次交换。在所有的完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。</p>
@@ -3061,16 +2948,10 @@
 <span class="line">17</span>
 <span class="line">18</span>
 <span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 选择排序的简单实现</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: nums</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 选择排序的简单实现</span></span>
 <span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span></span>
-<span class="line"><span class="function"></span>&#123;</span>
+<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span>
 <span class="line">    <span class="keyword">int</span> temp;</span>
 <span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> currentPlace = <span class="number">0</span>; currentPlace &lt; nums.length - <span class="number">1</span>; currentPlace++) &#123;</span>
 <span class="line">        <span class="keyword">int</span> smallest = nums[currentPlace + <span class="number">1</span>];</span>
@@ -3106,35 +2987,25 @@
 <span class="line">17</span>
 <span class="line">18</span>
 <span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 选择排序的简单实现（支持泛型）</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: comparable</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
-<span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function"><span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(</span></span></span>
-<span class="line"><span class="function"><span class="params">            E[] comparable)</span></span></span>
-<span class="line"><span class="function"></span>&#123;</span>
-<span class="line">    E temp;</span>
-<span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> currentPlace = <span class="number">0</span>; currentPlace &lt; comparable.length - <span class="number">1</span>; currentPlace++) &#123;</span>
-<span class="line">        E smallest = comparable[currentPlace + <span class="number">1</span>];</span>
-<span class="line">        <span class="keyword">int</span> smallestAt = currentPlace + <span class="number">1</span>;</span>
-<span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> check = currentPlace; check &lt; comparable.length; check++) &#123;</span>
-<span class="line">            <span class="keyword">if</span> (comparable[check].compareTo(smallest) &lt; <span class="number">0</span>) &#123;</span>
-<span class="line">                smallestAt = check;</span>
-<span class="line">                smallest = comparable[check];</span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment">     * 选择排序的简单实现（支持泛型）</span></span>
+<span class="line"><span class="comment">     */</span></span>
+<span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function"><span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(E[] comparable)</span> </span>&#123;</span>
+<span class="line">        E temp;</span>
+<span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> currentPlace = <span class="number">0</span>; currentPlace &lt; comparable.length - <span class="number">1</span>; currentPlace++) &#123;</span>
+<span class="line">            E smallest = comparable[currentPlace + <span class="number">1</span>];</span>
+<span class="line">            <span class="keyword">int</span> smallestAt = currentPlace + <span class="number">1</span>;</span>
+<span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> check = currentPlace; check &lt; comparable.length; check++) &#123;</span>
+<span class="line">                <span class="keyword">if</span> (comparable[check].compareTo(smallest) &lt; <span class="number">0</span>) &#123;</span>
+<span class="line">                    smallestAt = check;</span>
+<span class="line">                    smallest = comparable[check];</span>
+<span class="line">                &#125;</span>
 <span class="line">            &#125;</span>
+<span class="line">            temp = comparable[currentPlace];</span>
+<span class="line">            comparable[currentPlace] = comparable[smallestAt];</span>
+<span class="line">            comparable[smallestAt] = temp;</span>
 <span class="line">        &#125;</span>
-<span class="line">        temp = comparable[currentPlace];</span>
-<span class="line">        comparable[currentPlace] = comparable[smallestAt];</span>
-<span class="line">        comparable[smallestAt] = temp;</span>
 <span class="line">    &#125;</span>
-<span class="line">&#125;</span>
 </pre></td></tr></table></figure>
 <h2 id="算法复杂度分析"><a href="#算法复杂度分析" class="headerlink" title="算法复杂度分析"></a>算法复杂度分析</h2><ul>
 <li>选择排序的<strong><em>交换操作</em></strong>介于0和(n-1)次之间。选择排序的<strong><em>比较操作</em></strong>为n(n-1)/2次之间。选择排序的<strong><em>赋值操作</em></strong>介于0和3(n-1)次之间。</li>
@@ -3167,7 +3038,7 @@
       <title><![CDATA[常用排序算法总结1一一冒泡排序]]></title>
       <url>https://craneyuan.github.io/2016/08/28/the-sort-algorithm-of-bubble-sort/</url>
       <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
-<p>冒泡排序（英语：Bubble Sort）是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
+<p>冒泡排序（英文：bubble Sort）是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
 </blockquote>
 <p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521872975/blog/lsts2aa5n0mbvrtpdrl1.gif" alt="冒泡排序过程"></p>
 <h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><p>冒泡排序算法的运作如下：</p>
@@ -3196,7 +3067,7 @@
 <span class="line">    &#125;</span>
 <span class="line">&#125;</span>
 </pre></td></tr></table></figure></p>
-<h2 id="代码实现（java）"><a href="#代码实现（java）" class="headerlink" title="代码实现（java）"></a>代码实现（java）</h2><h3 id="一般实现"><a href="#一般实现" class="headerlink" title="一般实现"></a>一般实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<h2 id="代码实现（java）"><a href="#代码实现（java）" class="headerlink" title="代码实现（java）"></a>代码实现（java）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
 <span class="line">2</span>
 <span class="line">3</span>
 <span class="line">4</span>
@@ -3211,16 +3082,10 @@
 <span class="line">13</span>
 <span class="line">14</span>
 <span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 冒泡排序简单实现</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: nums</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 冒泡排序简单实现</span></span>
 <span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span></span>
-<span class="line"><span class="function"></span>&#123;</span>
+<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span>
 <span class="line">    <span class="keyword">int</span> tmp;</span>
 <span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span>
 <span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nums.length - i - <span class="number">1</span>; j++) &#123;</span>
@@ -3228,49 +3093,6 @@
 <span class="line">                tmp = nums[j];</span>
 <span class="line">                nums[j] = nums[j + <span class="number">1</span>];</span>
 <span class="line">                nums[j + <span class="number">1</span>] = tmp;</span>
-<span class="line">            &#125;</span>
-<span class="line">        &#125;</span>
-<span class="line">    &#125;</span>
-<span class="line">&#125;</span>
-</pre></td></tr></table></figure>
-<h3 id="通用实现"><a href="#通用实现" class="headerlink" title="通用实现"></a>通用实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 冒泡排序的简单实现(支持泛型)</span></span>
-<span class="line"><span class="comment"> * </span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: &lt;E&gt;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: comparable</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
-<span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function"><span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(</span></span></span>
-<span class="line"><span class="function"><span class="params">            E[] comparable)</span></span></span>
-<span class="line"><span class="function"></span>&#123;</span>
-<span class="line">    E tmpE;</span>
-<span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; comparable.length; i++) &#123;</span>
-<span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; comparable.length - i - <span class="number">1</span>; j++) &#123;</span>
-<span class="line">            <span class="keyword">if</span> (comparable[j].compareTo(comparable[j + <span class="number">1</span>]) &gt; <span class="number">0</span>) &#123;</span>
-<span class="line">                tmpE = comparable[j];</span>
-<span class="line">                comparable[j] = comparable[j + <span class="number">1</span>];</span>
-<span class="line">                comparable[j + <span class="number">1</span>] = tmpE;</span>
 <span class="line">            &#125;</span>
 <span class="line">        &#125;</span>
 <span class="line">    &#125;</span>
@@ -3338,7 +3160,7 @@
 <tbody>
 <tr>
 <td>public</td>
-<td>完全开发</td>
+<td>完全开放</td>
 </tr>
 <tr>
 <td>default(无)</td>
@@ -3364,7 +3186,7 @@
 </tr>
 <tr>
 <td>final</td>
-<td>指定为最终类，不可被继承</td>
+<td>指定为终态类，不可被继承</td>
 </tr>
 </tbody>
 </table>
@@ -3377,7 +3199,33 @@
 <li>transient </li>
 <li>volatile</li>
 </ul>
-<p>限定词含义：<br>|限定符|描述|<br>|—|—|<br>|static| 类属性，可通过类名直接调用|<br>|final|该成员不能被重写，即定义常量|<br>|transient| 不序列化|<br>|volatile |可被多个线程访问 （同步变量）|</p>
+<p>限定词含义：</p>
+<table>
+<thead>
+<tr>
+<th>限定符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>static</td>
+<td>类属性，可通过类名直接调用</td>
+</tr>
+<tr>
+<td>final</td>
+<td>该成员不能被重写，即定义常量</td>
+</tr>
+<tr>
+<td>transient</td>
+<td>不序列化</td>
+</tr>
+<tr>
+<td>volatile</td>
+<td>可被多个线程访问 （同步变量）</td>
+</tr>
+</tbody>
+</table>
 <h2 id="Java用于成员方法的修饰符"><a href="#Java用于成员方法的修饰符" class="headerlink" title="Java用于成员方法的修饰符"></a>Java用于成员方法的修饰符</h2><ul>
 <li>public</li>
 <li>protected </li>
@@ -3388,11 +3236,11 @@
 <li>native</li>
 <li>synchronized</li>
 </ul>
-<p>限定词含义：<br>|限定符|描述|<br>|—|—|<br>|static|类(静态)方法，可通过类名直接调用|<br>|final|方法不能被重写|<br>|native| 集成其它语言的代码 本地方法|<br>|abstract|抽象方法，没有方法体|<br>|synchronized|控制多个并发线程的访问 （同步方法）|</p>
+<p>限定词含义：<br>|限定符|描述|<br>| — | — |<br>|static|类(静态)方法，可通过类名直接调用|<br>|final|方法不能被重写|<br>|native| 集成其它语言的代码 本地方法|<br>|abstract|抽象方法，没有方法体|<br>|synchronized|控制多个并发线程的访问 （同步方法）|</p>
 <h2 id="构造函数的一些注意事项"><a href="#构造函数的一些注意事项" class="headerlink" title="构造函数的一些注意事项"></a>构造函数的一些注意事项</h2><blockquote>
-<p>在 Java 中，无论是 explicit 还是 implicit 方式，都要求在子类的构造方法中调用其父类的构造方法。</p>
+<p>在 Java 中，无论是 explicit（显式的） 还是 implicit（隐式的）方式，都要求在子类的构造方法中调用其父类的构造方法。</p>
 </blockquote>
-<p>如果父类无构造方法（其实是一个默认无参的构造方法），那么子类的构造方法中会自动进行调用；如果 父类有自己的构造方法（这时父类不会有默认无参的构造方法），那么在子类的构造方法中，必须要调用父类的某个构造方法，而且必须是在构造方法的第一个语句 中进行调用。 究其原因，想必是 Java 语言设计者，要求子类有责任保证它所继承的父类尽快进入到一个稳定、完整的状态中。试想，如果没有这个约束，那么子类的某个继承自父类的方法可能会使用到父类中的一些变量，而这些变量并没有进行初始化，从而产生一些难以预料的后果。 </p>
+<p>如果父类无构造方法（其实是一个默认无参的构造方法），那么子类的构造方法中会自动进行调用；如果父类有自己的构造方法（这时父类不会有默认无参的构造方法），那么在子类的构造方法中，必须要调用父类的某个构造方法，而且必须是在构造方法的第一个语句 中进行调用。 究其原因，想必是 Java 语言设计者，要求子类有责任保证它所继承的父类尽快进入到一个稳定、完整的状态中。试想，如果没有这个约束，那么子类的某个继承自父类的方法可能会使用到父类中的一些变量，而这些变量并没有进行初始化，从而产生一些难以预料的后果。 </p>
 <ul>
 <li><p>构造函数必须满足的语法规则：方法名必须与类名相同；不要声明返回类型；不能被static、final、synchronized、abstract、native等修饰。</p>
 </li>
@@ -3411,31 +3259,20 @@
 </ul>
 <pre><code>class A //该类定义了含参数的构造方法，就失去了默认的无参的构造方法
 {
-
     int i;
-
     A(int i) {
-
         this.i=i*2;
-
     }
-
 }
 public class B extends A
 {
-
-    B(int i) {//该构造方法没有super显示调用父类的构造方法，将自动调用父类的默认构造方法，而父类A没有默认构造方法，这里将编译错误
-
+    B(int i) {
+        //该构造方法没有super显示调用父类的构造方法，将自动调用父类的默认构造方法，而父类A没有默认构造方法，这里将编译错误
         System.out.println(i);
-
     }
-
     public static void main(String[] args) {
-
         B b=new B(2);
-
     }
-
 }
 </code></pre><ul>
 <li><p>构造方法被调用的几种方式：</p>
@@ -3459,7 +3296,7 @@ public class B extends A
         
         <tags>
             
-            <tag> Java </tag>
+            <tag> java </tag>
             
         </tags>
         
@@ -3612,7 +3449,7 @@ public class B extends A
         
         <tags>
             
-            <tag> Java </tag>
+            <tag> java </tag>
             
             <tag> how-to </tag>
             
@@ -3621,9 +3458,13 @@ public class B extends A
     </entry>
     
     <entry>
-      <title><![CDATA[Java中资源关闭的处理方式]]></title>
+      <title><![CDATA[\[译\]Java中资源关闭的处理方式]]></title>
       <url>https://craneyuan.github.io/2016/08/23/the-way-to-release-resources/</url>
-      <content type="html"><![CDATA[<p>本文就关于IO资源的处理问题，提出三种方案。</p>
+      <content type="html"><![CDATA[<p>原文链接：<a href="http://www.programcreek.com/2013/12/should-close-be-put-in-finally-block-or-not/" target="_blank" rel="noopener">should-close-be-put-in-finally-block-or-not</a></p>
+<p>译者：craneyuan</p>
+<p>[ 转载请保留原文出处、译者和译文链接。]</p>
+<hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文就关于IO资源的处理问题，提出三种方案。</p>
 <ul>
 <li>close()放在try块中</li>
 <li>close()放在finally块中</li>
@@ -3697,11 +3538,8 @@ public class B extends A
 <span class="line">&#125;</span>
 </pre></td></tr></table></figure>
 <p>这种方式可能是最好的，Java官方推荐使用这种方式，但是，使用的前提是你的jdk版本在1.7以上。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>因为不管什么情况下(异常或者非异常)资源都必须关闭，在jdk1.6之前，应该把close()放在finally块中，以确保资源的正确释放。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>因为不管什么情况下（异常或者非异常）资源都必须关闭，在jdk1.6之前，应该把close()放在finally块中，以确保资源的正确释放。</p>
 <p>如果使用jdk1.7以上的版本，推荐使用<a href="http://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html" target="_blank" rel="noopener">try-with-resources</a>语句。</p>
-<p>原文链接：<a href="http://www.programcreek.com/2013/12/should-close-be-put-in-finally-block-or-not/" target="_blank" rel="noopener">should-close-be-put-in-finally-block-or-not</a></p>
-<p>翻译：crane-yuan</p>
-<p>[ 转载请保留原文出处、译者和译文链接。]</p>
 ]]></content>
       
         <categories>
@@ -3713,7 +3551,9 @@ public class B extends A
         
         <tags>
             
-            <tag> Java </tag>
+            <tag> java </tag>
+            
+            <tag> how-to </tag>
             
         </tags>
         
@@ -3722,10 +3562,10 @@ public class B extends A
     <entry>
       <title><![CDATA[算法入门]]></title>
       <url>https://craneyuan.github.io/2016/08/20/the-introduction-of-algorithm/</url>
-      <content type="html"><![CDATA[<p>最近在研究算法，发现其实算法也并不是特别难，只要抓住算法的核心思想，再静下心来，都可以自己实现的。在计算机领域，有一些常见的而且又经常使用的算法，这些算法我们应该掌握，比如常见的排序算法；还有一些算法就是特定领域中经常使用的算法了，这些算法我们只有必须使用时再去学习使用就行了，比如图像处理中的快速傅里叶变换算法。</p>
+      <content type="html"><![CDATA[<p>最近在研究算法，发现其实算法也并不是特别难，只要抓住算法的核心思想，再静下心来，都可以自己实现的。在计算机领域，有一些常见的而且又经常使用的算法，这些算法我们应该掌握，比如常见的排序算法；还有一些算法就是特定领域中经常使用的算法了，这些算法我们可以在必须使用时再去学习就行了，比如图像处理中的快速傅里叶变换算法。</p>
 <h2 id="算法定义"><a href="#算法定义" class="headerlink" title="算法定义"></a>算法定义</h2><p>让我们来看看算法的定义吧。（以下定义摘自中文维基百科）</p>
 <blockquote>
-<p>在数学和计算机科学/算学之中，算法/演算法/算则法（Algorithm）为一个计算的具体步骤，常用于计算、数据处理和自动推理。精确而言，算法是一个表示为有限长列表的有效方法。算法应包含清晰定义的指令用于计算函数。</p>
+<p>在数学和计算机科学/算学之中，算法/演算法/算则法（algorithm）为一个计算的具体步骤，常用于计算、数据处理和自动推理。精确而言，算法是一个表示为有限长列表的有效方法。算法应包含清晰定义的指令用于计算函数。</p>
 <p>算法中的指令描述的是一个计算，当其运行时能从一个初始状态和初始输入（可能为空）开始，经过一系列有限而清晰定义的状态最终产生输出并停止于一个终态。一个状态到另一个状态的转移不一定是确定的。随机化算法在内的一些算法，包含了一些随机输入。</p>
 <p>形式化算法的概念部分源自尝试解决希尔伯特提出的判定问题，并在其后尝试定义有效计算性或者有效方法中成形。这些尝试包括库尔特·哥德尔、雅克·埃尔布朗和斯蒂芬·科尔·克莱尼分别于1930年、1934年和1935年提出的递归函数，阿隆佐·邱奇于1936年提出的λ演算，1936年Emil Leon Post的Formulation 1和艾伦·图灵1937年提出的图灵机。即使在当前，依然常有直觉想法难以定义为形式化算法的情况。</p>
 </blockquote>
@@ -3767,8 +3607,8 @@ public class B extends A
 <li>递归方法</li>
 <li>迭代方法</li>
 </ul>
-<p>好了讲了这么多理论，还是用一个例子来解释下算法到底是什么。</p>
-<h2 id="求最大公约算法"><a href="#求最大公约算法" class="headerlink" title="求最大公约算法"></a>求最大公约算法</h2><h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><p>求两个自然数的最大公约数 设两个变量M和N</p>
+<p>好了，讲了这么多理论，还是用一个例子来解释下算法到底是什么。</p>
+<h2 id="求最大公约算法"><a href="#求最大公约算法" class="headerlink" title="求最大公约算法"></a>求最大公约算法</h2><h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><p>求两个自然数的最大公约数，设两个变量M和N</p>
 <h3 id="解题步骤："><a href="#解题步骤：" class="headerlink" title="解题步骤："></a>解题步骤：</h3><p>1.如果M &lt; N，则交换M和N<br>2.M被N除，得到余数R<br>3.判断R＝0，正确则N即为“最大公约数”，否则下一步<br>4.将N赋值给M，将R赋值给N，重做第一步。</p>
 <h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
 <span class="line">2</span>
@@ -3831,985 +3671,13 @@ public class B extends A
     </entry>
     
     <entry>
-      <title><![CDATA[Myeclipse快捷键收录]]></title>
-      <url>https://craneyuan.github.io/2016/08/20/the-shortcut-of-myeclipse/</url>
-      <content type="html"><![CDATA[<h2 id="我经常使用的快捷键"><a href="#我经常使用的快捷键" class="headerlink" title="我经常使用的快捷键"></a>我经常使用的快捷键</h2><table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Ctrl+Shift+X</td>
-<td>代码大写</td>
-</tr>
-<tr>
-<td>Ctrl+Shift+Y</td>
-<td>代码小写</td>
-</tr>
-<tr>
-<td>Alt+Shift+S</td>
-<td>“source”快捷键</td>
-</tr>
-<tr>
-<td>alt+shift+A</td>
-<td>多列编辑</td>
-</tr>
-<tr>
-<td>Ctrl+D</td>
-<td>删除当前行</td>
-</tr>
-<tr>
-<td>Ctrl+1</td>
-<td>快速修复</td>
-</tr>
-<tr>
-<td>Ctrl+Alt+↓</td>
-<td>复制当前行到下一行(复制增加)</td>
-</tr>
-<tr>
-<td>Ctrl+Q</td>
-<td>定位到最后编辑的地方</td>
-</tr>
-<tr>
-<td>Ctrl+L</td>
-<td>定位在某行</td>
-</tr>
-<tr>
-<td>Ctrl+M</td>
-<td>最大化当前的Edit或View (再按则反之)</td>
-</tr>
-<tr>
-<td>Ctrl+T</td>
-<td>快速显示当前类的继承结构</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="myeclipse中的所有快捷键列表"><a href="#myeclipse中的所有快捷键列表" class="headerlink" title="myeclipse中的所有快捷键列表"></a>myeclipse中的所有快捷键列表</h2><table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Ctrl+1</td>
-<td>快速修复(最经典的快捷键,就不用多说了)</td>
-</tr>
-<tr>
-<td>Ctrl+D</td>
-<td>删除当前行</td>
-</tr>
-<tr>
-<td>Ctrl+Alt+↓</td>
-<td>复制当前行到下一行(复制增加)</td>
-</tr>
-<tr>
-<td>Ctrl+Alt+↑</td>
-<td>复制当前行到上一行(复制增加)</td>
-</tr>
-<tr>
-<td>Alt+↓</td>
-<td>当前行和下面一行交互位置(特别实用,可以省去先剪切,再粘贴了)</td>
-</tr>
-<tr>
-<td>Alt+↑</td>
-<td>当前行和上面一行交互位置(同上)</td>
-</tr>
-<tr>
-<td>Alt+←</td>
-<td>前一个编辑的页面</td>
-</tr>
-<tr>
-<td>Alt+→</td>
-<td>下一个编辑的页面(当然是针对上面那条来说了)</td>
-</tr>
-<tr>
-<td>Alt+Enter</td>
-<td>显示当前选择资源(工程,or 文件 or文件)的属性</td>
-</tr>
-<tr>
-<td>Shift+Enter</td>
-<td>在当前行的下一行插入空行(这时鼠标可以在当前行的任一位置,不一定是最后)</td>
-</tr>
-<tr>
-<td>Shift+Ctrl+Enter</td>
-<td>在当前行插入空行(原理同上条)</td>
-</tr>
-<tr>
-<td>Ctrl+Q</td>
-<td>定位到最后编辑的地方</td>
-</tr>
-<tr>
-<td>Ctrl+L</td>
-<td>定位在某行 (对于程序超过100的人就有福音了)</td>
-</tr>
-<tr>
-<td>Ctrl+M</td>
-<td>最大化当前的Edit或View (再按则反之)</td>
-</tr>
-<tr>
-<td>Ctrl+/</td>
-<td>注释当前行,再按则取消注释</td>
-</tr>
-<tr>
-<td>Ctrl+O</td>
-<td>快速显示 OutLine</td>
-</tr>
-<tr>
-<td>Ctrl+T</td>
-<td>快速显示当前类的继承结构</td>
-</tr>
-<tr>
-<td>Ctrl+W</td>
-<td>关闭当前Editer</td>
-</tr>
-<tr>
-<td>Ctrl+K</td>
-<td>参照选中的Word快速定位到下一个</td>
-</tr>
-<tr>
-<td>Ctrl+E</td>
-<td>快速显示当前Editer的下拉列表(如果当前页面没有显示的用黑体表示)</td>
-</tr>
-<tr>
-<td>Ctrl+/(小键盘)</td>
-<td>折叠当前类中的所有代码</td>
-</tr>
-<tr>
-<td>Ctrl+×(小键盘)</td>
-<td>展开当前类中的所有代码</td>
-</tr>
-<tr>
-<td>Ctrl+Space</td>
-<td>代码助手完成一些代码的插入(但一般和输入法有冲突,可以修改输入法的热键,也可以暂用Alt+/来代替)</td>
-</tr>
-<tr>
-<td>Ctrl+Shift+E</td>
-<td>显示管理当前打开的所有的View的管理器(可以选择关闭,激活等操作)</td>
-</tr>
-<tr>
-<td>Ctrl+J</td>
-<td>正向增量查找(按下Ctrl+J后,你所输入的每个字母编辑器都提供快速匹配定位到某个单词,如果没有,则在stutes line中显示没有找到了,查一个单词时,特别实用,这个功能Idea两年前就有了)</td>
-</tr>
-<tr>
-<td>Ctrl+Shift+J</td>
-<td>反向增量查找(和上条相同,只不过是从后往前查)</td>
-</tr>
-<tr>
-<td>Ctrl+Shift+F4</td>
-<td>关闭所有打开的Editer</td>
-</tr>
-<tr>
-<td>Ctrl+Shift+X</td>
-<td>把当前选中的文本全部变为大写</td>
-</tr>
-<tr>
-<td>Ctrl+Shift+Y</td>
-<td>把当前选中的文本全部变为小写</td>
-</tr>
-<tr>
-<td>Ctrl+Shift+F</td>
-<td>格式化当前代码</td>
-</tr>
-<tr>
-<td>Ctrl+Shift+P</td>
-<td>定位到对于的匹配符(譬如{}) (从前面定位后面时,光标要在匹配符里面,后面到前面,则反之)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="重构里面常用的快捷键"><a href="#重构里面常用的快捷键" class="headerlink" title="重构里面常用的快捷键"></a>重构里面常用的快捷键</h3><p>本人就自己喜欢且常用的整理一下(注:一般重构的快捷键都是Alt+Shift开头的了)</p>
-<table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Alt+Shift+R</td>
-<td>重命名 (是我自己最爱用的一个了,尤其是变量和类的Rename,比手工方法能节省很多劳动力)</td>
-</tr>
-<tr>
-<td>Alt+Shift+M</td>
-<td>抽取方法 (这是重构里面最常用的方法之一了,尤其是对一大堆泥团代码有用)</td>
-</tr>
-<tr>
-<td>Alt+Shift+C</td>
-<td>修改函数结构(比较实用,有N个函数调用了这个方法,修改一次搞定)</td>
-</tr>
-<tr>
-<td>Alt+Shift+L</td>
-<td>抽取本地变量( 可以直接把一些魔法数字和字符串抽取成一个变量,尤其是多处调用的时候)</td>
-</tr>
-<tr>
-<td>Alt+Shift+F</td>
-<td>把Class中的local变量变为field变量 (比较实用的功能)</td>
-</tr>
-<tr>
-<td>Alt+Shift+I</td>
-<td>合并变量(可能这样说有点不妥Inline)</td>
-</tr>
-<tr>
-<td>Alt+Shift+V</td>
-<td>移动函数和变量(不怎么常用)</td>
-</tr>
-<tr>
-<td>Alt+Shift+Z</td>
-<td>重构的后悔药(Undo)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="编辑常用快捷键"><a href="#编辑常用快捷键" class="headerlink" title="编辑常用快捷键"></a>编辑常用快捷键</h3><table>
-<thead>
-<tr>
-<th>作用域</th>
-<th>功能</th>
-<th>快捷键</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>全局</td>
-<td>查找并替换</td>
-<td>Ctrl+F</td>
-</tr>
-<tr>
-<td>文本编辑器</td>
-<td>查找上一个</td>
-<td>Ctrl+Shift+K</td>
-</tr>
-<tr>
-<td>文本编辑器</td>
-<td>查找下一个</td>
-<td>Ctrl+K</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>撤销</td>
-<td>Ctrl+Z</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>复制</td>
-<td>Ctrl+C</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>恢复上一个选择</td>
-<td>Alt+Shift+↓</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>剪切</td>
-<td>Ctrl+X</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>快速修正</td>
-<td>Ctrl1+1</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>内容辅助</td>
-<td>Alt+/</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>全部选中</td>
-<td>Ctrl+A</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>删除</td>
-<td>Delete</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>上下文信息</td>
-<td>Alt+？、Alt+Shift+?、Ctrl+Shift+Space</td>
-</tr>
-<tr>
-<td>Java编辑器</td>
-<td>显示工具提示描述</td>
-<td>F2</td>
-</tr>
-<tr>
-<td>Java编辑器</td>
-<td>选择封装元素</td>
-<td>Alt+Shift+↑</td>
-</tr>
-<tr>
-<td>Java编辑器</td>
-<td>选择上一个元素</td>
-<td>Alt+Shift+←</td>
-</tr>
-<tr>
-<td>Java编辑器</td>
-<td>选择下一个元素</td>
-<td>Alt+Shift+→</td>
-</tr>
-<tr>
-<td>Java编辑器</td>
-<td>增量查找</td>
-<td>Ctrl+J</td>
-</tr>
-<tr>
-<td>Java编辑器</td>
-<td>增量逆向查找</td>
-<td>Ctrl+Shift+J</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>粘贴</td>
-<td>Ctrl+V</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>重做</td>
-<td>Ctrl+Y</td>
-</tr>
-</tbody>
-</table>
-<h3 id="查看快捷键"><a href="#查看快捷键" class="headerlink" title="查看快捷键"></a>查看快捷键</h3><table>
-<thead>
-<tr>
-<th>作用域</th>
-<th>功能</th>
-<th>快捷键</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>全局</td>
-<td>放大</td>
-<td>Ctrl+=</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>缩小</td>
-<td>Ctrl+-</td>
-</tr>
-</tbody>
-</table>
-<h3 id="窗口快捷键"><a href="#窗口快捷键" class="headerlink" title="窗口快捷键"></a>窗口快捷键</h3><table>
-<thead>
-<tr>
-<th>作用域</th>
-<th>功能</th>
-<th>快捷键</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>全局</td>
-<td>激活编辑器</td>
-<td>F12</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>切换编辑器</td>
-<td>Ctrl+Shift+W</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>上一个编辑器</td>
-<td>Ctrl+Shift+F6</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>上一个视图</td>
-<td>Ctrl+Shift+F7</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>上一个透视图</td>
-<td>Ctrl+Shift+F8</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>下一个编辑器</td>
-<td>Ctrl+F6</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>下一个视图</td>
-<td>Ctrl+F7</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>下一个透视图</td>
-<td>Ctrl+F8</td>
-</tr>
-<tr>
-<td>文本编辑器</td>
-<td>显示标尺上下文菜单</td>
-<td>Ctrl+W</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>显示视图菜单</td>
-<td>Ctrl+F10</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>显示系统菜单</td>
-<td>Alt+-</td>
-</tr>
-</tbody>
-</table>
-<h3 id="导航快捷键"><a href="#导航快捷键" class="headerlink" title="导航快捷键"></a>导航快捷键</h3><table>
-<thead>
-<tr>
-<th>作用域</th>
-<th>功能</th>
-<th>快捷键</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Java编辑器</td>
-<td>打开结构</td>
-<td>Ctrl+F3</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>打开类型</td>
-<td>Ctrl+Shift+T</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>打开类型层次结构</td>
-<td>F4</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>打开声明</td>
-<td>F3</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>打开外部javadoc</td>
-<td>Shift+F2</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>打开资源</td>
-<td>Ctrl+Shift+R</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>后退历史记录</td>
-<td>Alt+←</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>前进历史记录</td>
-<td>Alt+→</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>上一个</td>
-<td>Ctrl+,</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>下一个</td>
-<td>Ctrl+.</td>
-</tr>
-<tr>
-<td>Java编辑器</td>
-<td>显示大纲</td>
-<td>Ctrl+O</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>在层次结构中打开类型</td>
-<td>Ctrl+Shift+H</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>转至匹配的括号</td>
-<td>Ctrl+Shift+P</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>转至上一个编辑位置</td>
-<td>Ctrl+Q</td>
-</tr>
-<tr>
-<td>Java编辑器</td>
-<td>转至上一个成员</td>
-<td>Ctrl+Shift+↑</td>
-</tr>
-<tr>
-<td>Java编辑器</td>
-<td>转至下一个成员</td>
-<td>Ctrl+Shift+↓</td>
-</tr>
-<tr>
-<td>文本编辑器</td>
-<td>转至行</td>
-<td>Ctrl+L</td>
-</tr>
-</tbody>
-</table>
-<h3 id="搜索快捷键"><a href="#搜索快捷键" class="headerlink" title="搜索快捷键"></a>搜索快捷键</h3><table>
-<thead>
-<tr>
-<th>作用域</th>
-<th>功能</th>
-<th>快捷键</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>全局</td>
-<td>出现在文件中</td>
-<td>Ctrl+Shift+U</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>打开搜索对话框</td>
-<td>Ctrl+H</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>工作区中的声明</td>
-<td>Ctrl+G</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>工作区中的引用</td>
-<td>Ctrl+Shift+G</td>
-</tr>
-</tbody>
-</table>
-<h3 id="文本编辑快捷键"><a href="#文本编辑快捷键" class="headerlink" title="文本编辑快捷键"></a>文本编辑快捷键</h3><table>
-<thead>
-<tr>
-<th>作用域</th>
-<th>功能</th>
-<th>快捷键</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>文本编辑器</td>
-<td>改写切换</td>
-<td>Insert</td>
-</tr>
-<tr>
-<td>文本编辑器</td>
-<td>上滚行</td>
-<td>Ctrl+↑</td>
-</tr>
-<tr>
-<td>文本编辑器</td>
-<td>下滚行</td>
-<td>Ctrl+↓</td>
-</tr>
-</tbody>
-</table>
-<h3 id="文件快捷键"><a href="#文件快捷键" class="headerlink" title="文件快捷键"></a>文件快捷键</h3><table>
-<thead>
-<tr>
-<th>作用域</th>
-<th>功能</th>
-<th>快捷键</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>全局</td>
-<td>保存</td>
-<td>Ctrl+S</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>打印</td>
-<td>Ctrl+P</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>关闭</td>
-<td>Ctrl+F4</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>全部保存 Ctrl+Shift+S</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>全部关闭 Ctrl+Shift+F4</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>属性</td>
-<td>Alt+Enter</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>新建</td>
-<td>Ctrl+N</td>
-</tr>
-</tbody>
-</table>
-<h3 id="项目快捷键"><a href="#项目快捷键" class="headerlink" title="项目快捷键"></a>项目快捷键</h3><table>
-<thead>
-<tr>
-<th>作用域</th>
-<th>功能</th>
-<th>快捷键</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>全局</td>
-<td>全部构建</td>
-<td>Ctrl+B</td>
-</tr>
-</tbody>
-</table>
-<h3 id="源代码快捷键"><a href="#源代码快捷键" class="headerlink" title="源代码快捷键"></a>源代码快捷键</h3><table>
-<thead>
-<tr>
-<th>作用域</th>
-<th>功能</th>
-<th>快捷键</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Java编辑器</td>
-<td>格式化</td>
-<td>Ctrl+Shift+F</td>
-</tr>
-<tr>
-<td>Java编辑器</td>
-<td>取消注释</td>
-<td>Ctrl+\</td>
-</tr>
-<tr>
-<td>Java编辑器</td>
-<td>注释</td>
-<td>Ctrl+/</td>
-</tr>
-<tr>
-<td>Java编辑器</td>
-<td>添加导入</td>
-<td>Ctrl+Shift+M</td>
-</tr>
-<tr>
-<td>Java编辑器</td>
-<td>组织导入</td>
-<td>Ctrl+Shift+O</td>
-</tr>
-<tr>
-<td>Java编辑器</td>
-<td>使用try/catch块来包围</td>
-<td>未设置，太常用了，所以在这里列出,建议自己设置。也可以使用Ctrl+1自动修正。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="运行快捷键"><a href="#运行快捷键" class="headerlink" title="运行快捷键"></a>运行快捷键</h3><table>
-<thead>
-<tr>
-<th>作用域</th>
-<th>功能</th>
-<th>快捷键</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>全局</td>
-<td>单步返回</td>
-<td>F7</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>单步跳过</td>
-<td>F6</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>单步跳入</td>
-<td>F5</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>单步跳入选择</td>
-<td>Ctrl+F5</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>调试上次启动</td>
-<td>F11</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>继续</td>
-<td>F8</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>使用过滤器单步执行</td>
-<td>Shift+F5</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>添加/去除断点</td>
-<td>Ctrl+Shift+B</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>显示</td>
-<td>Ctrl+D</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>运行上次启动</td>
-<td>Ctrl+F11</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>运行至行</td>
-<td>Ctrl+R</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>执行</td>
-<td>Ctrl+U</td>
-</tr>
-</tbody>
-</table>
-<h3 id="重构快捷键"><a href="#重构快捷键" class="headerlink" title="重构快捷键"></a>重构快捷键</h3><table>
-<thead>
-<tr>
-<th>作用域</th>
-<th>功能</th>
-<th>快捷键</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>全局</td>
-<td>撤销重构</td>
-<td>Alt+Shift+Z</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>抽取方法</td>
-<td>Alt+Shift+M</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>抽取局部变量</td>
-<td>Alt+Shift+L</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>内联</td>
-<td>Alt+Shift+I</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>移动</td>
-<td>Alt+Shift+V</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>重命名</td>
-<td>Alt+Shift+R</td>
-</tr>
-<tr>
-<td>全局</td>
-<td>重做</td>
-<td>Alt+Shift+Y</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      
-        <categories>
-            
-            <category> Java平台 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Java </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Eclipse注释规范模版总结]]></title>
-      <url>https://craneyuan.github.io/2016/08/17/the-comment-template-of-myeclipse/</url>
-      <content type="html"><![CDATA[<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><ul>
-<li><p>在eclipse中，打开Window-&gt;Preference-&gt;Java-&gt;Code Style-&gt;Code Template</p>
-</li>
-<li><p>然后展开Comments节点就是所有需设置注释的元素，参照下面注释规范对应设置即可</p>
-</li>
-</ul>
-<h2 id="注释规范"><a href="#注释规范" class="headerlink" title="注释规范"></a>注释规范</h2><h3 id="文件-Files-注释标签"><a href="#文件-Files-注释标签" class="headerlink" title="文件(Files)注释标签"></a>文件(Files)注释标签</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
-<span class="line"><span class="comment"> * FileName:     	$&#123;file_name&#125;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@Description</span>: 	$&#123;todo&#125;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@author</span>:    		crane-yuan</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@version</span>    		V1.0</span></span>
-<span class="line"><span class="comment"> * Createdate:      $&#123;date&#125; 	$&#123;time&#125;</span></span>
-<span class="line"><span class="comment"> * Copyright:    	Copyright(C) 2016-2017</span></span>
-<span class="line"><span class="comment"> * Company       	CY.</span></span>
-<span class="line"><span class="comment"> * All rights Reserved, Designed By crane-yuan</span></span>
-<span class="line"><span class="comment"></span></span>
-<span class="line"><span class="comment"> * Modification  History:</span></span>
-<span class="line"><span class="comment"> * Date         Author        Version        Discription</span></span>
-<span class="line"><span class="comment"> * ---------------------------------------------------------------------------</span></span>
-<span class="line"><span class="comment"> * $&#123;date&#125;     crane-yuan       1.0             1.0</span></span>
-<span class="line"><span class="comment"></span></span>
-<span class="line"><span class="comment"> * Why &amp; What is modified:</span></span>
-<span class="line"><span class="comment"></span></span>
-<span class="line"><span class="comment"> */</span></span>
-</pre></td></tr></table></figure>
-<h3 id="类型-Types-注释标签（类的注释）："><a href="#类型-Types-注释标签（类的注释）：" class="headerlink" title="类型(Types)注释标签（类的注释）："></a>类型(Types)注释标签（类的注释）：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@ClassName</span>:   	$&#123;type_name&#125;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@Description</span>:	$&#123;todo&#125;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@author</span>:    		crane-yuan</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@date</span>:			$&#123;date&#125;		$&#123;time&#125;</span></span>
-<span class="line"><span class="comment"> */</span></span>
-</pre></td></tr></table></figure>
-<h3 id="字段-Fields-注释标签："><a href="#字段-Fields-注释标签：" class="headerlink" title="字段(Fields)注释标签："></a>字段(Fields)注释标签：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/**  </span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@Fields</span> $&#123;field&#125; :			$&#123;todo&#125;</span></span>
-<span class="line"><span class="comment"> */</span></span>
-</pre></td></tr></table></figure>
-<h3 id="构造函数-Constructor-注释标签："><a href="#构造函数-Constructor-注释标签：" class="headerlink" title="构造函数(Constructor)注释标签："></a>构造函数(Constructor)注释标签：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@Title</span>:        	$&#123;enclosing_type&#125;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@Description</span>:    $&#123;todo&#125;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>:    		$&#123;tags&#125;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
-<span class="line"><span class="comment"> */</span></span>
-</pre></td></tr></table></figure>
-<h3 id="方法-Methods-标签："><a href="#方法-Methods-标签：" class="headerlink" title="方法(Methods)标签："></a>方法(Methods)标签：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@Title</span>: 			$&#123;enclosing_method&#125;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@Description</span>: 	$&#123;todo&#125;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: 			$&#123;tags&#125;   </span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: 		$&#123;return_type&#125;   </span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
-<span class="line"><span class="comment"> */</span></span>
-</pre></td></tr></table></figure>
-<h3 id="覆盖方法-Overriding-Methods-标签"><a href="#覆盖方法-Overriding-Methods-标签" class="headerlink" title="覆盖方法(Overriding Methods)标签:"></a>覆盖方法(Overriding Methods)标签:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
-<span class="line"><span class="comment"> * &lt;p&gt;Title: $&#123;enclosing_method&#125;&lt;/p&gt;</span></span>
-<span class="line"><span class="comment"> * &lt;p&gt;Description: &lt;/p&gt;</span></span>
-<span class="line"><span class="comment"> * $&#123;tags&#125;</span></span>
-<span class="line"><span class="comment"> * $&#123;see_to_overridden&#125;</span></span>
-<span class="line"><span class="comment"> */</span></span>
-</pre></td></tr></table></figure>
-<h3 id="代表方法-Delegate-Methods-标签："><a href="#代表方法-Delegate-Methods-标签：" class="headerlink" title="代表方法(Delegate Methods)标签："></a>代表方法(Delegate Methods)标签：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
-<span class="line"><span class="comment"> * $&#123;tags&#125;</span></span>
-<span class="line"><span class="comment"> * $&#123;see_to_target&#125;</span></span>
-<span class="line"><span class="comment"> */</span></span>
-</pre></td></tr></table></figure>
-<h3 id="getter方法标签："><a href="#getter方法标签：" class="headerlink" title="getter方法标签："></a>getter方法标签：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@Title</span>:        	$&#123;enclosing_method&#125; &lt;BR&gt;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@Description</span>:  	$&#123;todo&#125; &lt;BR&gt;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>:     	$&#123;field_type&#125; &lt;BR&gt;</span></span>
-<span class="line"><span class="comment"> */</span></span>
-</pre></td></tr></table></figure>
-<h3 id="setter方法标签："><a href="#setter方法标签：" class="headerlink" title="setter方法标签："></a>setter方法标签：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** </span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@Title</span>:  		$&#123;enclosing_method&#125; &lt;BR&gt; </span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@Description</span>: 	$&#123;todo&#125; &lt;BR&gt;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: 		$&#123;field_type&#125; &lt;BR&gt; </span></span>
-<span class="line"><span class="comment"> */</span></span>
-</pre></td></tr></table></figure>
-]]></content>
-      
-        <categories>
-            
-            <category> Java平台 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Java </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Java中Scanner类和BufferReader类之间的区别]]></title>
+      <title><![CDATA[\[译\]Java中Scanner类和BufferReader类之间的区别]]></title>
       <url>https://craneyuan.github.io/2016/08/17/the-difference-between-scanner-and-bufferreader-class-in-java/</url>
-      <content type="html"><![CDATA[<p>java.util.Scanner类是一个简单的文本扫描类，它可以解析基本数据类型和字符串。它本质上是使用正则表达式去读取不同的数据类型。</p>
+      <content type="html"><![CDATA[<p>原文链接：<a href="http://www.geeksforgeeks.org/difference-between-scanner-and-bufferreader-class-in-java/" target="_blank" rel="noopener">Difference between Scanner and BufferReader Class in Java</a></p>
+<p>译者：craneyuan</p>
+<p>[ 转载请保留原文出处、译者和译文链接。]</p>
+<hr>
+<p>java.util.Scanner类是一个简单的文本扫描类，它可以解析基本数据类型和字符串。它本质上是使用正则表达式去读取不同的数据类型。</p>
 <p>Java.io.BufferedReader类为了能够高效的读取字符序列，从字符输入流和字符缓冲区读取文本。</p>
 <p>下面是两个类的不同之处：</p>
 <p><strong><em>当nextLine()被用在nextXXX()之后，用Scanner类有什么问题</em></strong></p>
@@ -4918,9 +3786,6 @@ public class B extends A
 <li>Scanner有很少的缓冲区(1KB字符缓冲)相对于BufferedReader(8KB字节缓冲)，但是这是绰绰有余的。</li>
 <li>BufferedReader相对于Scanner来说要快一点，因为Scanner对输入数据进行类解析，而BufferedReader只是简单地读取字符序列。</li>
 </ul>
-<p>原文链接：<a href="http://www.geeksforgeeks.org/difference-between-scanner-and-bufferreader-class-in-java/" target="_blank" rel="noopener">Difference between Scanner and BufferReader Class in Java</a></p>
-<p>翻译：crane-yuan</p>
-<p>[ 转载请保留原文出处、译者和译文链接。]</p>
 ]]></content>
       
         <categories>
@@ -4932,16 +3797,20 @@ public class B extends A
         
         <tags>
             
-            <tag> Java </tag>
+            <tag> java </tag>
             
         </tags>
         
     </entry>
     
     <entry>
-      <title><![CDATA[使用双引号""创建Java字符串还是使用String构造函数？]]></title>
+      <title><![CDATA[\[译\]使用双引号""创建Java字符串还是使用String构造函数？]]></title>
       <url>https://craneyuan.github.io/2016/08/15/create-java-string-by-double-quotes-vs-by-constructor/</url>
-      <content type="html"><![CDATA[<p>在Java中，一个字符串可以使用下面这两种方式进行创建：</p>
+      <content type="html"><![CDATA[<p>原文链接：<a href="http://www.programcreek.com/2014/03/create-java-string-by-double-quotes-vs-by-constructor/" target="_blank" rel="noopener">Create Java String Using ” ” or Constructor? </a></p>
+<p>译者：craneyuan</p>
+<p>[ 转载请保留原文出处、译者和译文链接。]</p>
+<hr>
+<p>在Java中，一个字符串可以使用下面这两种方式进行创建：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
 <span class="line">2</span>
 </pre></td><td class="code"><pre><span class="line">String x = &quot;abc&quot;;</span>
@@ -4988,7 +3857,6 @@ public class B extends A
 <span class="line">System.out.println(c.equals(d)); // True</span>
 </pre></td></tr></table></figure>
 <h3 id="两种方法的使用场景"><a href="#两种方法的使用场景" class="headerlink" title="两种方法的使用场景"></a>两种方法的使用场景</h3><p>因为字符串“abcd”已经是String类型，使用字符串构造函数将会创建额外没有必要的对象。因此，如果你只想要创建一个字符串对象时，双引号“”推荐使用。如果你的确想要在堆中创建一个新的对象，字符串构造函数将可以使用。</p>
-<p>原文链接：<a href="http://www.programcreek.com/2014/03/create-java-string-by-double-quotes-vs-by-constructor/" target="_blank" rel="noopener">Create Java String Using ” ” or Constructor? </a><br>翻译：crane-yuan<br>[ 转载请保留原文出处、译者和译文链接。]</p>
 ]]></content>
       
         <categories>
@@ -5000,7 +3868,7 @@ public class B extends A
         
         <tags>
             
-            <tag> Java </tag>
+            <tag> java </tag>
             
         </tags>
         
@@ -5153,7 +4021,7 @@ public class B extends A
         
         <tags>
             
-            <tag> Java </tag>
+            <tag> java </tag>
             
         </tags>
         
@@ -5162,10 +4030,8 @@ public class B extends A
     <entry>
       <title><![CDATA[Java中Map按Value排序]]></title>
       <url>https://craneyuan.github.io/2016/08/15/the-map-of-java-sorted-by-value/</url>
-      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>Map是键值对的集合接口，它的实现类主要包括：HashMap,TreeMap,Hashtable以及LinkedHashMap等。</p>
-</blockquote>
-<h3 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h3><p>基于红黑树（Red-Black tree）的 NavigableMap 实现，该映射根据其键的自然顺序进行排序，或者根据创建映射时提供的 Comparator 进行排序，具体取决于使用的构造方法。</p>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Map是键值对的集合接口，它的实现类主要包括：HashMap,TreeMap,Hashtable以及LinkedHashMap等。</p>
+<h3 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h3><p>基于红黑树（red-black tree）的 NavigableMap 实现，该映射根据其键的自然顺序进行排序，或者根据创建映射时提供的 Comparator 进行排序，具体取决于使用的构造方法。</p>
 <h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>HashMap的值是没有顺序的，它是按照key的HashCode来实现的，对于这个无序的HashMap我们要怎么来实现排序呢？参照TreeMap的value排序。</p>
 <blockquote>
 <p>Map.Entry返回Collections视图。</p>
@@ -5395,7 +4261,7 @@ public class B extends A
         
         <tags>
             
-            <tag> Java </tag>
+            <tag> java </tag>
             
         </tags>
         
@@ -5467,7 +4333,19 @@ public class B extends A
 <span class="line">System.out.println(cal.getTime());</span>
 </pre></td></tr></table></figure>
 <p>算出给定日期是属于星期几</p>
-<p>```<br>Calendarcal = Calendar.getInstance();<br>cal.set(2016,08,01);<br>String[] strDays = new String[] { “SUNDAY”, “MONDAY”, “TUESDAY”,<br>                                  “WEDNESDAY”, “THURSDAY”, “FRIDAY”, “SATURDAY”<br>                                };<br>System.out.println(strDays[cal.get(Calendar.DAY_OF_WEEK) - 1]);</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+</pre></td><td class="code"><pre><span class="line">Calendarcal = Calendar.getInstance();</span>
+<span class="line">cal.set(<span class="number">2016</span>,<span class="number">08</span>,<span class="number">01</span>);</span>
+<span class="line">String[] strDays = <span class="keyword">new</span> String[] &#123; <span class="string">"SUNDAY"</span>, <span class="string">"MONDAY"</span>, <span class="string">"TUESDAY"</span>,</span>
+<span class="line">                                  <span class="string">"WEDNESDAY"</span>, <span class="string">"THURSDAY"</span>, <span class="string">"FRIDAY"</span>, <span class="string">"SATURDAY"</span></span>
+<span class="line">                                &#125;;</span>
+<span class="line">System.out.println(strDays[cal.get(Calendar.DAY_OF_WEEK) - <span class="number">1</span>]);</span>
+</pre></td></tr></table></figure>
 ]]></content>
       
         <categories>
@@ -5479,7 +4357,7 @@ public class B extends A
         
         <tags>
             
-            <tag> Java </tag>
+            <tag> java </tag>
             
         </tags>
         
@@ -5522,7 +4400,7 @@ public class B extends A
       
         <categories>
             
-            <category> Java平台 </category>
+            <category> 软件工程 </category>
             
         </categories>
         
@@ -5570,9 +4448,7 @@ public class B extends A
 <span class="line">    <span class="keyword">return</span> maxSum;</span>
 <span class="line">&#125;</span>
 </pre></td></tr></table></figure>
-<blockquote>
 <p><strong>本算法的关键在于，对于一个子序列，如果其和为负数，则不可能作为最大子串的前缀。</strong></p>
-</blockquote>
 ]]></content>
       
         <categories>
@@ -5649,7 +4525,7 @@ public class B extends A
         
         <tags>
             
-            <tag> Linux </tag>
+            <tag> linux </tag>
             
         </tags>
         
@@ -6281,7 +5157,7 @@ public class B extends A
         
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> leetcode </tag>
             
         </tags>
         
@@ -6401,7 +5277,7 @@ Space complexity : O(n)O(n)O(n). The extra space required depends on the number 
         
         <tags>
             
-            <tag> LeetCode </tag>
+            <tag> leetcode </tag>
             
         </tags>
         
@@ -6589,18 +5465,12 @@ Space complexity : O(n)O(n)O(n). The extra space required depends on the number 
         </categories>
         
         
-        <tags>
-            
-            <tag> Check </tag>
-            
-        </tags>
-        
     </entry>
     
     <entry>
       <title><![CDATA[常见License辨析]]></title>
       <url>https://craneyuan.github.io/2016/04/05/introduction-of-general-license/</url>
-      <content type="html"><![CDATA[<p>什么也不说上图<br><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521873546/blog/qn1dxwagc0hdmhhrsqwr.jpg" alt="常见License"></p>
+      <content type="html"><![CDATA[<p>什么也不说，上图<br><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521873546/blog/qn1dxwagc0hdmhhrsqwr.jpg" alt="常见License"></p>
 ]]></content>
       
         <categories>
@@ -7277,7 +6147,7 @@ Space complexity : O(n)O(n)O(n). The extra space required depends on the number 
         
         <tags>
             
-            <tag> Hexo </tag>
+            <tag> hexo </tag>
             
         </tags>
         
@@ -7353,7 +6223,7 @@ Space complexity : O(n)O(n)O(n). The extra space required depends on the number 
         
         <tags>
             
-            <tag> Hexo </tag>
+            <tag> hexo </tag>
             
         </tags>
         
@@ -7406,7 +6276,7 @@ Space complexity : O(n)O(n)O(n). The extra space required depends on the number 
         
         <tags>
             
-            <tag> Hexo </tag>
+            <tag> hexo </tag>
             
         </tags>
         
@@ -7427,7 +6297,7 @@ Space complexity : O(n)O(n)O(n). The extra space required depends on the number 
         
         <tags>
             
-            <tag> Hexo </tag>
+            <tag> hexo </tag>
             
         </tags>
         
@@ -7465,7 +6335,7 @@ Space complexity : O(n)O(n)O(n). The extra space required depends on the number 
         
         <tags>
             
-            <tag> Hexo </tag>
+            <tag> hexo </tag>
             
         </tags>
         
@@ -7557,9 +6427,7 @@ Space complexity : O(n)O(n)O(n). The extra space required depends on the number 
         
         <tags>
             
-            <tag> Hexo </tag>
-            
-            <tag> Landscape </tag>
+            <tag> hexo </tag>
             
         </tags>
         
@@ -7657,9 +6525,7 @@ Space complexity : O(n)O(n)O(n). The extra space required depends on the number 
         
         <tags>
             
-            <tag> Hexo </tag>
-            
-            <tag> GitHub </tag>
+            <tag> hexo </tag>
             
         </tags>
         

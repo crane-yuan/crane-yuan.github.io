@@ -7,34 +7,6 @@
     </url>
 
     <url>
-        <loc>https://craneyuan.github.io/categories/Linux/</loc>
-        <lastmod>2018-03-26T14:07:06.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/categories/C%E8%AF%AD%E8%A8%80/</loc>
-        <lastmod>2018-03-26T14:34:22.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/categories/Spec/</loc>
-        <lastmod>2018-07-30T16:14:38.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/categories/%E6%9D%82%E9%A1%B9/</loc>
-        <lastmod>2018-12-24T15:07:31.052Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://craneyuan.github.io/categories/%E5%B7%A5%E5%85%B7/</loc>
         <lastmod>2019-03-03T07:44:02.533Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -43,21 +15,56 @@
 
     <url>
         <loc>https://craneyuan.github.io/categories/%E4%B9%A6%E7%B1%8D/</loc>
-        <lastmod>2019-03-03T07:54:10.515Z</lastmod>
+        <lastmod>2019-03-03T14:15:56.409Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://craneyuan.github.io/categories/Java%E5%B9%B3%E5%8F%B0/</loc>
-        <lastmod>2019-03-03T13:14:55.311Z</lastmod>
+        <loc>https://craneyuan.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</loc>
+        <lastmod>2019-03-03T14:34:59.100Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://craneyuan.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
-        <lastmod>2019-03-03T13:30:01.743Z</lastmod>
+        <lastmod>2019-03-03T14:49:36.926Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/categories/Linux/</loc>
+        <lastmod>2019-03-03T14:50:38.427Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/categories/C%E8%AF%AD%E8%A8%80/</loc>
+        <lastmod>2019-03-03T14:58:49.076Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/categories/Java%E5%B9%B3%E5%8F%B0/</loc>
+        <lastmod>2019-03-03T15:00:16.020Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/categories/%E6%9D%82%E9%A1%B9/</loc>
+        <lastmod>2019-03-03T15:01:28.885Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/categories/%E8%A7%84%E8%8C%83/</loc>
+        <lastmod>2019-03-03T15:02:14.702Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

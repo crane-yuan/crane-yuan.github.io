@@ -204,10 +204,10 @@
     <div class="post-content">
       
         <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
-<p>快速排序（英语：Quick Sort），又称划分交换排序（partition-exchange sort），一种排序算法，最早由东尼·霍尔提出。在平均状况下，排序n个项目要Ο(n log n)次比较。在最坏状况下则需要Ο(n2)次比较，但这种状况并不常见。事实上，快速排序通常明显比其他Ο(n log n)算法更快，因为它的内部循环（inner loop）可以在大部分的架构上很有效率地被实现出来。</p>
+<p>快速排序（英文：quick Sort），又称划分交换排序（partition-exchange sort），一种排序算法，最早由东尼·霍尔提出。在平均状况下，排序n个项目要Ο(n log n)次比较。在最坏状况下则需要Ο(n2)次比较，但这种状况并不常见。事实上，快速排序通常明显比其他Ο(n log n)算法更快，因为它的内部循环（inner loop）可以在大部分的架构上很有效率地被实现出来。</p>
 </blockquote>
 <p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521871052/blog/dnwug2dzi4wanknfet31.gif" alt="快速排序演示动画1"></p>
-<h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><p>快速排序使用分治法（Divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists）。</p>
+<h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><p>快速排序使用分治法（divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists）。</p>
 <p>步骤为：</p>
 <ul>
 <li>从数列中挑出一个元素，称为”基准”（pivot），</li>
@@ -275,17 +275,10 @@
 <span class="line">31</span>
 <span class="line">32</span>
 <span class="line">33</span>
-<span class="line">34</span>
-<span class="line">35</span>
-<span class="line">36</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 快速排序，递归版</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: &lt;E&gt;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: arr</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: List&lt;E&gt;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 快速排序，递归版</span></span>
 <span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function">List&lt;E&gt; <span class="title">quickSort</span><span class="params">( List&lt;E&gt; arr)</span> </span>&#123;</span>
+<span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function">List&lt;E&gt; <span class="title">quickSort</span><span class="params">(List&lt;E&gt; arr)</span> </span>&#123;</span>
 <span class="line">    <span class="keyword">if</span> (!arr.isEmpty()) &#123;</span>
 <span class="line">        E pivot = arr.get(<span class="number">0</span>); <span class="comment">// This pivot can change to get faster results</span></span>
 <span class="line"></span>
@@ -295,12 +288,13 @@
 <span class="line"></span>
 <span class="line">        <span class="comment">// Partition</span></span>
 <span class="line">        <span class="keyword">for</span> (E i : arr) &#123;</span>
-<span class="line">            <span class="keyword">if</span> (i.compareTo(pivot) &lt; <span class="number">0</span>)</span>
+<span class="line">            <span class="keyword">if</span> (i.compareTo(pivot) &lt; <span class="number">0</span>) &#123;</span>
 <span class="line">                less.add(i);</span>
-<span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (i.compareTo(pivot) &gt; <span class="number">0</span>)</span>
+<span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i.compareTo(pivot) &gt; <span class="number">0</span>) &#123;</span>
 <span class="line">                more.add(i);</span>
-<span class="line">            <span class="keyword">else</span></span>
+<span class="line">            &#125; <span class="keyword">else</span> &#123;</span>
 <span class="line">                pivotList.add(i);</span>
+<span class="line">            &#125;</span>
 <span class="line">        &#125;</span>
 <span class="line"></span>
 <span class="line">        <span class="comment">// Recursively sort sublists</span></span>

@@ -7,8 +7,192 @@
     </url>
 
     <url>
+        <loc>https://craneyuan.github.io/2018/07/31/jpa/</loc>
+        <lastmod>2019-03-03T15:02:14.702Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2017/03/15/chinese-copywriting-guidelines/</loc>
+        <lastmod>2019-03-03T15:01:28.885Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/08/04/java-date-calendar/</loc>
+        <lastmod>2019-03-03T15:00:16.020Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/08/15/the-map-of-java-sorted-by-value/</loc>
+        <lastmod>2019-03-03T15:00:00.219Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/08/15/the-procedure-of-init-class-in-java/</loc>
+        <lastmod>2019-03-03T14:59:41.548Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/08/30/the-reserved-word-of-goto/</loc>
+        <lastmod>2019-03-03T14:59:25.651Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/04/10/the-frame-of-c-test/</loc>
+        <lastmod>2019-03-03T14:58:49.076Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/08/15/create-java-string-by-double-quotes-vs-by-constructor/</loc>
+        <lastmod>2019-03-03T14:57:48.760Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/08/17/the-difference-between-scanner-and-bufferreader-class-in-java/</loc>
+        <lastmod>2019-03-03T14:57:35.321Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/08/23/the-way-to-release-resources/</loc>
+        <lastmod>2019-03-03T14:56:48.112Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2017/03/25/greasyfork-introduction/</loc>
+        <lastmod>2019-03-03T14:52:29.821Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/03/19/hexo-00-generate-blog-by-hexo/</loc>
+        <lastmod>2019-03-03T14:52:05.670Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/03/24/hexo-01-add-new-theme/</loc>
+        <lastmod>2019-03-03T14:51:56.776Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/03/24/hexo-02-not-render-md/</loc>
+        <lastmod>2019-03-03T14:51:51.047Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/03/24/hexo-03-colourful-tag-cloud/</loc>
+        <lastmod>2019-03-03T14:51:42.033Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/03/24/hexo-04-add-duoshuo-discuss/</loc>
+        <lastmod>2019-03-03T14:51:35.775Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/03/22/hexo-06-add-category/</loc>
+        <lastmod>2019-03-03T14:51:31.080Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2018/02/25/hexo-code-style-redundant-blank-solution/</loc>
+        <lastmod>2019-03-03T14:51:22.070Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/07/15/how-to-get-sourcecode-by-linux/</loc>
+        <lastmod>2019-03-03T14:50:38.427Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/04/05/introduction-of-general-license/</loc>
+        <lastmod>2019-03-03T14:50:06.811Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2017/12/28/java-annotations-introduction/</loc>
+        <lastmod>2019-03-03T14:49:48.080Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://craneyuan.github.io/2016/05/18/leetcode-number-of-1-bits/</loc>
-        <lastmod>2019-03-03T13:30:01.743Z</lastmod>
+        <lastmod>2019-03-03T14:49:36.926Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/05/06/leetcode-twosum/</loc>
+        <lastmod>2019-03-03T14:48:16.629Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/03/30/realization-of-bitmap-sort/</loc>
+        <lastmod>2019-03-03T14:48:05.417Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +200,7 @@
 
     <url>
         <loc>https://craneyuan.github.io/2016/09/17/remove-sorted-linkedlist-duplicated-value/</loc>
-        <lastmod>2019-03-03T13:27:20.161Z</lastmod>
+        <lastmod>2019-03-03T14:47:20.110Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -24,7 +208,7 @@
 
     <url>
         <loc>https://craneyuan.github.io/2016/09/16/remove-sorted-array-duplicated-value/</loc>
-        <lastmod>2019-03-03T13:25:03.831Z</lastmod>
+        <lastmod>2019-03-03T14:47:08.953Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -32,7 +216,111 @@
 
     <url>
         <loc>https://craneyuan.github.io/2016/10/12/remove-the-nth-node-from-end-of-list/</loc>
-        <lastmod>2019-03-03T13:22:01.198Z</lastmod>
+        <lastmod>2019-03-03T14:47:01.611Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/10/10/reverse-the-single-linkedlist/</loc>
+        <lastmod>2019-03-03T14:46:25.355Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2018/01/11/spring-boot-aop-custom-annotation/</loc>
+        <lastmod>2019-03-03T14:44:47.973Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/08/20/the-introduction-of-algorithm/</loc>
+        <lastmod>2019-03-03T14:40:03.371Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/07/31/the-max-sub-sum/</loc>
+        <lastmod>2019-03-03T14:35:37.884Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/08/02/the-relationship-of-uml-class/</loc>
+        <lastmod>2019-03-03T14:34:59.100Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/08/28/the-sort-algorithm-of-bubble-sort/</loc>
+        <lastmod>2019-03-03T14:31:04.995Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/08/28/the-sort-algorithm-of-select-sort/</loc>
+        <lastmod>2019-03-03T14:30:55.285Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/09/05/the-sort-algorithm-of-radix-sort/</loc>
+        <lastmod>2019-03-03T14:30:46.915Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/09/03/the-sort-algorithm-of-quick-sort/</loc>
+        <lastmod>2019-03-03T14:30:38.333Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/08/30/the-sort-algorithm-of-merge-sort/</loc>
+        <lastmod>2019-03-03T14:30:27.574Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/08/29/the-sort-algorithm-of-insert-sort/</loc>
+        <lastmod>2019-03-03T14:30:07.898Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/09/04/the-sort-algorithm-of-heap-sort/</loc>
+        <lastmod>2019-03-03T14:28:08.160Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/08/24/the-summary-of-constructor-and-modifier/</loc>
+        <lastmod>2019-03-03T14:16:55.471Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -40,7 +328,7 @@
 
     <url>
         <loc>https://craneyuan.github.io/2016/08/23/the-ways-of-copy-file/</loc>
-        <lastmod>2019-03-03T13:14:55.311Z</lastmod>
+        <lastmod>2019-03-03T14:16:14.732Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -48,7 +336,23 @@
 
     <url>
         <loc>https://craneyuan.github.io/2018/06/03/effective-java-3e-new-items/</loc>
-        <lastmod>2019-03-03T07:54:10.515Z</lastmod>
+        <lastmod>2019-03-03T14:15:56.409Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/03/25/hexo-05-add-site-statistics/</loc>
+        <lastmod>2019-03-03T14:15:21.149Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/2016/09/02/the-sort-algorithm-of-shell-sort/</loc>
+        <lastmod>2019-03-03T14:14:44.789Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -63,24 +367,8 @@
     </url>
 
     <url>
-        <loc>https://craneyuan.github.io/2016/03/25/hexo-05-add-site-statistics/</loc>
-        <lastmod>2018-12-29T07:37:39.239Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://craneyuan.github.io/2018/04/22/awesome-meta-blog/</loc>
         <lastmod>2018-12-24T15:07:31.052Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2018/07/31/jpa/</loc>
-        <lastmod>2018-07-30T16:14:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -103,230 +391,6 @@
     </url>
 
     <url>
-        <loc>https://craneyuan.github.io/2017/03/15/chinese-copywriting-guidelines/</loc>
-        <lastmod>2018-03-26T14:47:53.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/08/23/the-way-to-release-resources/</loc>
-        <lastmod>2018-03-26T14:47:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/08/24/the-summary-of-constructor-and-modifier/</loc>
-        <lastmod>2018-03-26T14:46:57.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/09/02/the-sort-algorithm-of-shell-sort/</loc>
-        <lastmod>2018-03-26T14:46:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/08/28/the-sort-algorithm-of-select-sort/</loc>
-        <lastmod>2018-03-26T14:46:08.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/09/05/the-sort-algorithm-of-radix-sort/</loc>
-        <lastmod>2018-03-26T14:45:47.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/09/03/the-sort-algorithm-of-quick-sort/</loc>
-        <lastmod>2018-03-26T14:45:20.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/08/30/the-sort-algorithm-of-merge-sort/</loc>
-        <lastmod>2018-03-26T14:44:59.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/08/29/the-sort-algorithm-of-insert-sort/</loc>
-        <lastmod>2018-03-26T14:44:38.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/09/04/the-sort-algorithm-of-heap-sort/</loc>
-        <lastmod>2018-03-26T14:44:14.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/08/28/the-sort-algorithm-of-bubble-sort/</loc>
-        <lastmod>2018-03-26T14:43:44.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/08/20/the-shortcut-of-myeclipse/</loc>
-        <lastmod>2018-03-26T14:42:57.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/08/30/the-reserved-word-of-goto/</loc>
-        <lastmod>2018-03-26T14:42:22.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/08/02/the-relationship-of-uml-class/</loc>
-        <lastmod>2018-03-26T14:40:30.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/08/15/the-procedure-of-init-class-in-java/</loc>
-        <lastmod>2018-03-26T14:39:52.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/07/31/the-max-sub-sum/</loc>
-        <lastmod>2018-03-26T14:38:49.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/08/15/the-map-of-java-sorted-by-value/</loc>
-        <lastmod>2018-03-26T14:38:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/08/20/the-introduction-of-algorithm/</loc>
-        <lastmod>2018-03-26T14:37:23.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/04/10/the-frame-of-c-test/</loc>
-        <lastmod>2018-03-26T14:34:22.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/08/17/the-difference-between-scanner-and-bufferreader-class-in-java/</loc>
-        <lastmod>2018-03-26T14:31:07.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/08/17/the-comment-template-of-myeclipse/</loc>
-        <lastmod>2018-03-26T14:29:34.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2018/01/11/spring-boot-aop-custom-annotation/</loc>
-        <lastmod>2018-03-26T14:28:18.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/10/10/reverse-the-single-linkedlist/</loc>
-        <lastmod>2018-03-26T14:28:05.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/03/30/realization-of-bitmap-sort/</loc>
-        <lastmod>2018-03-26T14:21:33.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/05/06/leetcode-twosum/</loc>
-        <lastmod>2018-03-26T14:18:46.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/08/04/java-date-calendar/</loc>
-        <lastmod>2018-03-26T14:14:13.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2017/12/28/java-annotations-introduction/</loc>
-        <lastmod>2018-03-26T14:09:14.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/04/05/introduction-of-general-license/</loc>
-        <lastmod>2018-03-26T14:08:58.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://craneyuan.github.io/2016/04/04/how-to-use-autotools/</loc>
         <lastmod>2018-03-26T14:08:30.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -335,88 +399,8 @@
     </url>
 
     <url>
-        <loc>https://craneyuan.github.io/2016/07/15/how-to-get-sourcecode-by-linux/</loc>
-        <lastmod>2018-03-26T14:07:06.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2018/02/25/hexo-code-style-redundant-blank-solution/</loc>
-        <lastmod>2018-03-26T14:05:22.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/03/22/hexo-06-add-category/</loc>
-        <lastmod>2018-03-26T14:04:20.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/03/24/hexo-04-add-duoshuo-discuss/</loc>
-        <lastmod>2018-03-26T13:54:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/03/24/hexo-03-colourful-tag-cloud/</loc>
-        <lastmod>2018-03-26T13:48:12.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/03/24/hexo-02-not-render-md/</loc>
-        <lastmod>2018-03-26T13:47:09.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/03/24/hexo-01-add-new-theme/</loc>
-        <lastmod>2018-03-26T13:45:01.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/03/19/hexo-00-generate-blog-by-hexo/</loc>
-        <lastmod>2018-03-26T13:43:11.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2017/03/25/greasyfork-introduction/</loc>
-        <lastmod>2018-03-26T13:35:21.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://craneyuan.github.io/2016/05/21/dynamic-allocate-two-dimension-array/</loc>
         <lastmod>2018-03-26T13:31:42.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/2016/08/15/create-java-string-by-double-quotes-vs-by-constructor/</loc>
-        <lastmod>2018-03-26T13:12:57.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

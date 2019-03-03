@@ -204,7 +204,7 @@
     <div class="post-content">
       
         <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><blockquote>
-<p>归并排序（英语：Merge sort），是创建在归并操作上的一种有效的排序算法，效率为O(n log n)。<br><strong>归并操作</strong>（merge），也叫归并算法，指的是将两个已经排序的序列合并成一个序列的操作。归并排序算法依赖归并操作。</p>
+<p>归并排序（英文：merge sort），是创建在归并操作上的一种有效的排序算法，效率为O(n log n)。<br><strong>归并操作</strong>（merge），也叫归并算法，指的是将两个已经排序的序列合并成一个序列的操作。归并排序算法依赖归并操作。</p>
 </blockquote>
 <p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521872711/blog/bwt19rrqdrfpokicdhsd.gif" alt="归并排序算法演示动画"></p>
 <h2 id="递归法"><a href="#递归法" class="headerlink" title="递归法"></a>递归法</h2><p>原理如下（假设序列共有n个元素）：</p>
@@ -275,66 +275,60 @@
 <span class="line">53</span>
 <span class="line">54</span>
 <span class="line">55</span>
-<span class="line">56</span>
-<span class="line">57</span>
-<span class="line">58</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 归并排序，递归版</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: &lt;E&gt;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: m</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: List&lt;E&gt;</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 归并排序，递归版</span></span>
 <span class="line"><span class="comment"> */</span></span>
 <span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function">List&lt;E&gt; <span class="title">mergeSort</span><span class="params">(List&lt;E&gt; m)</span> </span>&#123;</span>
-<span class="line">	<span class="keyword">if</span> (m.size() &lt;= <span class="number">1</span>)</span>
-<span class="line">		<span class="keyword">return</span> m;</span>
+<span class="line">    <span class="keyword">if</span> (m.size() &lt;= <span class="number">1</span>) &#123;</span>
+<span class="line">        <span class="keyword">return</span> m;</span>
+<span class="line">    &#125;</span>
 <span class="line"></span>
-<span class="line">	<span class="keyword">int</span> middle = m.size() / <span class="number">2</span>;</span>
-<span class="line">	List&lt;E&gt; left = m.subList(<span class="number">0</span>, middle);</span>
-<span class="line">	List&lt;E&gt; right = m.subList(middle, m.size());</span>
+<span class="line">    <span class="keyword">int</span> middle = m.size() / <span class="number">2</span>;</span>
+<span class="line">    List&lt;E&gt; left = m.subList(<span class="number">0</span>, middle);</span>
+<span class="line">    List&lt;E&gt; right = m.subList(middle, m.size());</span>
 <span class="line"></span>
-<span class="line">	right = mergeSort(right);</span>
-<span class="line">	left = mergeSort(left);</span>
-<span class="line">	List&lt;E&gt; result = merge(left, right);</span>
+<span class="line">    right = mergeSort(right);</span>
+<span class="line">    left = mergeSort(left);</span>
+<span class="line">    List&lt;E&gt; result = merge(left, right);</span>
 <span class="line"></span>
-<span class="line">	<span class="keyword">return</span> result;</span>
+<span class="line">    <span class="keyword">return</span> result;</span>
 <span class="line">&#125;</span>
 <span class="line"></span>
 <span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function">List&lt;E&gt; <span class="title">merge</span><span class="params">(List&lt;E&gt; left, List&lt;E&gt; right)</span> </span>&#123;</span>
-<span class="line">	List&lt;E&gt; result = <span class="keyword">new</span> ArrayList&lt;E&gt;();</span>
-<span class="line">	Iterator&lt;E&gt; it1 = left.iterator();</span>
-<span class="line">	Iterator&lt;E&gt; it2 = right.iterator();</span>
+<span class="line">    List&lt;E&gt; result = <span class="keyword">new</span> ArrayList&lt;E&gt;();</span>
+<span class="line">    Iterator&lt;E&gt; it1 = left.iterator();</span>
+<span class="line">    Iterator&lt;E&gt; it2 = right.iterator();</span>
 <span class="line"></span>
-<span class="line">	E x = it1.next();</span>
-<span class="line">	E y = it2.next();</span>
-<span class="line">	<span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span>
-<span class="line">		<span class="comment">// change the direction of this comparison to change the direction</span></span>
-<span class="line">		<span class="comment">// of the sort</span></span>
-<span class="line">		<span class="keyword">if</span> (x.compareTo(y) &lt;= <span class="number">0</span>) &#123;</span>
-<span class="line">			result.add(x);</span>
-<span class="line">			<span class="keyword">if</span> (it1.hasNext()) &#123;</span>
-<span class="line">				x = it1.next();</span>
-<span class="line">			&#125; <span class="keyword">else</span> &#123;</span>
-<span class="line">				result.add(y);</span>
-<span class="line">				<span class="keyword">while</span> (it2.hasNext()) &#123;</span>
-<span class="line">					result.add(it2.next());</span>
-<span class="line">				&#125;</span>
-<span class="line">				<span class="keyword">break</span>;</span>
-<span class="line">			&#125;</span>
-<span class="line">		&#125; <span class="keyword">else</span> &#123;</span>
-<span class="line">			result.add(y);</span>
-<span class="line">			<span class="keyword">if</span> (it2.hasNext()) &#123;</span>
-<span class="line">				y = it2.next();</span>
-<span class="line">			&#125; <span class="keyword">else</span> &#123;</span>
-<span class="line">				result.add(x);</span>
-<span class="line">				<span class="keyword">while</span> (it1.hasNext()) &#123;</span>
-<span class="line">					result.add(it1.next());</span>
-<span class="line">				&#125;</span>
-<span class="line">				<span class="keyword">break</span>;</span>
-<span class="line">			&#125;</span>
-<span class="line">		&#125;</span>
-<span class="line">	&#125;</span>
-<span class="line">	<span class="keyword">return</span> result;</span>
+<span class="line">    E x = it1.next();</span>
+<span class="line">    E y = it2.next();</span>
+<span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span>
+<span class="line">        <span class="comment">// change the direction of this comparison to change the direction</span></span>
+<span class="line">        <span class="comment">// of the sort</span></span>
+<span class="line">        <span class="keyword">if</span> (x.compareTo(y) &lt;= <span class="number">0</span>) &#123;</span>
+<span class="line">            result.add(x);</span>
+<span class="line">            <span class="keyword">if</span> (it1.hasNext()) &#123;</span>
+<span class="line">                x = it1.next();</span>
+<span class="line">            &#125; <span class="keyword">else</span> &#123;</span>
+<span class="line">                result.add(y);</span>
+<span class="line">                <span class="keyword">while</span> (it2.hasNext()) &#123;</span>
+<span class="line">                    result.add(it2.next());</span>
+<span class="line">                &#125;</span>
+<span class="line">                <span class="keyword">break</span>;</span>
+<span class="line">            &#125;</span>
+<span class="line">        &#125; <span class="keyword">else</span> &#123;</span>
+<span class="line">            result.add(y);</span>
+<span class="line">            <span class="keyword">if</span> (it2.hasNext()) &#123;</span>
+<span class="line">                y = it2.next();</span>
+<span class="line">            &#125; <span class="keyword">else</span> &#123;</span>
+<span class="line">                result.add(x);</span>
+<span class="line">                <span class="keyword">while</span> (it1.hasNext()) &#123;</span>
+<span class="line">                    result.add(it1.next());</span>
+<span class="line">                &#125;</span>
+<span class="line">                <span class="keyword">break</span>;</span>
+<span class="line">            &#125;</span>
+<span class="line">        &#125;</span>
+<span class="line">    &#125;</span>
+<span class="line">    <span class="keyword">return</span> result;</span>
 <span class="line">&#125;</span>
 </pre></td></tr></table></figure>
 <h3 id="迭代版"><a href="#迭代版" class="headerlink" title="迭代版"></a>迭代版</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
@@ -370,49 +364,39 @@
 <span class="line">31</span>
 <span class="line">32</span>
 <span class="line">33</span>
-<span class="line">34</span>
-<span class="line">35</span>
-<span class="line">36</span>
-<span class="line">37</span>
-<span class="line">38</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 归并排序，迭代版</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: nums</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
-<span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span>
-<span class="line">	<span class="keyword">int</span> len = nums.length;</span>
-<span class="line">	<span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span>
-<span class="line">	<span class="keyword">int</span> block, start;</span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment">     * 归并排序，迭代版</span></span>
+<span class="line"><span class="comment">     */</span></span>
+<span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span>
+<span class="line">        <span class="keyword">int</span> len = nums.length;</span>
+<span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span>
+<span class="line">        <span class="keyword">int</span> block, start;</span>
 <span class="line"></span>
-<span class="line">	<span class="keyword">for</span> (block = <span class="number">1</span>; block &lt; len*<span class="number">2</span>; block *= <span class="number">2</span>) &#123;</span>
-<span class="line">		<span class="keyword">for</span> (start = <span class="number">0</span>; start &lt; len; start += <span class="number">2</span> * block) &#123;</span>
-<span class="line">			<span class="keyword">int</span> low = start;</span>
-<span class="line">			<span class="keyword">int</span> mid = (start + block) &lt; len ? (start + block) : len;</span>
-<span class="line">			<span class="keyword">int</span> high = (start + <span class="number">2</span> * block) &lt; len ? (start + <span class="number">2</span> * block)</span>
-<span class="line">					: len;</span>
-<span class="line">			<span class="comment">// 两个块的起始下标及结束下标</span></span>
-<span class="line">			<span class="keyword">int</span> start1 = low, end1 = mid;</span>
-<span class="line">			<span class="keyword">int</span> start2 = mid, end2 = high;</span>
-<span class="line">			<span class="comment">// 开始对两个block进行归并排序</span></span>
-<span class="line">			<span class="keyword">while</span> (start1 &lt; end1 &amp;&amp; start2 &lt; end2) &#123;</span>
-<span class="line">				result[low++] = nums[start1] &lt; nums[start2] ? nums[start1++]</span>
-<span class="line">						: nums[start2++];</span>
-<span class="line">			&#125;</span>
-<span class="line">			<span class="keyword">while</span> (start1 &lt; end1) &#123;</span>
-<span class="line">				result[low++] = nums[start1++];</span>
-<span class="line">			&#125;</span>
-<span class="line">			<span class="keyword">while</span> (start2 &lt; end2) &#123;</span>
-<span class="line">				result[low++] = nums[start2++];</span>
-<span class="line">			&#125;</span>
-<span class="line">		&#125;</span>
-<span class="line">		<span class="keyword">int</span>[] temp = nums;</span>
-<span class="line">		nums = result;</span>
-<span class="line">		result = temp;</span>
-<span class="line">	&#125;</span>
-<span class="line">	result = nums;</span>
-<span class="line">&#125;</span>
+<span class="line">        <span class="keyword">for</span> (block = <span class="number">1</span>; block &lt; len * <span class="number">2</span>; block *= <span class="number">2</span>) &#123;</span>
+<span class="line">            <span class="keyword">for</span> (start = <span class="number">0</span>; start &lt; len; start += <span class="number">2</span> * block) &#123;</span>
+<span class="line">                <span class="keyword">int</span> low = start;</span>
+<span class="line">                <span class="keyword">int</span> mid = (start + block) &lt; len ? (start + block) : len;</span>
+<span class="line">                <span class="keyword">int</span> high = (start + <span class="number">2</span> * block) &lt; len ? (start + <span class="number">2</span> * block) : len;</span>
+<span class="line">                <span class="comment">// 两个块的起始下标及结束下标</span></span>
+<span class="line">                <span class="keyword">int</span> start1 = low, end1 = mid;</span>
+<span class="line">                <span class="keyword">int</span> start2 = mid, end2 = high;</span>
+<span class="line">                <span class="comment">// 开始对两个block进行归并排序</span></span>
+<span class="line">                <span class="keyword">while</span> (start1 &lt; end1 &amp;&amp; start2 &lt; end2) &#123;</span>
+<span class="line">                    result[low++] = nums[start1] &lt; nums[start2] ? nums[start1++] : nums[start2++];</span>
+<span class="line">                &#125;</span>
+<span class="line">                <span class="keyword">while</span> (start1 &lt; end1) &#123;</span>
+<span class="line">                    result[low++] = nums[start1++];</span>
+<span class="line">                &#125;</span>
+<span class="line">                <span class="keyword">while</span> (start2 &lt; end2) &#123;</span>
+<span class="line">                    result[low++] = nums[start2++];</span>
+<span class="line">                &#125;</span>
+<span class="line">            &#125;</span>
+<span class="line">            <span class="keyword">int</span>[] temp = nums;</span>
+<span class="line">            nums = result;</span>
+<span class="line">            result = temp;</span>
+<span class="line">        &#125;</span>
+<span class="line">        result = nums;</span>
+<span class="line">    &#125;</span>
 </pre></td></tr></table></figure>
 <h2 id="算法复杂度分析"><a href="#算法复杂度分析" class="headerlink" title="算法复杂度分析"></a>算法复杂度分析</h2><p>比较操作的次数介于(n*logn)/2(n log n)/2和n*logn?n+1。 赋值操作的次数是 n*logn。归并算法的空间复杂度为：O(n)。</p>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>

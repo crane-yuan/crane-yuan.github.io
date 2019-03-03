@@ -22,7 +22,7 @@
 
 
 
-  <meta name="keywords" content="LeetCode, algorithm, CornerCat" />
+  <meta name="keywords" content="leetcode, algorithm, CornerCat" />
 
 
 
@@ -215,12 +215,8 @@
 <span class="line">9</span>
 <span class="line">10</span>
 <span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 单链表定义</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@author</span>: crane-yuan</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@date</span>: 2016-9-17 下午12:11:13</span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/** </span></span>
+<span class="line"><span class="comment"> * 单链表定义</span></span>
 <span class="line"><span class="comment"> */</span></span>
 <span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListNode</span> </span>&#123;</span>
 <span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> val;</span>
@@ -250,22 +246,18 @@
 <span class="line">17</span>
 <span class="line">18</span>
 <span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 单链表反转</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span> head</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span> ListNode</span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 单链表反转</span></span>
 <span class="line"><span class="comment"> */</span></span>
 <span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ListNode <span class="title">reverseList</span><span class="params">(ListNode head)</span> </span>&#123;</span>
 <span class="line">    <span class="keyword">if</span> (head == <span class="keyword">null</span>) &#123;</span>
 <span class="line">        <span class="keyword">return</span> head;</span>
 <span class="line">    &#125;</span>
-<span class="line">    ListNode prev = <span class="keyword">null</span> ;</span>
+<span class="line">    ListNode prev = <span class="keyword">null</span>;</span>
 <span class="line">    ListNode current = head;</span>
-<span class="line">    ListNode next = <span class="keyword">null</span> ;</span>
+<span class="line">    ListNode next = <span class="keyword">null</span>;</span>
 <span class="line">    <span class="keyword">while</span> (current != <span class="keyword">null</span>) &#123;</span>
-<span class="line">        next = current.next ;</span>
+<span class="line">        next = current.next;</span>
 <span class="line">        current.next = prev;</span>
 <span class="line">        prev = current;</span>
 <span class="line">        current = next;</span>
@@ -328,16 +320,8 @@
 <span class="line">50</span>
 <span class="line">51</span>
 <span class="line">52</span>
-<span class="line">53</span>
-<span class="line">54</span>
-<span class="line">55</span>
-<span class="line">56</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 单链表反转，反转指定区间内的节点</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span> head</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span> m</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span> n</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span> ListNode</span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 单链表反转，反转指定区间内的节点</span></span>
 <span class="line"><span class="comment"> */</span></span>
 <span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ListNode <span class="title">reverseBetween</span><span class="params">(ListNode head, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span>
 <span class="line">    <span class="comment">// 合法性检测</span></span>
@@ -356,7 +340,7 @@
 <span class="line">    ListNode second = first;</span>
 <span class="line">    ListNode third = first;</span>
 <span class="line">    ListNode current = first;</span>
-<span class="line">    <span class="keyword">int</span>  i = <span class="number">0</span>;</span>
+<span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span>
 <span class="line">    <span class="keyword">while</span> (current != <span class="keyword">null</span>) &#123;</span>
 <span class="line">        i++;</span>
 <span class="line">        <span class="keyword">if</span> (i == m - <span class="number">1</span>) &#123;</span>
@@ -366,18 +350,18 @@
 <span class="line">            second = current;</span>
 <span class="line">        &#125;</span>
 <span class="line">        <span class="keyword">if</span> (i == n) &#123;</span>
-<span class="line">            third = current.next ;</span>
-<span class="line">            <span class="keyword">break</span> ;</span>
+<span class="line">            third = current.next;</span>
+<span class="line">            <span class="keyword">break</span>;</span>
 <span class="line">        &#125;</span>
-<span class="line">        current = current.next ;</span>
+<span class="line">        current = current.next;</span>
 <span class="line">    &#125;</span>
 <span class="line">    <span class="comment">// 进行中间second段的reverse</span></span>
 <span class="line">    current = second;</span>
 <span class="line">    ListNode prev = third;</span>
-<span class="line">    ListNode next =  <span class="keyword">null</span> ;</span>
+<span class="line">    ListNode next = <span class="keyword">null</span>;</span>
 <span class="line">    <span class="keyword">while</span> (current != third) &#123;</span>
-<span class="line">        next = current. next ;</span>
-<span class="line">        current. next  = prev;</span>
+<span class="line">        next = current.next;</span>
+<span class="line">        current.next = prev;</span>
 <span class="line">        prev = current;</span>
 <span class="line">        current = next;</span>
 <span class="line">    &#125;</span>
@@ -427,7 +411,7 @@
         
           <div class="post-tags">
             
-              <a href="/tags/LeetCode/">LeetCode</a>
+              <a href="/tags/leetcode/">leetcode</a>
             
               <a href="/tags/algorithm/">algorithm</a>
             

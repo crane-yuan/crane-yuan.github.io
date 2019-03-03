@@ -204,7 +204,7 @@
     <div class="post-content">
       
         <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
-<p>选择排序（英语：Selection sort）是一种简单直观的排序算法。它首先在未排序的序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
+<p>选择排序（英文：selection sort）是一种简单直观的排序算法。它首先在未排序的序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
 </blockquote>
 <p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521872863/blog/ycjwfucucvgowsx1fd00.gif" alt="选择排序演示动画"></p>
 <p>选择排序的主要优点与数据移动有关。如果某个元素位于正确的最终位置上，则它不会被移动。选择排序每次交换一对元素，它们当中至少有一个将被移到其最终位置上，因此对n个元素的表进行排序总共进行至多n-1次交换。在所有的完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。</p>
@@ -264,16 +264,10 @@
 <span class="line">17</span>
 <span class="line">18</span>
 <span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 选择排序的简单实现</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: nums</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 选择排序的简单实现</span></span>
 <span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span></span>
-<span class="line"><span class="function"></span>&#123;</span>
+<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span>
 <span class="line">    <span class="keyword">int</span> temp;</span>
 <span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> currentPlace = <span class="number">0</span>; currentPlace &lt; nums.length - <span class="number">1</span>; currentPlace++) &#123;</span>
 <span class="line">        <span class="keyword">int</span> smallest = nums[currentPlace + <span class="number">1</span>];</span>
@@ -309,35 +303,25 @@
 <span class="line">17</span>
 <span class="line">18</span>
 <span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 选择排序的简单实现（支持泛型）</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: comparable</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
-<span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function"><span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(</span></span></span>
-<span class="line"><span class="function"><span class="params">            E[] comparable)</span></span></span>
-<span class="line"><span class="function"></span>&#123;</span>
-<span class="line">    E temp;</span>
-<span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> currentPlace = <span class="number">0</span>; currentPlace &lt; comparable.length - <span class="number">1</span>; currentPlace++) &#123;</span>
-<span class="line">        E smallest = comparable[currentPlace + <span class="number">1</span>];</span>
-<span class="line">        <span class="keyword">int</span> smallestAt = currentPlace + <span class="number">1</span>;</span>
-<span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> check = currentPlace; check &lt; comparable.length; check++) &#123;</span>
-<span class="line">            <span class="keyword">if</span> (comparable[check].compareTo(smallest) &lt; <span class="number">0</span>) &#123;</span>
-<span class="line">                smallestAt = check;</span>
-<span class="line">                smallest = comparable[check];</span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment">     * 选择排序的简单实现（支持泛型）</span></span>
+<span class="line"><span class="comment">     */</span></span>
+<span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function"><span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(E[] comparable)</span> </span>&#123;</span>
+<span class="line">        E temp;</span>
+<span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> currentPlace = <span class="number">0</span>; currentPlace &lt; comparable.length - <span class="number">1</span>; currentPlace++) &#123;</span>
+<span class="line">            E smallest = comparable[currentPlace + <span class="number">1</span>];</span>
+<span class="line">            <span class="keyword">int</span> smallestAt = currentPlace + <span class="number">1</span>;</span>
+<span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> check = currentPlace; check &lt; comparable.length; check++) &#123;</span>
+<span class="line">                <span class="keyword">if</span> (comparable[check].compareTo(smallest) &lt; <span class="number">0</span>) &#123;</span>
+<span class="line">                    smallestAt = check;</span>
+<span class="line">                    smallest = comparable[check];</span>
+<span class="line">                &#125;</span>
 <span class="line">            &#125;</span>
+<span class="line">            temp = comparable[currentPlace];</span>
+<span class="line">            comparable[currentPlace] = comparable[smallestAt];</span>
+<span class="line">            comparable[smallestAt] = temp;</span>
 <span class="line">        &#125;</span>
-<span class="line">        temp = comparable[currentPlace];</span>
-<span class="line">        comparable[currentPlace] = comparable[smallestAt];</span>
-<span class="line">        comparable[smallestAt] = temp;</span>
 <span class="line">    &#125;</span>
-<span class="line">&#125;</span>
 </pre></td></tr></table></figure>
 <h2 id="算法复杂度分析"><a href="#算法复杂度分析" class="headerlink" title="算法复杂度分析"></a>算法复杂度分析</h2><ul>
 <li>选择排序的<strong><em>交换操作</em></strong>介于0和(n-1)次之间。选择排序的<strong><em>比较操作</em></strong>为n(n-1)/2次之间。选择排序的<strong><em>赋值操作</em></strong>介于0和3(n-1)次之间。</li>

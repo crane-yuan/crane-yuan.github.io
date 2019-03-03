@@ -204,7 +204,7 @@
     <div class="post-content">
       
         <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
-<p>希尔排序（英语：Shell sort），也称递减增量排序算法，是插入排序的一种更高效的改进版本。希尔排序是非稳定排序算法。</p>
+<p>希尔排序（英文：shell sort），也称递减增量排序算法，是插入排序的一种更高效的改进版本。希尔排序是非稳定排序算法。</p>
 </blockquote>
 <p>希尔排序是基于插入排序的以下两点性质而提出改进方法的：</p>
 <ul>
@@ -243,17 +243,10 @@
 <span class="line">19</span>
 <span class="line">20</span>
 <span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 希尔排序</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@param</span>: nums</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@return</span>: void</span></span>
-<span class="line"><span class="comment"> * <span class="doctag">@throws</span></span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 希尔排序</span></span>
 <span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shellSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span></span>
-<span class="line"><span class="function"></span>&#123;</span>
+<span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shellSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span>
 <span class="line">    <span class="keyword">int</span> gap = <span class="number">1</span>, i, j, len = nums.length;</span>
 <span class="line">    <span class="keyword">int</span> temp;</span>
 <span class="line">    <span class="comment">// 选择步长</span></span>
@@ -264,8 +257,9 @@
 <span class="line">    <span class="keyword">for</span> (; gap &gt; <span class="number">0</span>; gap /= <span class="number">3</span>) &#123;</span>
 <span class="line">        <span class="keyword">for</span> (i = gap; i &lt; len; i++) &#123;</span>
 <span class="line">            temp = nums[i];</span>
-<span class="line">            <span class="keyword">for</span> (j = i - gap; j &gt;= <span class="number">0</span> &amp;&amp; nums[j] &gt; temp; j -= gap)</span>
+<span class="line">            <span class="keyword">for</span> (j = i - gap; j &gt;= <span class="number">0</span> &amp;&amp; nums[j] &gt; temp; j -= gap) &#123;</span>
 <span class="line">                nums[j + gap] = nums[j];</span>
+<span class="line">            &#125;</span>
 <span class="line">            nums[j + gap] = temp;</span>
 <span class="line">        &#125;</span>
 <span class="line">    &#125;</span>

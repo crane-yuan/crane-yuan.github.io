@@ -2,64 +2,8 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://craneyuan.github.io/tags/%E6%8F%92%E4%BB%B6/</loc>
-        <lastmod>2018-03-26T13:35:21.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/tags/GitHub/</loc>
-        <lastmod>2018-03-26T13:43:11.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/tags/Landscape/</loc>
-        <lastmod>2018-03-26T14:04:20.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/tags/Linux/</loc>
-        <lastmod>2018-03-26T14:07:06.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://craneyuan.github.io/tags/tools/</loc>
         <lastmod>2018-03-26T14:08:30.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/tags/Check/</loc>
-        <lastmod>2018-03-26T14:34:22.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/tags/uml/</loc>
-        <lastmod>2018-03-26T14:40:30.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/tags/sort/</loc>
-        <lastmod>2018-03-26T14:46:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/tags/%E6%8E%92%E7%89%88/</loc>
-        <lastmod>2018-03-26T14:47:53.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -72,50 +16,71 @@
     </url>
 
     <url>
-        <loc>https://craneyuan.github.io/tags/JPA/</loc>
-        <lastmod>2018-07-30T16:14:38.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/tags/Hexo/</loc>
-        <lastmod>2018-12-29T07:37:39.239Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://craneyuan.github.io/tags/best-practice/</loc>
-        <lastmod>2019-03-03T07:54:10.515Z</lastmod>
+        <lastmod>2019-03-03T14:15:56.409Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://craneyuan.github.io/tags/Java/</loc>
-        <lastmod>2019-03-03T13:14:55.311Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://craneyuan.github.io/tags/how-to/</loc>
-        <lastmod>2019-03-03T13:14:55.311Z</lastmod>
+        <loc>https://craneyuan.github.io/tags/uml/</loc>
+        <lastmod>2019-03-03T14:34:59.100Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://craneyuan.github.io/tags/algorithm/</loc>
-        <lastmod>2019-03-03T13:27:20.161Z</lastmod>
+        <lastmod>2019-03-03T14:47:20.110Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://craneyuan.github.io/tags/LeetCode/</loc>
-        <lastmod>2019-03-03T13:30:01.743Z</lastmod>
+        <loc>https://craneyuan.github.io/tags/sort/</loc>
+        <lastmod>2019-03-03T14:48:05.417Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/tags/leetcode/</loc>
+        <lastmod>2019-03-03T14:49:36.926Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/tags/linux/</loc>
+        <lastmod>2019-03-03T14:50:38.427Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/tags/hexo/</loc>
+        <lastmod>2019-03-03T14:52:05.670Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/tags/plugin/</loc>
+        <lastmod>2019-03-03T14:52:29.821Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/tags/how-to/</loc>
+        <lastmod>2019-03-03T14:56:48.112Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://craneyuan.github.io/tags/java/</loc>
+        <lastmod>2019-03-03T15:02:14.702Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
