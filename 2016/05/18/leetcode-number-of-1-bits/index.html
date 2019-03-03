@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="本文介绍了如何统计 32 位整数二进制格式下'1'的个数。"/>
+  <meta name="description" content="本文介绍了如何统计 32 位无符号整数二进制格式下'1'的个数。"/>
 
 
 
@@ -207,7 +207,7 @@
 <p>Write a function that takes an unsigned integer and returns the number of ’1’ bits it has (also known as the Hamming weight).</p>
 <p>For example, the 32-bit integer ’11’ has binary representation 00000000000000000000000000001011, so the function should return 3.</p>
 </blockquote>
-<h2 id="解说"><a href="#解说" class="headerlink" title="解说"></a>解说</h2><p>这道题的意思是统计32位整数二进制格式下的‘1’的个数。</p>
+<h2 id="解说"><a href="#解说" class="headerlink" title="解说"></a>解说</h2><p>这道题的意思是统计32位无符号整数二进制格式下的‘1’的个数。</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="right-shift-counting"><a href="#right-shift-counting" class="headerlink" title="right-shift counting"></a>right-shift counting</h3><p>The simplest technique is right-shift the number 32 times, counting the number of times you right-shift a one bit off.</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span>
 <span class="line">2</span>

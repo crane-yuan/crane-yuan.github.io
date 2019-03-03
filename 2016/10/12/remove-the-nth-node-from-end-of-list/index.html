@@ -245,49 +245,45 @@
 <span class="line">38</span>
 <span class="line">39</span>
 <span class="line">40</span>
-<span class="line">41</span>
-<span class="line">42</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 删除单链表倒数第n个节点，常规解法.</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> *  <span class="doctag">@param</span>  head</span></span>
-<span class="line"><span class="comment"> *  <span class="doctag">@param</span>  n</span></span>
-<span class="line"><span class="comment"> *  <span class="doctag">@return</span>  ListNode</span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 删除单链表倒数第n个节点，常规解法.</span></span>
 <span class="line"><span class="comment"> */</span></span>
 <span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ListNode <span class="title">removeNthFromEnd</span><span class="params">(ListNode head, <span class="keyword">int</span> n)</span> </span>&#123;</span>
-<span class="line">    <span class="keyword">if</span>(head == <span class="keyword">null</span>) &#123;</span>
-<span class="line">        <span class="keyword">return</span> <span class="keyword">null</span> ;</span>
+<span class="line">    <span class="keyword">if</span> (head == <span class="keyword">null</span>) &#123;</span>
+<span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span>
 <span class="line">    &#125;</span>
 <span class="line"></span>
 <span class="line">    <span class="comment">//get length of list</span></span>
 <span class="line">    ListNode p = head;</span>
 <span class="line">    <span class="keyword">int</span> len = <span class="number">0</span>;</span>
 <span class="line"></span>
-<span class="line">    <span class="keyword">while</span>(p !=  <span class="keyword">null</span>) &#123;</span>
+<span class="line">    <span class="keyword">while</span> (p != <span class="keyword">null</span>) &#123;</span>
 <span class="line">        len++;</span>
-<span class="line">        p = p.next ;</span>
+<span class="line">        p = p.next;</span>
 <span class="line">    &#125;</span>
 <span class="line"></span>
 <span class="line">    <span class="comment">//if remove first node</span></span>
 <span class="line">    <span class="keyword">int</span> fromStart = len - n + <span class="number">1</span>;</span>
 <span class="line"></span>
-<span class="line">    <span class="keyword">if</span>(fromStart == <span class="number">1</span>)</span>
-<span class="line">        <span class="keyword">return</span>  head. next ;</span>
+<span class="line">    <span class="keyword">if</span> (fromStart == <span class="number">1</span>) &#123;</span>
+<span class="line">        <span class="keyword">return</span> head.next;</span>
+<span class="line">    &#125;</span>
 <span class="line"></span>
 <span class="line">    <span class="comment">//remove non-first node</span></span>
 <span class="line">    p = head;</span>
 <span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span>
 <span class="line"></span>
-<span class="line">    <span class="keyword">while</span>(p != <span class="keyword">null</span>) &#123;</span>
+<span class="line">    <span class="keyword">while</span> (p != <span class="keyword">null</span>) &#123;</span>
 <span class="line">        i++;</span>
 <span class="line"></span>
-<span class="line">        <span class="keyword">if</span>(i == fromStart - <span class="number">1</span>) &#123;</span>
-<span class="line">            p.next = p.next.next ;</span>
+<span class="line">        <span class="keyword">if</span> (i == fromStart - <span class="number">1</span>) &#123;</span>
+<span class="line">            p.next = p.next.next;</span>
 <span class="line">        &#125;</span>
 <span class="line"></span>
-<span class="line">        p = p.next ;</span>
+<span class="line">        p = p.next;</span>
 <span class="line">    &#125;</span>
 <span class="line"></span>
-<span class="line">    <span class="keyword">return</span>  head;</span>
+<span class="line">    <span class="keyword">return</span> head;</span>
 <span class="line">&#125;</span>
 </pre></td></tr></table></figure>
 <h2 id="一次遍历法"><a href="#一次遍历法" class="headerlink" title="一次遍历法"></a>一次遍历法</h2><p>使用快慢指针。快指针比慢指针提前n个单元。当快指针到达单链表尾部时，慢指针指向待删除节点的前节点。</p>
@@ -320,42 +316,38 @@
 <span class="line">27</span>
 <span class="line">28</span>
 <span class="line">29</span>
-<span class="line">30</span>
-<span class="line">31</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/** 删除单链表倒数第n个节点，快慢指针法.</span></span>
-<span class="line"><span class="comment"> *</span></span>
-<span class="line"><span class="comment"> *  <span class="doctag">@param</span>  head</span></span>
-<span class="line"><span class="comment"> *  <span class="doctag">@param</span>  n</span></span>
-<span class="line"><span class="comment"> *  <span class="doctag">@return</span>  ListNode</span></span>
+</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
+<span class="line"><span class="comment"> * 删除单链表倒数第n个节点，快慢指针法.</span></span>
 <span class="line"><span class="comment"> */</span></span>
 <span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ListNode <span class="title">removeNthFromEnd</span><span class="params">(ListNode head, <span class="keyword">int</span> n)</span> </span>&#123;</span>
-<span class="line">    <span class="keyword">if</span>(head == <span class="keyword">null</span>)</span>
-<span class="line">        <span class="keyword">return</span> <span class="keyword">null</span> ;</span>
+<span class="line">    <span class="keyword">if</span> (head == <span class="keyword">null</span>) &#123;</span>
+<span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span>
+<span class="line">    &#125;</span>
 <span class="line"></span>
 <span class="line">    ListNode fast = head;</span>
 <span class="line">    ListNode slow = head;</span>
 <span class="line"></span>
-<span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span>
-<span class="line">        fast = fast.next ;</span>
+<span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span>
+<span class="line">        fast = fast.next;</span>
 <span class="line">    &#125;</span>
 <span class="line"></span>
 <span class="line">    <span class="comment">//if remove the first node</span></span>
-<span class="line">    <span class="keyword">if</span>(fast == <span class="keyword">null</span>) &#123;</span>
-<span class="line">        head = head.next ;</span>
+<span class="line">    <span class="keyword">if</span> (fast == <span class="keyword">null</span>) &#123;</span>
+<span class="line">        head = head.next;</span>
 <span class="line">        <span class="keyword">return</span> head;</span>
 <span class="line">    &#125;</span>
 <span class="line"></span>
-<span class="line">    <span class="keyword">while</span>(fast.next != <span class="keyword">null</span>) &#123;</span>
-<span class="line">        fast = fast.next ;</span>
-<span class="line">        slow = slow.next ;</span>
+<span class="line">    <span class="keyword">while</span> (fast.next != <span class="keyword">null</span>) &#123;</span>
+<span class="line">        fast = fast.next;</span>
+<span class="line">        slow = slow.next;</span>
 <span class="line">    &#125;</span>
 <span class="line"></span>
-<span class="line">    slow.next = slow.next.next ;</span>
+<span class="line">    slow.next = slow.next.next;</span>
 <span class="line">    <span class="keyword">return</span> head;</span>
 <span class="line">&#125;</span>
 </pre></td></tr></table></figure>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
-<li><a href="Remove-the-Nth-node-from-end-of-list">Remove Nth Node From End of List</a></li>
+<li><a href="https://leetcode.com/articles/remove-nth-node-end-list/" target="_blank" rel="noopener">LeetCode-Remove Nth Node From End of List</a></li>
 </ul>
 
       

@@ -22,7 +22,7 @@
 
 
 
-  <meta name="keywords" content="Java, CornerCat" />
+  <meta name="keywords" content="Java, how-to, CornerCat" />
 
 
 
@@ -98,7 +98,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
 </script>
 
-    <title> Java文件拷贝的几种实现方案 - CornerCat </title>
+    <title> Java中文件拷贝的几种实现方案 - CornerCat </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -178,7 +178,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          Java文件拷贝的几种实现方案
+          Java中文件拷贝的几种实现方案
         
       </h1>
 
@@ -208,9 +208,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
 <span class="line">2</span>
 <span class="line">3</span>
-<span class="line">4</span>
-</pre></td><td class="code"><pre><span class="line">private static void copyFileUsingJava7Files(File source, File dest)</span>
-<span class="line">throws IOException &#123;</span>
+</pre></td><td class="code"><pre><span class="line">private static void copyFileUsingJava7Files(File source, File dest) throws IOException &#123;</span>
 <span class="line">    Files.copy(source.toPath(), dest.toPath());</span>
 <span class="line">&#125;</span>
 </pre></td></tr></table></figure>
@@ -234,29 +232,7 @@
 <span class="line">18</span>
 <span class="line">19</span>
 <span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-<span class="line">25</span>
-<span class="line">26</span>
-<span class="line">27</span>
-<span class="line">28</span>
-<span class="line">29</span>
-<span class="line">30</span>
-<span class="line">31</span>
-</pre></td><td class="code"><pre><span class="line">/**</span>
-<span class="line"> *</span>
-<span class="line"> * @Title: copyFileUsingStream</span>
-<span class="line"> * @Description: 使用Stream拷贝文件</span>
-<span class="line"> * @param: @param source</span>
-<span class="line"> * @param: @param dest</span>
-<span class="line"> * @param: @throws IOException</span>
-<span class="line"> * @return: void</span>
-<span class="line"> * @throws</span>
-<span class="line"> */</span>
-<span class="line">public static void copyFileUsingStream(File source, File dest)</span>
-<span class="line">throws IOException &#123;</span>
+</pre></td><td class="code"><pre><span class="line">public static void copyFileUsingStream(File source, File dest) throws IOException &#123;</span>
 <span class="line">    InputStream is = null;</span>
 <span class="line">    OutputStream os = null;</span>
 <span class="line">    try &#123;</span>
@@ -268,10 +244,10 @@
 <span class="line">            os.write(buffer, 0, length);</span>
 <span class="line">        &#125;</span>
 <span class="line">    &#125; finally &#123;</span>
-<span class="line">        if(is != null) &#123;</span>
+<span class="line">        if (is != null) &#123;</span>
 <span class="line">            is.close();</span>
 <span class="line">        &#125;</span>
-<span class="line">        if(os != null) &#123;</span>
+<span class="line">        if (os != null) &#123;</span>
 <span class="line">            os.close();</span>
 <span class="line">        &#125;</span>
 <span class="line">    &#125;</span>
@@ -293,27 +269,7 @@
 <span class="line">14</span>
 <span class="line">15</span>
 <span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-<span class="line">25</span>
-<span class="line">26</span>
-</pre></td><td class="code"><pre><span class="line">/**</span>
-<span class="line"> * @throws IOException</span>
-<span class="line"> *</span>
-<span class="line"> * @Title: copyFileUsingChannel</span>
-<span class="line"> * @Description: 使用Channel拷贝文件</span>
-<span class="line"> * @param: @param source</span>
-<span class="line"> * @param: @param dest</span>
-<span class="line"> * @return: void</span>
-<span class="line"> * @throws</span>
-<span class="line"> */</span>
-<span class="line">public static void copyFileUsingChannel(File source, File dest) throws IOException &#123;</span>
+</pre></td><td class="code"><pre><span class="line">public static void copyFileUsingChannel(File source, File dest) throws IOException &#123;</span>
 <span class="line">    FileChannel sourceChannel = null;</span>
 <span class="line">    FileChannel destChannel = null;</span>
 <span class="line">    try &#123;</span>
@@ -321,10 +277,10 @@
 <span class="line">        destChannel = new FileOutputStream(dest).getChannel();</span>
 <span class="line">        destChannel.transferFrom(sourceChannel, 0, sourceChannel.size());</span>
 <span class="line">    &#125; finally &#123;</span>
-<span class="line">        if(sourceChannel != null) &#123;</span>
+<span class="line">        if (sourceChannel != null) &#123;</span>
 <span class="line">            sourceChannel.close();</span>
 <span class="line">        &#125;</span>
-<span class="line">        if(destChannel != null) &#123;</span>
+<span class="line">        if (destChannel != null) &#123;</span>
 <span class="line">            destChannel.close();</span>
 <span class="line">        &#125;</span>
 <span class="line">    &#125;</span>
@@ -358,27 +314,7 @@
 <span class="line">19</span>
 <span class="line">20</span>
 <span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-<span class="line">25</span>
-<span class="line">26</span>
-<span class="line">27</span>
-<span class="line">28</span>
-<span class="line">29</span>
-<span class="line">30</span>
-<span class="line">31</span>
-</pre></td><td class="code"><pre><span class="line">/**</span>
-<span class="line"> *</span>
-<span class="line"> * @Title: copyFileUsingRedirection</span>
-<span class="line"> * @Description: 使用Redirection拷贝文件</span>
-<span class="line"> * @param: @param source</span>
-<span class="line"> * @param: @param dest</span>
-<span class="line"> * @param: @throws IOException</span>
-<span class="line"> * @return: void</span>
-<span class="line"> * @throws</span>
-<span class="line"> */</span>
-<span class="line">public static void copyFileUsingRedirection(File source, File dest) throws IOException &#123;</span>
+</pre></td><td class="code"><pre><span class="line">public static void copyFileUsingRedirection(File source, File dest) throws IOException &#123;</span>
 <span class="line">    FileInputStream in = null;</span>
 <span class="line">    PrintStream out = null;</span>
 <span class="line">    try &#123;</span>
@@ -387,14 +323,14 @@
 <span class="line">        System.setIn(in);</span>
 <span class="line">        System.setOut(out);</span>
 <span class="line">        Scanner sc = new Scanner(System.in);</span>
-<span class="line">        while(sc.hasNext()) &#123;</span>
+<span class="line">        while (sc.hasNext()) &#123;</span>
 <span class="line">            System.out.println(sc.nextLine());</span>
 <span class="line">        &#125;</span>
-<span class="line">    &#125; finally&#123;</span>
-<span class="line">        if(in != null) &#123;</span>
+<span class="line">    &#125; finally &#123;</span>
+<span class="line">        if (in != null) &#123;</span>
 <span class="line">            in.close();</span>
 <span class="line">        &#125;</span>
-<span class="line">        if(out != null) &#123;</span>
+<span class="line">        if (out != null) &#123;</span>
 <span class="line">            out.close();</span>
 <span class="line">        &#125;</span>
 <span class="line">    &#125;</span>
@@ -436,6 +372,8 @@
           <div class="post-tags">
             
               <a href="/tags/Java/">Java</a>
+            
+              <a href="/tags/how-to/">how-to</a>
             
           </div>
         
@@ -569,7 +507,7 @@ function googleTranslateElementInit() {
     var disqus_config = function () {
         this.page.url = 'https://craneyuan.github.io/2016/08/23/the-ways-of-copy-file/';
         this.page.identifier = '2016/08/23/the-ways-of-copy-file/';
-        this.page.title = 'Java文件拷贝的几种实现方案';
+        this.page.title = 'Java中文件拷贝的几种实现方案';
     };
     (function() {
     var d = document, s = d.createElement('script');

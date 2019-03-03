@@ -221,10 +221,10 @@
 <span class="line">10</span>
 <span class="line">11</span>
 <span class="line">12</span>
-</pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="keyword">int</span>[] nums)</span></span></span>
-<span class="line"><span class="function"></span>&#123;</span>
-<span class="line">    <span class="keyword">if</span> (nums.length &lt; <span class="number">1</span>)</span>
+</pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span>
+<span class="line">    <span class="keyword">if</span> (nums.length &lt; <span class="number">1</span>) &#123;</span>
 <span class="line">        <span class="keyword">return</span> nums.length;</span>
+<span class="line">    &#125;</span>
 <span class="line">    <span class="keyword">int</span> slow = <span class="number">1</span>;</span>
 <span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> fast = <span class="number">1</span>; fast &lt; nums.length; fast++) &#123;</span>
 <span class="line">        <span class="keyword">if</span> (nums[fast] != nums[slow - <span class="number">1</span>]) &#123;</span>
@@ -236,7 +236,8 @@
 </pre></td></tr></table></figure>
 <p>动画演示：</p>
 <p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521870522/blog/viq29qhdvdn6wux4u635.gif" alt="动画演示"></p>
-<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p>去除已排序数组中的重复元素，保留指定位数。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p>去除已排序数组中的重复元素，保留指定位数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
 <span class="line">2</span>
 <span class="line">3</span>
 <span class="line">4</span>
@@ -248,10 +249,10 @@
 <span class="line">10</span>
 <span class="line">11</span>
 <span class="line">12</span>
-</pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">removeDuplicatesN</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> repeatN)</span></span></span>
-<span class="line"><span class="function"></span>&#123;</span>
-<span class="line">    <span class="keyword">if</span> (nums.length &lt;= repeatN)</span>
+</pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">removeDuplicatesN</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> repeatN)</span> </span>&#123;</span>
+<span class="line">    <span class="keyword">if</span> (nums.length &lt;= repeatN) &#123;</span>
 <span class="line">        <span class="keyword">return</span> nums.length;</span>
+<span class="line">    &#125;</span>
 <span class="line">    <span class="keyword">int</span> index = repeatN;</span>
 <span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = repeatN; i &lt; nums.length; i++) &#123;</span>
 <span class="line">        <span class="keyword">if</span> (nums[i] != nums[index - repeatN]) &#123;</span>
@@ -260,9 +261,9 @@
 <span class="line">    &#125;</span>
 <span class="line">    <span class="keyword">return</span> index;</span>
 <span class="line">&#125;</span>
-</pre></td></tr></table></figure></p>
+</pre></td></tr></table></figure>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
-<li><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener"> remove-duplicates-from-sorted-array </a></li>
+<li><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">remove-duplicates-from-sorted-array</a></li>
 </ul>
 
       
