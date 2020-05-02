@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://craneyuan.github.io/"/>
-  <updated>2019-03-03T07:44:02.000Z</updated>
+  <updated>2020-05-02T15:40:47.307Z</updated>
   <id>https://craneyuan.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://craneyuan.github.io/2019/01/31/tools-choose/"/>
     <id>https://craneyuan.github.io/2019/01/31/tools-choose/</id>
     <published>2019-01-31T11:15:42.000Z</published>
-    <updated>2019-03-03T07:44:02.000Z</updated>
+    <updated>2020-05-02T15:40:47.307Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>2018年的总结在本地的笔记本中躺着呢，就不公开了。2019年的也很简单，也就不公开了。</p><p>最近博客更新的频率降了下来了，不是没有什么东西想去分享，只是总怕自己分享的观点有问题、误人子弟了。想起之前写的一些技术文章，确实是有问题的，时效性太强，可能之前这种观点是合理的，过了一段时间就变得不合理了；这也是本人最近不太愿意更新博客的原因之一。其次，就是人变懒了，没有上学期间那么勤快了，实在是惭愧啊！！！</p><p>这篇文章主要分享一些本人平时工作生活中常用的工具。不知道大家会不会遇到这样的情景，有很多同类型的工具都挺不错，难以选择用哪一个，这时候本人会参考下面这几个对比网站来进行抉择（有得选择代表自由，自由的代价就是你得做出选择，哈哈）</p><ul><li><a href="https://alternativeto.net/" target="_blank" rel="noopener">https://alternativeto.net/</a></li><li><a href="https://www.producthunt.com/" target="_blank" rel="noopener">https://www.producthunt.com/</a></li></ul><h2 id="Google-Chrome-插件篇"><a href="#Google-Chrome-插件篇" class="headerlink" title="Google Chrome 插件篇"></a>Google Chrome 插件篇</h2><ul><li>Decentraleyes 网页加速插件 | 预先缓存了一些第三方库文件到本地</li><li>Extension Manager 插件管理器</li><li>OneTab 标签页管理工具</li><li>Proxy SwitchyOmega 代理切换工具</li><li>Privacy Badger 隐私保护工具</li><li>Raindrop 书签同步工具</li><li>Wayback Machine 网页时光机工具</li><li>Tampermonkey 脚本管理器</li></ul><h2 id="编辑器篇"><a href="#编辑器篇" class="headerlink" title="编辑器篇"></a>编辑器篇</h2><ul><li>Simplenote 支持 markdown 的一款比较干净的多端笔记工具</li><li>MWeb 一款还不错的 Mac 下的笔记工具</li><li>Notion 这个笔记工具很炫丽，本人目前正在探索中。这里有篇不错的介绍文章：<a href="https://sspai.com/post/39694" target="_blank" rel="noopener">Notion：重新定义数字笔记</a> | 感兴趣的朋友可以注册试试 <a href="https://www.notion.so/?r=070970cf5ce04d70ae0dfe9b4ad25f99" target="_blank" rel="noopener">邀请码</a></li></ul><h2 id="杂项篇"><a href="#杂项篇" class="headerlink" title="杂项篇"></a>杂项篇</h2><ul><li>Alfred 功能极其强大，workflow 很不错</li><li>KeepPassXC 一款不错的本地密码管理工具，配合浏览器插件一起使用更方便</li></ul><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><a href="https://github.com/nikitavoloboev/my-mac-os" target="_blank" rel="noopener">My wonderful world of macOS</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这篇文章主要分享一些本人平时工作生活中常用的工具。不知道大家会不会遇到这样的情景，有很多同类型的工具都挺不错，难以选择用哪一个，这时候本人会参考下面这几个对比网站来进行抉择（有得选择代表自由，自由的代价就是你得做出选择，哈哈）</p><ul><li><a href="https://alternativeto.net/" target="_blank" rel="noopener">https://alternativeto.net/</a></li><li><a href="https://www.producthunt.com/" target="_blank" rel="noopener">https://www.producthunt.com/</a></li></ul><h2 id="Google-Chrome-插件篇"><a href="#Google-Chrome-插件篇" class="headerlink" title="Google Chrome 插件篇"></a>Google Chrome 插件篇</h2><ul><li>Decentraleyes 网页加速插件 | 预先缓存了一些第三方库文件到本地</li><li>Extension Manager 插件管理器</li><li>OneTab 标签页管理工具</li><li>Proxy SwitchyOmega 代理切换工具</li><li>Privacy Badger 隐私保护工具</li><li>Raindrop 书签同步工具</li><li>Wayback Machine 网页时光机工具</li><li>Tampermonkey 脚本管理器</li></ul><h2 id="编辑器篇"><a href="#编辑器篇" class="headerlink" title="编辑器篇"></a>编辑器篇</h2><ul><li>Simplenote 支持 markdown 的一款比较干净的多端笔记工具</li><li>MWeb 一款还不错的 Mac 下的笔记工具</li><li>Notion 这个笔记工具很炫丽，本人目前正在探索中。这里有篇不错的介绍文章：<a href="https://sspai.com/post/39694" target="_blank" rel="noopener">Notion：重新定义数字笔记</a> | 感兴趣的朋友可以注册试试 <a href="https://www.notion.so/?r=070970cf5ce04d70ae0dfe9b4ad25f99" target="_blank" rel="noopener">邀请码</a></li></ul><h2 id="杂项篇"><a href="#杂项篇" class="headerlink" title="杂项篇"></a>杂项篇</h2><ul><li>Alfred 功能极其强大，workflow 很不错</li><li>KeepPassXC 一款不错的本地密码管理工具，配合浏览器插件一起使用更方便</li></ul><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul><li><a href="https://github.com/nikitavoloboev/my-mac-os" target="_blank" rel="noopener">My wonderful world of macOS</a></li></ul>]]></content>
     
     <summary type="html">
     
