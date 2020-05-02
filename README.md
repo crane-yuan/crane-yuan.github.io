@@ -1,4 +1,4 @@
-# [我的个人博客](http://crane-yuan.github.io)
+# [我的个人博客](http://craneyuan.github.io)
 
 ## 简介
 
