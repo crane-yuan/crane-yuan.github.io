@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-<meta charset="UTF-8"/>
+  <head><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -15,61 +13,13 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-
-
-  <meta name="description" content="本文介绍了在 Java 6 中 Date 类和 Calendar 类的常用用法。"/>
-
-
-
-
-  <meta name="keywords" content="java, CornerCat" />
-
-
-
-
-
-  <meta name="google-site-verification" content="cTwCB-oVxflZBdr9iwZkcN2IsrSchykrhDWdlf8AhK8" />
-
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="CornerCat">
-
-
-
-
-
-
+<meta name="description" content="本文介绍了在 Java 6 中 Date 类和 Calendar 类的常用用法。"/><meta name="keywords" content="java, CornerCat" /><link rel="alternate" href="/atom.xml" title="CornerCat" type="application/atom+xml">
 <link rel="canonical" href="https://craneyuan.github.io/2016/08/04/java-date-calendar/"/>
 
 
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=" />
 
-
-
-
-
-
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1" />
-
-
-
-  
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93890480-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-93890480-1');
-</script>
-
-
-  <script id="baidu_push">
+<script id="baidu_push">
 (function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -83,21 +33,12 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-
-
-
-
-
-
-
-
-
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
+  window.config = {"leancloud":"","toc":"","fancybox":"","pjax":"","latex":""};
 </script>
 
-    <title> Java中的Date和Calendar的常用用法 - CornerCat </title>
-  </head>
+    <title>Java中的Date和Calendar的常用用法 - CornerCat</title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
@@ -111,311 +52,85 @@
 </div>
 
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    
-      <a href="/categories">
-        <li class="mobile-menu-item">
-          
-          
-            Categories
-          
-        </li>
-      </a>
-    
-      <a href="/tags">
-        <li class="mobile-menu-item">
-          
-          
-            Tags
-          
-        </li>
-      </a>
-    
-  </ul>
+  <ul class="mobile-menu-list"></ul>
 </nav>
-
-    <div class="container" id="mobile-panel">
+<div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">CornerCat</a>
 </div>
 
-<nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/categories">
-            
-            
-              Categories
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/tags">
-            
-            
-              Tags
-            
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-
-      </header>
+<nav class="site-navbar"></nav>
+</header>
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  
-  <article class="post">
+          <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">
-        
-          Java中的Date和Calendar的常用用法
-        
-      </h1>
+      <h1 class="post-title">Java中的Date和Calendar的常用用法
+        </h1>
 
       <div class="post-meta">
         <span class="post-time">
           2016-08-04
-        </span>
-        
-          <span class="post-category">
-            
-              <a href="/categories/Java平台/">Java平台</a>
-            
-          </span>
-        
-        
-      </div>
+        </span><span class="post-category">
+            <a href="/categories/Java%E5%B9%B3%E5%8F%B0/">Java平台</a>
+            </span>
+        </div>
     </header>
 
-    
-    
-
-
-    <div class="post-content">
-      
-        <p>在java中用到的最多的时间类莫过于 java.util.Date了<br>由于Date类中将getYear(),getMonth()等获取年、月、日的方法都废弃了<br>所以要借助于Calendar来获取年、月、日、周等比较常用的日期格式</p>
+    <div class="post-content"><p>在java中用到的最多的时间类莫过于 java.util.Date了<br>由于Date类中将getYear(),getMonth()等获取年、月、日的方法都废弃了<br>所以要借助于Calendar来获取年、月、日、周等比较常用的日期格式</p>
 <blockquote>
 <p>注意：以下代码均已在jdk1.6中测试通过，其他版本可能使用不同，请注意！</p>
 </blockquote>
 <p>Date与String的互转用法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-</pre></td><td class="code"><pre><span class="line">/**</span>
-<span class="line"> * Date与String的互转用法，这里需要用到SimpleDateFormat</span>
-<span class="line"> */</span>
-<span class="line">Date currentTime = new Date();</span>
-<span class="line">SimpleDateFormat formatter = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span>
-<span class="line">String dateString = formatter.format(currentTime);</span>
-<span class="line">Date date = formatter.parse(dateString);</span>
-</pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Date与String的互转用法，这里需要用到SimpleDateFormat</span><br><span class="line"> */</span><br><span class="line">Date currentTime = new Date();</span><br><span class="line">SimpleDateFormat formatter = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span><br><span class="line">String dateString = formatter.format(currentTime);</span><br><span class="line">Date date = formatter.parse(dateString);</span><br></pre></td></tr></table></figure>
+
 <p>Date与Calendar之间的互转</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-</pre></td><td class="code"><pre><span class="line">/**</span>
-<span class="line"> * Date与Calendar之间的互转</span>
-<span class="line"> */</span>
-<span class="line">Calendar  cal = Calendar.getInstance();</span>
-<span class="line">cal.setTime(new Date());</span>
-<span class="line">Date date1 = cal.getTime();</span>
-</pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Date与Calendar之间的互转</span><br><span class="line"> */</span><br><span class="line">Calendar  cal = Calendar.getInstance();</span><br><span class="line">cal.setTime(new Date());</span><br><span class="line">Date date1 = cal.getTime();</span><br></pre></td></tr></table></figure>
+
 <p>利用Calendar获取年、月、周、日、小时等时间域</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-</pre></td><td class="code"><pre><span class="line">/**</span>
-<span class="line"> * 利用Calendar获取年、月、周、日、小时等时间域</span>
-<span class="line"> */</span>
-<span class="line">cal.get(Calendar.YEAR);</span>
-<span class="line">cal.get(Calendar.MONTH);</span>
-<span class="line">cal.get(Calendar.WEEK_OF_MONTH);</span>
-<span class="line">cal.get(Calendar.DAY_OF_MONTH);</span>
-</pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 利用Calendar获取年、月、周、日、小时等时间域</span><br><span class="line"> */</span><br><span class="line">cal.get(Calendar.YEAR);</span><br><span class="line">cal.get(Calendar.MONTH);</span><br><span class="line">cal.get(Calendar.WEEK_OF_MONTH);</span><br><span class="line">cal.get(Calendar.DAY_OF_MONTH);</span><br></pre></td></tr></table></figure>
+
 <p>对时间进行加减</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-</pre></td><td class="code"><pre><span class="line">/**</span>
-<span class="line"> * 对时间进行加减</span>
-<span class="line"> */</span>
-<span class="line">cal.add(Calendar.MONTH, 1);</span>
-<span class="line">System.out.println(cal.getTime());</span>
-</pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 对时间进行加减</span><br><span class="line"> */</span><br><span class="line">cal.add(Calendar.MONTH, 1);</span><br><span class="line">System.out.println(cal.getTime());</span><br></pre></td></tr></table></figure>
+
 <p>算出给定日期是属于星期几</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-</pre></td><td class="code"><pre><span class="line">Calendarcal = Calendar.getInstance();</span>
-<span class="line">cal.set(<span class="number">2016</span>,<span class="number">08</span>,<span class="number">01</span>);</span>
-<span class="line">String[] strDays = <span class="keyword">new</span> String[] &#123; <span class="string">"SUNDAY"</span>, <span class="string">"MONDAY"</span>, <span class="string">"TUESDAY"</span>,</span>
-<span class="line">                                  <span class="string">"WEDNESDAY"</span>, <span class="string">"THURSDAY"</span>, <span class="string">"FRIDAY"</span>, <span class="string">"SATURDAY"</span></span>
-<span class="line">                                &#125;;</span>
-<span class="line">System.out.println(strDays[cal.get(Calendar.DAY_OF_WEEK) - <span class="number">1</span>]);</span>
-</pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Calendarcal = Calendar.getInstance();</span><br><span class="line">cal.set(<span class="number">2016</span>,08,<span class="number">01</span>);</span><br><span class="line">String[] strDays = <span class="keyword">new</span> String[] &#123; <span class="string">&quot;SUNDAY&quot;</span>, <span class="string">&quot;MONDAY&quot;</span>, <span class="string">&quot;TUESDAY&quot;</span>,</span><br><span class="line">                                  <span class="string">&quot;WEDNESDAY&quot;</span>, <span class="string">&quot;THURSDAY&quot;</span>, <span class="string">&quot;FRIDAY&quot;</span>, <span class="string">&quot;SATURDAY&quot;</span></span><br><span class="line">                                &#125;;</span><br><span class="line">System.out.println(strDays[cal.get(Calendar.DAY_OF_WEEK) - <span class="number">1</span>]);</span><br></pre></td></tr></table></figure>
 
+
+
+      </div>
       
-    </div>
-
-    
-      
-      
-
-  <div class="post-copyright">
-    <p class="copyright-item">
-      <span>Author: </span>
-      <a href="https://craneyuan.github.io">craneyuan</a>
-    </p>
-    <p class="copyright-item">
-      <span>Link: </span>
-      <a href="https://craneyuan.github.io/2016/08/04/java-date-calendar/">https://craneyuan.github.io/2016/08/04/java-date-calendar/</a>
-    </p>
-    <p class="copyright-item">
-      <span>License: </span>
-      
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
-    </p>
-  </div>
-
-
-
-      
-      
-    
-
-    
       <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/java/">java</a>
+            </div>
         
-          <div class="post-tags">
-            
-              <a href="/tags/java/">java</a>
-            
-          </div>
-        
-        
-        
-  <nav class="post-nav">
-    
-      <a class="prev" href="/2016/08/15/the-map-of-java-sorted-by-value/">
+        <nav class="post-nav"><a class="prev" href="/2016/08/15/the-map-of-java-sorted-by-value/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">Java中Map按Value排序</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
-    
-    
-      <a class="next" href="/2016/08/02/the-relationship-of-uml-class/">
+    <a class="next" href="/2016/08/02/the-relationship-of-uml-class/">
         <span class="next-text nav-default">UML类之间的六大关系总结</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
-    
-  </nav>
-
-
-      </footer>
-    
-
-  </article>
-
-
-          </div>
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
-
-        </div>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
       </main>
 
-      <footer id="footer" class="footer"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-
-  <div class="social-links">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-
-    
-      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    
-  </div>
-
-
-
-<div class="copyright">
+      <footer id="footer" class="footer"><div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     Theme - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
-  <span class="copyright-year">
-    
-    &copy; 
-     
-      2016 - 
-    
-    2020
-
-    <span class="heart">
+  <span class="copyright-year">&copy;2021<span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
     <span class="author">craneyuan</span>
@@ -424,61 +139,13 @@
     </span>
   </span>
 </div>
-
-      </footer>
+</footer>
 
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div>
-
-    
-  
-  <script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = 'https://craneyuan.github.io/2016/08/04/java-date-calendar/';
-        this.page.identifier = '2016/08/04/java-date-calendar/';
-        this.page.title = 'Java中的Date和Calendar的常用用法';
-    };
-    (function() {
-    var d = document, s = d.createElement('script');
-
-    s.src = '//crane-yuan.disqus.com/embed.js';
-
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();  
-  </script>
-
-  
-
-  
-
-
-
-    
-
-
-
-
-
-
-  
-    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  
-
-  
-
-  
-
-  
-
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
-
-  </body>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v="></script>
+</body>
 </html>

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-<meta charset="UTF-8"/>
+  <head><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -15,61 +13,13 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-
-
-  <meta name="description" content="本文介绍了如何在 Hexo 中添加「不蒜子统计」，实现博客页面访问量的统计。"/>
-
-
-
-
-  <meta name="keywords" content="hexo, CornerCat" />
-
-
-
-
-
-  <meta name="google-site-verification" content="cTwCB-oVxflZBdr9iwZkcN2IsrSchykrhDWdlf8AhK8" />
-
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="CornerCat">
-
-
-
-
-
-
+<meta name="description" content="本文介绍了如何在 Hexo 中添加「不蒜子统计」，实现博客页面访问量的统计。"/><meta name="keywords" content="hexo, CornerCat" /><link rel="alternate" href="/atom.xml" title="CornerCat" type="application/atom+xml">
 <link rel="canonical" href="https://craneyuan.github.io/2016/03/25/hexo-05-add-site-statistics/"/>
 
 
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=" />
 
-
-
-
-
-
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1" />
-
-
-
-  
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93890480-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-93890480-1');
-</script>
-
-
-  <script id="baidu_push">
+<script id="baidu_push">
 (function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -83,21 +33,12 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-
-
-
-
-
-
-
-
-
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
+  window.config = {"leancloud":"","toc":"","fancybox":"","pjax":"","latex":""};
 </script>
 
-    <title> Hexo优化（5）：添加网站访问统计 - CornerCat </title>
-  </head>
+    <title>Hexo优化（5）：添加网站访问统计 - CornerCat</title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
@@ -111,331 +52,93 @@
 </div>
 
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    
-      <a href="/categories">
-        <li class="mobile-menu-item">
-          
-          
-            Categories
-          
-        </li>
-      </a>
-    
-      <a href="/tags">
-        <li class="mobile-menu-item">
-          
-          
-            Tags
-          
-        </li>
-      </a>
-    
-  </ul>
+  <ul class="mobile-menu-list"></ul>
 </nav>
-
-    <div class="container" id="mobile-panel">
+<div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">CornerCat</a>
 </div>
 
-<nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/categories">
-            
-            
-              Categories
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/tags">
-            
-            
-              Tags
-            
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-
-      </header>
+<nav class="site-navbar"></nav>
+</header>
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  
-  <article class="post">
+          <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">
-        
-          Hexo优化（5）：添加网站访问统计
-        
-      </h1>
+      <h1 class="post-title">Hexo优化（5）：添加网站访问统计
+        </h1>
 
       <div class="post-meta">
         <span class="post-time">
           2016-03-25
-        </span>
-        
-        
-      </div>
+        </span></div>
     </header>
 
-    
-    
-
-
-    <div class="post-content">
-      
-        <p>本文主要说明<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="noopener">不蒜子</a>访问统计在Landscape-plus主题下的应用，理论上下面的方法同样适用于Landscape主题。<br>关于light主题下不蒜子的应用可以参考：<a href="http://jackroyal.github.io/2015/05/30/hexo-setting-with-comments-and-visitors/" target="_blank" rel="noopener">给hexo配置上评论和访问量</a></p>
+    <div class="post-content"><p>本文主要说明<a target="_blank" rel="noopener" href="http://ibruce.info/2015/04/04/busuanzi/">不蒜子</a>访问统计在Landscape-plus主题下的应用，理论上下面的方法同样适用于Landscape主题。<br>关于light主题下不蒜子的应用可以参考：<a target="_blank" rel="noopener" href="http://jackroyal.github.io/2015/05/30/hexo-setting-with-comments-and-visitors/">给hexo配置上评论和访问量</a></p>
 <h2 id="安装脚本"><a href="#安装脚本" class="headerlink" title="安装脚本"></a>安装脚本</h2><p>这是使用不蒜子的前提，即要使用它必须先添加它的脚本。<br>打开themes\landscape-plus\layout_partial\after-footer.ejs,在最后添加上下面的脚本即可，当然你也可以添加到 header.ejs 或 footer.ejs 中。目前最新版本2.3。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-</pre></td><td class="code"><pre><span class="line">&lt;script async src=<span class="string">"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;&lt;/script&gt;</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script async src=<span class="string">&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
 <h2 id="网站访问量统计"><a href="#网站访问量统计" class="headerlink" title="网站访问量统计"></a>网站访问量统计</h2><p>打开themes/landscape-plus/layout/_partial/footer.ejs，在需要的地方添加下面的代码，可以选择添加任意一种代码或同时添加两种代码。<br>算法a：pv的方式，单个用户连续点击n篇文章，记录n次访问量。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-</pre></td><td class="code"><pre><span class="line">&lt;span id=<span class="string">"busuanzi_container_site_pv"</span>&gt;</span>
-<span class="line">    本站总访问量&lt;span id=<span class="string">"busuanzi_value_site_pv"</span>&gt;&lt;/span&gt;次</span>
-<span class="line">&lt;/span&gt;</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=<span class="string">&quot;busuanzi_container_site_pv&quot;</span>&gt;</span><br><span class="line">    本站总访问量&lt;span id=<span class="string">&quot;busuanzi_value_site_pv&quot;</span>&gt;&lt;/span&gt;次</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
 <p>算法b：uv的方式，单个用户连续点击n篇文章，只记录1次访客数。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-</pre></td><td class="code"><pre><span class="line">&lt;span id=<span class="string">"busuanzi_container_site_uv"</span>&gt;</span>
-<span class="line">  本站访客数&lt;span id=<span class="string">"busuanzi_value_site_uv"</span>&gt;&lt;/span&gt;人次</span>
-<span class="line">&lt;/span&gt;</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span id=<span class="string">&quot;busuanzi_container_site_uv&quot;</span>&gt;</span><br><span class="line">  本站访客数&lt;span id=<span class="string">&quot;busuanzi_value_site_uv&quot;</span>&gt;&lt;/span&gt;人次</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
 <p>本站是在Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>语句后面添加下面的代码：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-</pre></td><td class="code"><pre><span class="line">&lt;!-- 不蒜统计 --&gt;</span>
-<span class="line">&lt;br&gt;</span>
-<span class="line">&lt;span style=<span class="string">"display: inline;"</span> id=<span class="string">"busuanzi_container_site_uv"</span>&gt;本站总访客数 &lt;span id=<span class="string">"busuanzi_value_site_uv"</span> font=<span class="string">"微软雅黑"</span> style=<span class="string">"color:white"</span>&gt;&lt;/span&gt; 次&lt;/span&gt;</span>
-<span class="line">&lt;span style=<span class="string">"display: inline;"</span> id=<span class="string">"busuanzi_container_site_pv"</span>&gt;本站总访问量 &lt;span id=<span class="string">"busuanzi_value_site_pv"</span> font=<span class="string">"微软雅黑"</span> style=<span class="string">"color:white"</span>&gt;&lt;/span&gt; 次&lt;/span&gt;</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 不蒜统计 --&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;span style=<span class="string">&quot;display: inline;&quot;</span> id=<span class="string">&quot;busuanzi_container_site_uv&quot;</span>&gt;本站总访客数 &lt;span id=<span class="string">&quot;busuanzi_value_site_uv&quot;</span> font=<span class="string">&quot;微软雅黑&quot;</span> style=<span class="string">&quot;color:white&quot;</span>&gt;&lt;/span&gt; 次&lt;/span&gt;</span><br><span class="line">&lt;span style=<span class="string">&quot;display: inline;&quot;</span> id=<span class="string">&quot;busuanzi_container_site_pv&quot;</span>&gt;本站总访问量 &lt;span id=<span class="string">&quot;busuanzi_value_site_pv&quot;</span> font=<span class="string">&quot;微软雅黑&quot;</span> style=<span class="string">&quot;color:white&quot;</span>&gt;&lt;/span&gt; 次&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
 <h2 id="文章访问量和评论数统计"><a href="#文章访问量和评论数统计" class="headerlink" title="文章访问量和评论数统计"></a>文章访问量和评论数统计</h2><p>不蒜子之所以称为极客的算子，正是因为不蒜子自身只提供标签+数字，至于显示的style和css动画效果，任你发挥。</p>
 <p>busuanzi_value_site_pv 的作用是异步回填访问数，这个id一定要正确。<br>busuanzi_container_site_pv的作用是为防止计数服务访问出错或超时（3秒）的情况下，使整个标签自动隐藏显示，带来更好的体验。这个id可以省略。</p>
 <p>因此，你也可以使用极简模式：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-</pre></td><td class="code"><pre><span class="line">本站总访问量&lt;span id=<span class="string">"busuanzi_value_site_pv"</span>&gt;&lt;/span&gt;次</span>
-<span class="line">本站访客数&lt;span id=<span class="string">"busuanzi_value_site_uv"</span>&gt;&lt;/span&gt;人次</span>
-<span class="line">本文总阅读量&lt;span id=<span class="string">"busuanzi_value_page_pv"</span>&gt;&lt;/span&gt;次</span>
-</pre></td></tr></table></figure>
-<h2 id="修改多说样式"><a href="#修改多说样式" class="headerlink" title="修改多说样式"></a>修改多说样式</h2><p>由于landscape-plus已经集成了多说评论，因此，只需要按照<a href="http://jackroyal.github.io/2015/05/30/hexo-setting-with-comments-and-visitors/" target="_blank" rel="noopener">给hexo配置上评论和访问量</a>一文中，在多说的管理页面找到配置-&gt;自定义文本，找到暂无评论,1条评论,{num}条评论,这几个设置,修改成自己要的格式,也可以参照我的修改,0,1,{num}。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">本站总访问量&lt;span id=<span class="string">&quot;busuanzi_value_site_pv&quot;</span>&gt;&lt;/span&gt;次</span><br><span class="line">本站访客数&lt;span id=<span class="string">&quot;busuanzi_value_site_uv&quot;</span>&gt;&lt;/span&gt;人次</span><br><span class="line">本文总阅读量&lt;span id=<span class="string">&quot;busuanzi_value_page_pv&quot;</span>&gt;&lt;/span&gt;次</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改多说样式"><a href="#修改多说样式" class="headerlink" title="修改多说样式"></a>修改多说样式</h2><p>由于landscape-plus已经集成了多说评论，因此，只需要按照<a target="_blank" rel="noopener" href="http://jackroyal.github.io/2015/05/30/hexo-setting-with-comments-and-visitors/">给hexo配置上评论和访问量</a>一文中，在多说的管理页面找到配置-&gt;自定义文本，找到暂无评论,1条评论,{num}条评论,这几个设置,修改成自己要的格式,也可以参照我的修改,0,1,{num}。</p>
 <h2 id="配置文章访问量和评论数"><a href="#配置文章访问量和评论数" class="headerlink" title="配置文章访问量和评论数"></a>配置文章访问量和评论数</h2><p>1.修改themes/landscape-plus/layout/_partial/article.ejs,在header标签的末尾添加以下代码:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-</pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (post.excerpt &amp;&amp; index)&#123; %&gt; </span>
-<span class="line">&lt;% &#125; <span class="keyword">else</span> &#123; %&gt; </span>
-<span class="line">&lt;div class=<span class="string">"busuanzi_container_page_pv"</span>&gt; </span>
-<span class="line">  &lt;span class=<span class="string">"head-plus"</span>&gt;   </span>
-<span class="line">	&lt;i class=<span class="string">"fa fa-user"</span>&gt;&lt;/i&gt;</span>
-<span class="line"> &lt;span id=<span class="string">"busuanzi_value_page_pv"</span>&gt;</span>
-<span class="line">	&lt;i class=<span class="string">"fa fa-spinner fa-spin"</span>&gt;&lt;/i&gt;</span>
-<span class="line"> &lt;/span&gt;次访问   &lt;/span&gt;  </span>
-<span class="line"> &lt;span class=<span class="string">"head-plus"</span>&gt;  </span>
-<span class="line"> 	&lt;i class=<span class="string">"fa fa-comments"</span>&gt;&lt;/i&gt;</span>
-<span class="line"> &lt;span class=<span class="string">"ds-thread-count"</span> data-thread-key=<span class="string">"&lt;%= post.path %&gt;"</span>&gt;</span>
-<span class="line">	&lt;i class=<span class="string">"fa fa-spinner fa-spin"</span>&gt;&lt;/i&gt;&lt;/span&gt;条评论  </span>
-<span class="line"> &lt;/span&gt; </span>
-<span class="line">&lt;/div&gt; </span>
-<span class="line">&lt;% &#125; %&gt;</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (post.excerpt &amp;&amp; index)&#123; %&gt; </span><br><span class="line">&lt;% &#125; <span class="keyword">else</span> &#123; %&gt; </span><br><span class="line">&lt;div class=<span class="string">&quot;busuanzi_container_page_pv&quot;</span>&gt; </span><br><span class="line">  &lt;span class=<span class="string">&quot;head-plus&quot;</span>&gt;   </span><br><span class="line">	&lt;i class=<span class="string">&quot;fa fa-user&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line"> &lt;span id=<span class="string">&quot;busuanzi_value_page_pv&quot;</span>&gt;</span><br><span class="line">	&lt;i class=<span class="string">&quot;fa fa-spinner fa-spin&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line"> &lt;/span&gt;次访问   &lt;/span&gt;  </span><br><span class="line"> &lt;span class=<span class="string">&quot;head-plus&quot;</span>&gt;  </span><br><span class="line"> 	&lt;i class=<span class="string">&quot;fa fa-comments&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line"> &lt;span class=<span class="string">&quot;ds-thread-count&quot;</span> data-thread-key=<span class="string">&quot;&lt;%= post.path %&gt;&quot;</span>&gt;</span><br><span class="line">	&lt;i class=<span class="string">&quot;fa fa-spinner fa-spin&quot;</span>&gt;&lt;/i&gt;&lt;/span&gt;条评论  </span><br><span class="line"> &lt;/span&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
 <h2 id="优化样式"><a href="#优化样式" class="headerlink" title="优化样式"></a>优化样式</h2><p>打开themes\landscape-plus\source\css_partial\article.styl,在.article-entry前面添加下面的代码：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-</pre></td><td class="code"><pre><span class="line">.busuanzi_container_page_pv</span>
-<span class="line">    margin:20px 0</span>
-<span class="line">    color: <span class="comment">#817C7C</span></span>
-<span class="line">    font-size: 12px</span>
-<span class="line"><span class="comment">#busuanzi_value_page_pv</span></span>
-<span class="line">    padding-left:4px</span>
-<span class="line">.head-plus</span>
-<span class="line">    padding-left:4px</span>
-<span class="line">.ds-thread-count</span>
-<span class="line">    padding-left:4px</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.busuanzi_container_page_pv</span><br><span class="line">    margin:20px 0</span><br><span class="line">    color: <span class="comment">#817C7C</span></span><br><span class="line">    font-size: 12px</span><br><span class="line"><span class="comment">#busuanzi_value_page_pv</span></span><br><span class="line">    padding-left:4px</span><br><span class="line">.head-plus</span><br><span class="line">    padding-left:4px</span><br><span class="line">.ds-thread-count</span><br><span class="line">    padding-left:4px</span><br></pre></td></tr></table></figure>
+
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://blog.wleyuan.me/2015/07/26/Hexo-AddStatistics/" target="_blank" rel="noopener">Hexo博客添加网站统计</a></li>
-<li><a href="http://jackroyal.github.io/2015/05/30/hexo-setting-with-comments-and-visitors/" target="_blank" rel="noopener">给hexo配置上评论和访问量</a></li>
-<li><a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="noopener">Hexo使用多说教程</a></li>
-<li><a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="noopener">不蒜子</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.wleyuan.me/2015/07/26/Hexo-AddStatistics/">Hexo博客添加网站统计</a></li>
+<li><a target="_blank" rel="noopener" href="http://jackroyal.github.io/2015/05/30/hexo-setting-with-comments-and-visitors/">给hexo配置上评论和访问量</a></li>
+<li><a target="_blank" rel="noopener" href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9">Hexo使用多说教程</a></li>
+<li><a target="_blank" rel="noopener" href="http://ibruce.info/2015/04/04/busuanzi/">不蒜子</a></li>
 </ul>
 
+      </div>
       
-    </div>
-
-    
-      
-      
-
-  <div class="post-copyright">
-    <p class="copyright-item">
-      <span>Author: </span>
-      <a href="https://craneyuan.github.io">craneyuan</a>
-    </p>
-    <p class="copyright-item">
-      <span>Link: </span>
-      <a href="https://craneyuan.github.io/2016/03/25/hexo-05-add-site-statistics/">https://craneyuan.github.io/2016/03/25/hexo-05-add-site-statistics/</a>
-    </p>
-    <p class="copyright-item">
-      <span>License: </span>
-      
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
-    </p>
-  </div>
-
-
-
-      
-      
-    
-
-    
       <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/hexo/">hexo</a>
+            </div>
         
-          <div class="post-tags">
-            
-              <a href="/tags/hexo/">hexo</a>
-            
-          </div>
-        
-        
-        
-  <nav class="post-nav">
-    
-      <a class="prev" href="/2016/03/30/realization-of-bitmap-sort/">
+        <nav class="post-nav"><a class="prev" href="/2016/03/30/realization-of-bitmap-sort/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">位图排序的简单实现</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
-    
-    
-      <a class="next" href="/2016/03/24/hexo-04-add-duoshuo-discuss/">
+    <a class="next" href="/2016/03/24/hexo-04-add-duoshuo-discuss/">
         <span class="next-text nav-default">Hexo优化（4）：添加多说评论最近评论</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
-    
-  </nav>
-
-
-      </footer>
-    
-
-  </article>
-
-
-          </div>
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
-
-        </div>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
       </main>
 
-      <footer id="footer" class="footer"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-
-  <div class="social-links">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-
-    
-      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    
-  </div>
-
-
-
-<div class="copyright">
+      <footer id="footer" class="footer"><div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     Theme - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
-  <span class="copyright-year">
-    
-    &copy; 
-     
-      2016 - 
-    
-    2020
-
-    <span class="heart">
+  <span class="copyright-year">&copy;2021<span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
     <span class="author">craneyuan</span>
@@ -444,61 +147,13 @@
     </span>
   </span>
 </div>
-
-      </footer>
+</footer>
 
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div>
-
-    
-  
-  <script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = 'https://craneyuan.github.io/2016/03/25/hexo-05-add-site-statistics/';
-        this.page.identifier = '2016/03/25/hexo-05-add-site-statistics/';
-        this.page.title = 'Hexo优化（5）：添加网站访问统计';
-    };
-    (function() {
-    var d = document, s = d.createElement('script');
-
-    s.src = '//crane-yuan.disqus.com/embed.js';
-
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();  
-  </script>
-
-  
-
-  
-
-
-
-    
-
-
-
-
-
-
-  
-    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  
-
-  
-
-  
-
-  
-
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
-
-  </body>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v="></script>
+</body>
 </html>

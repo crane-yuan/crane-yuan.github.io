@@ -629,6 +629,11 @@ h6 {
       border-bottom: 1px solid #c05b4d; }
     .post .post-content a.fancybox {
       border: 0; }
+  .post .post-content ul {
+    padding-left: 0;
+    list-style: inside; }
+    .post .post-content ul li input[type="checkbox"] {
+      margin-right: 5px; }
   .post .post-content blockquote {
     margin: 2em 0;
     padding: 10px 20px;
@@ -647,16 +652,16 @@ h6 {
     margin-bottom: 20px;
     overflow: auto;
     border: 3px double #f4efe1; }
-    .post .post-content .table-responsive table {
-      width: 100%;
-      max-width: 100%;
-      border-spacing: 0;
-      box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.125); }
-      .post .post-content .table-responsive table thead {
-        background: #f8f5ec; }
-      .post .post-content .table-responsive table th, .post .post-content .table-responsive table td {
-        padding: 5px 15px;
-        border: 1px double #f4efe1; }
+  .post .post-content table {
+    width: 100%;
+    max-width: 100%;
+    border-spacing: 0;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.125); }
+    .post .post-content table thead {
+      background: #f8f5ec; }
+    .post .post-content table th, .post .post-content table td {
+      padding: 5px 15px;
+      border: 1px double #f4efe1; }
   .post .post-content code, .post .post-content pre {
     padding: 7px;
     font-size: 13px;
@@ -665,7 +670,10 @@ h6 {
   .post .post-content code {
     padding: 3px 5px;
     border-radius: 4px;
-    color: #c7254e; }
+    color: #c7254e;
+    word-break: normal;
+    white-space: pre-warp;
+    word-wrap: break-word; }
   .post .post-content .highlight {
     margin: 1em 0;
     border-radius: 5px;
@@ -673,7 +681,8 @@ h6 {
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
     position: relative; }
     .post .post-content .highlight table {
-      position: relative; }
+      position: relative;
+      max-width: none; }
       .post .post-content .highlight table::after {
         position: absolute;
         top: 0;
@@ -811,6 +820,12 @@ h6 {
       content: " · Go"; }
     .post .post-content .highlight.go figcaption + table::after {
       display: none; }
+    .post .post-content .highlight.kotlin > table::after {
+      content: "Kotlin"; }
+    .post .post-content .highlight.kotlin > figcaption > span::after {
+      content: " · Kotlin"; }
+    .post .post-content .highlight.kotlin figcaption + table::after {
+      display: none; }
     .post .post-content .highlight figcaption {
       position: absolute;
       top: 0;
@@ -898,7 +913,10 @@ h6 {
     padding-top: 10px;
     border-top: 1px dashed #e6e6e6; }
     .post .post-copyright .copyright-item {
-      margin: 5px 0; }
+      margin: 5px 0;
+      word-break: normal;
+      white-space: pre-warp;
+      word-wrap: break-word; }
       .post .post-copyright .copyright-item a {
         color: #c05b4d; }
   .post .post-reward {
@@ -1394,13 +1412,6 @@ h6 {
   .back-to-top {
     display: none !important; } }
 
-#nprogress .bar {
-  background: #c05b4d;
-  height: 3px; }
-
-#nprogress .peg {
-  box-shadow: 0 0 10px #c05b4d, 0 0 5px #c05b4d; }
-
-#nprogress .spinner-icon {
-  border-top-color: #c05b4d;
-  border-left-color: #c05b4d; }
+.mjx-chtml:focus {
+  padding: 1px 0;
+  outline: none; }

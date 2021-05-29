@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-<meta charset="UTF-8"/>
+  <head><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -15,61 +13,13 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-
-
-  <meta name="description" content="如题。"/>
-
-
-
-
-  <meta name="keywords" content="java, CornerCat" />
-
-
-
-
-
-  <meta name="google-site-verification" content="cTwCB-oVxflZBdr9iwZkcN2IsrSchykrhDWdlf8AhK8" />
-
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="CornerCat">
-
-
-
-
-
-
+<meta name="description" content="如题。"/><meta name="keywords" content="java, CornerCat" /><link rel="alternate" href="/atom.xml" title="CornerCat" type="application/atom+xml">
 <link rel="canonical" href="https://craneyuan.github.io/2016/08/15/the-map-of-java-sorted-by-value/"/>
 
 
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=" />
 
-
-
-
-
-
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1" />
-
-
-
-  
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93890480-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-93890480-1');
-</script>
-
-
-  <script id="baidu_push">
+<script id="baidu_push">
 (function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -83,21 +33,12 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-
-
-
-
-
-
-
-
-
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
+  window.config = {"leancloud":"","toc":"","fancybox":"","pjax":"","latex":""};
 </script>
 
-    <title> Java中Map按Value排序 - CornerCat </title>
-  </head>
+    <title>Java中Map按Value排序 - CornerCat</title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
@@ -111,97 +52,33 @@
 </div>
 
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    
-      <a href="/categories">
-        <li class="mobile-menu-item">
-          
-          
-            Categories
-          
-        </li>
-      </a>
-    
-      <a href="/tags">
-        <li class="mobile-menu-item">
-          
-          
-            Tags
-          
-        </li>
-      </a>
-    
-  </ul>
+  <ul class="mobile-menu-list"></ul>
 </nav>
-
-    <div class="container" id="mobile-panel">
+<div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">CornerCat</a>
 </div>
 
-<nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/categories">
-            
-            
-              Categories
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/tags">
-            
-            
-              Tags
-            
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-
-      </header>
+<nav class="site-navbar"></nav>
+</header>
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  
-  <article class="post">
+          <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">
-        
-          Java中Map按Value排序
-        
-      </h1>
+      <h1 class="post-title">Java中Map按Value排序
+        </h1>
 
       <div class="post-meta">
         <span class="post-time">
           2016-08-15
-        </span>
-        
-          <span class="post-category">
-            
-              <a href="/categories/Java平台/">Java平台</a>
-            
-          </span>
-        
-        
-      </div>
+        </span><span class="post-category">
+            <a href="/categories/Java%E5%B9%B3%E5%8F%B0/">Java平台</a>
+            </span>
+        </div>
     </header>
 
-    
-    
-
-
-    <div class="post-content">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Map是键值对的集合接口，它的实现类主要包括：HashMap,TreeMap,Hashtable以及LinkedHashMap等。</p>
+    <div class="post-content"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Map是键值对的集合接口，它的实现类主要包括：HashMap,TreeMap,Hashtable以及LinkedHashMap等。</p>
 <h3 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h3><p>基于红黑树（red-black tree）的 NavigableMap 实现，该映射根据其键的自然顺序进行排序，或者根据创建映射时提供的 Comparator 进行排序，具体取决于使用的构造方法。</p>
 <h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>HashMap的值是没有顺序的，它是按照key的HashCode来实现的，对于这个无序的HashMap我们要怎么来实现排序呢？参照TreeMap的value排序。</p>
 <blockquote>
@@ -211,355 +88,54 @@
 <blockquote>
 <p>注意：以下代码均已在Jdk1.6测试通过了</p>
 </blockquote>
-<h3 id="TreeMap默认按key升序排序"><a href="#TreeMap默认按key升序排序" class="headerlink" title="TreeMap默认按key升序排序"></a>TreeMap默认按key升序排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-</pre></td><td class="code"><pre><span class="line">public static void keyUpSort() &#123;</span>
-<span class="line">    // 默认情况，TreeMap按key升序排序</span>
-<span class="line">    Map&lt;String, Integer&gt; map = new TreeMap&lt;String, Integer&gt;();</span>
-<span class="line">    map.put(&quot;acb1&quot;, 5);</span>
-<span class="line">    map.put(&quot;bac1&quot;, 3);</span>
-<span class="line">    map.put(&quot;bca1&quot;, 20);</span>
-<span class="line">    map.put(&quot;cab1&quot;, 80);</span>
-<span class="line">    map.put(&quot;cba1&quot;, 1);</span>
-<span class="line">    map.put(&quot;abc1&quot;, 10);</span>
-<span class="line">    map.put(&quot;abc2&quot;, 12);</span>
-<span class="line"></span>
-<span class="line">    // 默认情况下，TreeMap对key进行升序排序</span>
-<span class="line">    System.out.println(&quot;------------正常情况，TreeMap按key升序排序--------------------&quot;);</span>
-<span class="line">    for (Map.Entry&lt;String, Integer&gt; entry : map.entrySet()) &#123;</span>
-<span class="line">        System.out.println(entry.getKey() + &quot;:&quot; + entry.getValue());</span>
-<span class="line">    &#125;</span>
-<span class="line">&#125;</span>
-</pre></td></tr></table></figure>
-<h3 id="修改TreeMap的排序方式，按key降序排序"><a href="#修改TreeMap的排序方式，按key降序排序" class="headerlink" title="修改TreeMap的排序方式，按key降序排序"></a>修改TreeMap的排序方式，按key降序排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-<span class="line">25</span>
-<span class="line">26</span>
-</pre></td><td class="code"><pre><span class="line">public static void keyDownSort() &#123;</span>
-<span class="line">    // TreeMap,按key降序排序</span>
-<span class="line">    // 降序排序比较器</span>
-<span class="line">    Comparator&lt;String&gt; keyComparator = new Comparator&lt;String&gt;() &#123;</span>
-<span class="line"></span>
-<span class="line">        @Override</span>
-<span class="line">        public int compare(String o1, String o2) &#123;</span>
-<span class="line">            // TODO Auto-generated method stub</span>
-<span class="line">            return o2.compareTo(o1);</span>
-<span class="line">        &#125;</span>
-<span class="line">    &#125;;</span>
-<span class="line"></span>
-<span class="line">    Map&lt;String, Integer&gt; map = new TreeMap&lt;String, Integer&gt;(keyComparator);</span>
-<span class="line">    map.put(&quot;acb1&quot;, 5);</span>
-<span class="line">    map.put(&quot;bac1&quot;, 3);</span>
-<span class="line">    map.put(&quot;bca1&quot;, 20);</span>
-<span class="line">    map.put(&quot;cab1&quot;, 80);</span>
-<span class="line">    map.put(&quot;cba1&quot;, 1);</span>
-<span class="line">    map.put(&quot;abc1&quot;, 10);</span>
-<span class="line">    map.put(&quot;abc2&quot;, 12);</span>
-<span class="line"></span>
-<span class="line">    System.out.println(&quot;------------TreeMap按key降序排序--------------------&quot;);</span>
-<span class="line">    for (Map.Entry&lt;String, Integer&gt; entry : map.entrySet()) &#123;</span>
-<span class="line">        System.out.println(entry.getKey() + &quot;:&quot; + entry.getValue());</span>
-<span class="line">    &#125;</span>
-<span class="line">&#125;</span>
-</pre></td></tr></table></figure>
+<h3 id="TreeMap默认按key升序排序"><a href="#TreeMap默认按key升序排序" class="headerlink" title="TreeMap默认按key升序排序"></a>TreeMap默认按key升序排序</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public static void keyUpSort() &#123;</span><br><span class="line">    // 默认情况，TreeMap按key升序排序</span><br><span class="line">    Map&lt;String, Integer&gt; map = new TreeMap&lt;String, Integer&gt;();</span><br><span class="line">    map.put(&quot;acb1&quot;, 5);</span><br><span class="line">    map.put(&quot;bac1&quot;, 3);</span><br><span class="line">    map.put(&quot;bca1&quot;, 20);</span><br><span class="line">    map.put(&quot;cab1&quot;, 80);</span><br><span class="line">    map.put(&quot;cba1&quot;, 1);</span><br><span class="line">    map.put(&quot;abc1&quot;, 10);</span><br><span class="line">    map.put(&quot;abc2&quot;, 12);</span><br><span class="line"></span><br><span class="line">    // 默认情况下，TreeMap对key进行升序排序</span><br><span class="line">    System.out.println(&quot;------------正常情况，TreeMap按key升序排序--------------------&quot;);</span><br><span class="line">    for (Map.Entry&lt;String, Integer&gt; entry : map.entrySet()) &#123;</span><br><span class="line">        System.out.println(entry.getKey() + &quot;:&quot; + entry.getValue());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改TreeMap的排序方式，按key降序排序"><a href="#修改TreeMap的排序方式，按key降序排序" class="headerlink" title="修改TreeMap的排序方式，按key降序排序"></a>修改TreeMap的排序方式，按key降序排序</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public static void keyDownSort() &#123;</span><br><span class="line">    // TreeMap,按key降序排序</span><br><span class="line">    // 降序排序比较器</span><br><span class="line">    Comparator&lt;String&gt; keyComparator = new Comparator&lt;String&gt;() &#123;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">        public int compare(String o1, String o2) &#123;</span><br><span class="line">            // TODO Auto-generated method stub</span><br><span class="line">            return o2.compareTo(o1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    Map&lt;String, Integer&gt; map = new TreeMap&lt;String, Integer&gt;(keyComparator);</span><br><span class="line">    map.put(&quot;acb1&quot;, 5);</span><br><span class="line">    map.put(&quot;bac1&quot;, 3);</span><br><span class="line">    map.put(&quot;bca1&quot;, 20);</span><br><span class="line">    map.put(&quot;cab1&quot;, 80);</span><br><span class="line">    map.put(&quot;cba1&quot;, 1);</span><br><span class="line">    map.put(&quot;abc1&quot;, 10);</span><br><span class="line">    map.put(&quot;abc2&quot;, 12);</span><br><span class="line"></span><br><span class="line">    System.out.println(&quot;------------TreeMap按key降序排序--------------------&quot;);</span><br><span class="line">    for (Map.Entry&lt;String, Integer&gt; entry : map.entrySet()) &#123;</span><br><span class="line">        System.out.println(entry.getKey() + &quot;:&quot; + entry.getValue());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="按Value排序"><a href="#按Value排序" class="headerlink" title="按Value排序"></a>按Value排序</h2><blockquote>
 <p>以下只演示按TreeMap按Value升序排序，这同样适用于HashMap。</p>
 </blockquote>
 <h3 id="修改TreeMap的排序方式，按Value升序排序"><a href="#修改TreeMap的排序方式，按Value升序排序" class="headerlink" title="修改TreeMap的排序方式，按Value升序排序"></a>修改TreeMap的排序方式，按Value升序排序</h3><blockquote>
 <p>注意：正常情况下Map是不可以使用Collections.sort()方法进行排序的，不过可以将Map转换成list之后再进行排序。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-<span class="line">25</span>
-<span class="line">26</span>
-<span class="line">27</span>
-<span class="line">28</span>
-<span class="line">29</span>
-<span class="line">30</span>
-<span class="line">31</span>
-<span class="line">32</span>
-<span class="line">33</span>
-</pre></td><td class="code"><pre><span class="line">public static void valueUpSort() &#123;</span>
-<span class="line">    // 默认情况，TreeMap按key升序排序</span>
-<span class="line">    Map&lt;String, Integer&gt; map = new TreeMap&lt;String, Integer&gt;();</span>
-<span class="line">    map.put(&quot;acb1&quot;, 5);</span>
-<span class="line">    map.put(&quot;bac1&quot;, 3);</span>
-<span class="line">    map.put(&quot;bca1&quot;, 20);</span>
-<span class="line">    map.put(&quot;cab1&quot;, 80);</span>
-<span class="line">    map.put(&quot;cba1&quot;, 1);</span>
-<span class="line">    map.put(&quot;abc1&quot;, 10);</span>
-<span class="line">    map.put(&quot;abc2&quot;, 12);</span>
-<span class="line">    </span>
-<span class="line">    // 升序比较器</span>
-<span class="line">    Comparator&lt;Map.Entry&lt;String, Integer&gt;&gt; valueComparator = new Comparator&lt;Map.Entry&lt;String,Integer&gt;&gt;() &#123;</span>
-<span class="line">        @Override</span>
-<span class="line">        public int compare(Entry&lt;String, Integer&gt; o1,</span>
-<span class="line">                Entry&lt;String, Integer&gt; o2) &#123;</span>
-<span class="line">            // TODO Auto-generated method stub</span>
-<span class="line">            return o1.getValue()-o2.getValue();</span>
-<span class="line">        &#125;</span>
-<span class="line">    &#125;;</span>
-<span class="line"></span>
-<span class="line">    // map转换成list进行排序</span>
-<span class="line">    List&lt;Map.Entry&lt;String, Integer&gt;&gt; list = new ArrayList&lt;Map.Entry&lt;String,Integer&gt;&gt;(map.entrySet());</span>
-<span class="line"></span>
-<span class="line">    // 排序</span>
-<span class="line">    Collections.sort(list,valueComparator);</span>
-<span class="line"></span>
-<span class="line">    // 默认情况下，TreeMap对key进行升序排序</span>
-<span class="line">    System.out.println(&quot;------------map按照value升序排序--------------------&quot;);</span>
-<span class="line">    for (Map.Entry&lt;String, Integer&gt; entry : list) &#123;</span>
-<span class="line">        System.out.println(entry.getKey() + &quot;:&quot; + entry.getValue());</span>
-<span class="line">    &#125;</span>
-<span class="line">&#125;</span>
-</pre></td></tr></table></figure>
-<h3 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-</pre></td><td class="code"><pre><span class="line">------------正常情况，TreeMap按key升序排序--------------------</span>
-<span class="line">abc1:10</span>
-<span class="line">abc2:12</span>
-<span class="line">acb1:5</span>
-<span class="line">bac1:3</span>
-<span class="line">bca1:20</span>
-<span class="line">cab1:80</span>
-<span class="line">cba1:1</span>
-<span class="line">------------TreeMap按key降序排序--------------------</span>
-<span class="line">cba1:1</span>
-<span class="line">cab1:80</span>
-<span class="line">bca1:20</span>
-<span class="line">bac1:3</span>
-<span class="line">acb1:5</span>
-<span class="line">abc2:12</span>
-<span class="line">abc1:10</span>
-<span class="line">------------map按照value升序排序--------------------</span>
-<span class="line">cba1:1</span>
-<span class="line">bac1:3</span>
-<span class="line">acb1:5</span>
-<span class="line">abc1:10</span>
-<span class="line">abc2:12</span>
-<span class="line">bca1:20</span>
-<span class="line">cab1:80</span>
-</pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">public static void valueUpSort() &#123;</span><br><span class="line">    // 默认情况，TreeMap按key升序排序</span><br><span class="line">    Map&lt;String, Integer&gt; map = new TreeMap&lt;String, Integer&gt;();</span><br><span class="line">    map.put(&quot;acb1&quot;, 5);</span><br><span class="line">    map.put(&quot;bac1&quot;, 3);</span><br><span class="line">    map.put(&quot;bca1&quot;, 20);</span><br><span class="line">    map.put(&quot;cab1&quot;, 80);</span><br><span class="line">    map.put(&quot;cba1&quot;, 1);</span><br><span class="line">    map.put(&quot;abc1&quot;, 10);</span><br><span class="line">    map.put(&quot;abc2&quot;, 12);</span><br><span class="line">    </span><br><span class="line">    // 升序比较器</span><br><span class="line">    Comparator&lt;Map.Entry&lt;String, Integer&gt;&gt; valueComparator = new Comparator&lt;Map.Entry&lt;String,Integer&gt;&gt;() &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public int compare(Entry&lt;String, Integer&gt; o1,</span><br><span class="line">                Entry&lt;String, Integer&gt; o2) &#123;</span><br><span class="line">            // TODO Auto-generated method stub</span><br><span class="line">            return o1.getValue()-o2.getValue();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    // map转换成list进行排序</span><br><span class="line">    List&lt;Map.Entry&lt;String, Integer&gt;&gt; list = new ArrayList&lt;Map.Entry&lt;String,Integer&gt;&gt;(map.entrySet());</span><br><span class="line"></span><br><span class="line">    // 排序</span><br><span class="line">    Collections.sort(list,valueComparator);</span><br><span class="line"></span><br><span class="line">    // 默认情况下，TreeMap对key进行升序排序</span><br><span class="line">    System.out.println(&quot;------------map按照value升序排序--------------------&quot;);</span><br><span class="line">    for (Map.Entry&lt;String, Integer&gt; entry : list) &#123;</span><br><span class="line">        System.out.println(entry.getKey() + &quot;:&quot; + entry.getValue());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">------------正常情况，TreeMap按key升序排序--------------------</span><br><span class="line">abc1:10</span><br><span class="line">abc2:12</span><br><span class="line">acb1:5</span><br><span class="line">bac1:3</span><br><span class="line">bca1:20</span><br><span class="line">cab1:80</span><br><span class="line">cba1:1</span><br><span class="line">------------TreeMap按key降序排序--------------------</span><br><span class="line">cba1:1</span><br><span class="line">cab1:80</span><br><span class="line">bca1:20</span><br><span class="line">bac1:3</span><br><span class="line">acb1:5</span><br><span class="line">abc2:12</span><br><span class="line">abc1:10</span><br><span class="line">------------map按照value升序排序--------------------</span><br><span class="line">cba1:1</span><br><span class="line">bac1:3</span><br><span class="line">acb1:5</span><br><span class="line">abc1:10</span><br><span class="line">abc2:12</span><br><span class="line">bca1:20</span><br><span class="line">cab1:80</span><br></pre></td></tr></table></figure>
+
+
+
+      </div>
       
-    </div>
-
-    
-      
-      
-
-  <div class="post-copyright">
-    <p class="copyright-item">
-      <span>Author: </span>
-      <a href="https://craneyuan.github.io">craneyuan</a>
-    </p>
-    <p class="copyright-item">
-      <span>Link: </span>
-      <a href="https://craneyuan.github.io/2016/08/15/the-map-of-java-sorted-by-value/">https://craneyuan.github.io/2016/08/15/the-map-of-java-sorted-by-value/</a>
-    </p>
-    <p class="copyright-item">
-      <span>License: </span>
-      
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
-    </p>
-  </div>
-
-
-
-      
-      
-    
-
-    
       <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/java/">java</a>
+            </div>
         
-          <div class="post-tags">
-            
-              <a href="/tags/java/">java</a>
-            
-          </div>
-        
-        
-        
-  <nav class="post-nav">
-    
-      <a class="prev" href="/2016/08/15/the-procedure-of-init-class-in-java/">
+        <nav class="post-nav"><a class="prev" href="/2016/08/15/the-procedure-of-init-class-in-java/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">Java中class的初始化顺序</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
-    
-    
-      <a class="next" href="/2016/08/04/java-date-calendar/">
+    <a class="next" href="/2016/08/04/java-date-calendar/">
         <span class="next-text nav-default">Java中的Date和Calendar的常用用法</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
-    
-  </nav>
-
-
-      </footer>
-    
-
-  </article>
-
-
-          </div>
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
-
-        </div>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
       </main>
 
-      <footer id="footer" class="footer"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-
-  <div class="social-links">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-
-    
-      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    
-  </div>
-
-
-
-<div class="copyright">
+      <footer id="footer" class="footer"><div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     Theme - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
-  <span class="copyright-year">
-    
-    &copy; 
-     
-      2016 - 
-    
-    2020
-
-    <span class="heart">
+  <span class="copyright-year">&copy;2021<span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
     <span class="author">craneyuan</span>
@@ -568,61 +144,13 @@
     </span>
   </span>
 </div>
-
-      </footer>
+</footer>
 
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div>
-
-    
-  
-  <script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = 'https://craneyuan.github.io/2016/08/15/the-map-of-java-sorted-by-value/';
-        this.page.identifier = '2016/08/15/the-map-of-java-sorted-by-value/';
-        this.page.title = 'Java中Map按Value排序';
-    };
-    (function() {
-    var d = document, s = d.createElement('script');
-
-    s.src = '//crane-yuan.disqus.com/embed.js';
-
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();  
-  </script>
-
-  
-
-  
-
-
-
-    
-
-
-
-
-
-
-  
-    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  
-
-  
-
-  
-
-  
-
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
-
-  </body>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v="></script>
+</body>
 </html>

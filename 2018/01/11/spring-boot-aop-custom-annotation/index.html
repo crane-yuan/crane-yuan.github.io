@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-<meta charset="UTF-8"/>
+  <head><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -15,61 +13,13 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-
-
-  <meta name="description" content="本文介绍了如何在 Spring Boot 中处理注解。"/>
-
-
-
-
-  <meta name="keywords" content="java, CornerCat" />
-
-
-
-
-
-  <meta name="google-site-verification" content="cTwCB-oVxflZBdr9iwZkcN2IsrSchykrhDWdlf8AhK8" />
-
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="CornerCat">
-
-
-
-
-
-
+<meta name="description" content="本文介绍了如何在 Spring Boot 中处理注解。"/><meta name="keywords" content="java, CornerCat" /><link rel="alternate" href="/atom.xml" title="CornerCat" type="application/atom+xml">
 <link rel="canonical" href="https://craneyuan.github.io/2018/01/11/spring-boot-aop-custom-annotation/"/>
 
 
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=" />
 
-
-
-
-
-
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1" />
-
-
-
-  
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93890480-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-93890480-1');
-</script>
-
-
-  <script id="baidu_push">
+<script id="baidu_push">
 (function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -83,21 +33,12 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-
-
-
-
-
-
-
-
-
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
+  window.config = {"leancloud":"","toc":"","fancybox":"","pjax":"","latex":""};
 </script>
 
-    <title> 使用Spring Boot的AOP处理自定义注解 - CornerCat </title>
-  </head>
+    <title>使用Spring Boot的AOP处理自定义注解 - CornerCat</title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
@@ -111,97 +52,33 @@
 </div>
 
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    
-      <a href="/categories">
-        <li class="mobile-menu-item">
-          
-          
-            Categories
-          
-        </li>
-      </a>
-    
-      <a href="/tags">
-        <li class="mobile-menu-item">
-          
-          
-            Tags
-          
-        </li>
-      </a>
-    
-  </ul>
+  <ul class="mobile-menu-list"></ul>
 </nav>
-
-    <div class="container" id="mobile-panel">
+<div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">CornerCat</a>
 </div>
 
-<nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/categories">
-            
-            
-              Categories
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/tags">
-            
-            
-              Tags
-            
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-
-      </header>
+<nav class="site-navbar"></nav>
+</header>
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  
-  <article class="post">
+          <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">
-        
-          使用Spring Boot的AOP处理自定义注解
-        
-      </h1>
+      <h1 class="post-title">使用Spring Boot的AOP处理自定义注解
+        </h1>
 
       <div class="post-meta">
         <span class="post-time">
           2018-01-11
-        </span>
-        
-          <span class="post-category">
-            
-              <a href="/categories/Java平台/">Java平台</a>
-            
-          </span>
-        
-        
-      </div>
+        </span><span class="post-category">
+            <a href="/categories/Java%E5%B9%B3%E5%8F%B0/">Java平台</a>
+            </span>
+        </div>
     </header>
 
-    
-    
-
-
-    <div class="post-content">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一篇文章<a href="https://craneyuan.github.io/2017/12/28/java-annotations-introduction/">Java 注解介绍</a>讲解了下Java注解的基本使用方式，并且通过自定义注解实现了一个简单的测试工具；本篇文章将介绍如何使用Spring Boot的AOP来简化处理自定义注解，并将通过实现一个简单的方法执行时间统计工具为样例来讲解这些内容。</p>
+    <div class="post-content"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一篇文章<a href="https://craneyuan.github.io/2017/12/28/java-annotations-introduction/">Java 注解介绍</a>讲解了下Java注解的基本使用方式，并且通过自定义注解实现了一个简单的测试工具；本篇文章将介绍如何使用Spring Boot的AOP来简化处理自定义注解，并将通过实现一个简单的方法执行时间统计工具为样例来讲解这些内容。</p>
 <h2 id="AOP概念"><a href="#AOP概念" class="headerlink" title="AOP概念"></a>AOP概念</h2><blockquote>
 <p>面向侧面的程序设计（aspect-oriented programming，AOP，又译作面向方面的程序设计、观点导向编程、剖面导向程序设计）是计算机科学中的一个术语，指一种程序设计范型。该范型以一种称为侧面（aspect，又译作方面）的语言构造为基础，侧面是一种新的模块化机制，用来描述分散在对象、类或函数中的横切关注点（crosscutting concern）。</p>
 </blockquote>
@@ -209,417 +86,64 @@
 <blockquote>
 <p>注释：以上定义源自中文维基百科（如果访问不了，可以通过修改系统的hosts文件访问，<code>198.35.26.96 zh.wikipedia.org #中文维基百科</code>，只能帮到这了，如果还是上不了，那就麻烦上网搜索下怎么修改系统的hosts文件，不同系统下hosts文件位置不一样，如果是Linux或者Mac系统，我就直接告诉你吧，一般文件路径是<code>/etc/hosts</code>），AOP这个词的翻译有点和国内主流叫法不一致，国内主流都把AOP译做「面向切面编程」，大家不要拘泥于叫法，知道指的是同一个东西即可。</p>
 </blockquote>
-<p>估计，你看了这个定义也是懵的，如果想深入了解可以去知乎看看大佬们是如何掰扯的<a href="https://www.zhihu.com/question/24863332" target="_blank" rel="noopener">什么是面向切面编程AOP？</a>。我这边还是就直接上例子了吧。</p>
-<h2 id="Spring-Boot的AOP环境准备"><a href="#Spring-Boot的AOP环境准备" class="headerlink" title="Spring Boot的AOP环境准备"></a>Spring Boot的AOP环境准备</h2><p>在<code>pom.xml</code>中引入相应的依赖模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-</pre></td><td class="code"><pre><span class="line">&lt;!-- Spring Boot依赖包 --&gt;</span>
-<span class="line">&lt;parent&gt;</span>
-<span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span>
-<span class="line">    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span>
-<span class="line">    &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;</span>
-<span class="line">&lt;/parent&gt;</span>
-<span class="line">&lt;dependencies&gt;</span>
-<span class="line">    &lt;!-- AOP依赖模块 --&gt;</span>
-<span class="line">    &lt;dependency&gt;</span>
-<span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span>
-<span class="line">        &lt;artifactId&gt;spring-boot-starter-aop&lt;/artifactId&gt;</span>
-<span class="line">    &lt;/dependency&gt;</span>
-<span class="line">    &lt;!-- Web依赖模块 --&gt;</span>
-<span class="line">    &lt;dependency&gt;</span>
-<span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span>
-<span class="line">        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span>
-<span class="line">    &lt;/dependency&gt;</span>
-<span class="line">&lt;/dependencies&gt;</span>
-</pre></td></tr></table></figure></p>
-<h2 id="先实现一个简单的Web请求处理"><a href="#先实现一个简单的Web请求处理" class="headerlink" title="先实现一个简单的Web请求处理"></a>先实现一个简单的Web请求处理</h2><p>一个简单的处理Web请求的Controller。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-</pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.craneyuan.controller;</span>
-<span class="line"></span>
-<span class="line"><span class="keyword">import</span> com.craneyuan.service.IHelloWorldService;</span>
-<span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span>
-<span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span>
-<span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;</span>
-<span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span>
-<span class="line"></span>
-<span class="line"><span class="meta">@RestController</span></span>
-<span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldController</span> </span>&#123;</span>
-<span class="line">    <span class="meta">@Autowired</span></span>
-<span class="line">    <span class="keyword">private</span> IHelloWorldService helloWorldService;</span>
-<span class="line"></span>
-<span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/hello"</span>, method = RequestMethod.GET)</span>
-<span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">(String name)</span> </span>&#123;</span>
-<span class="line">        <span class="keyword">return</span> helloWorldService.getHelloMessage(name);</span>
-<span class="line">    &#125;</span>
-<span class="line">&#125;</span>
-</pre></td></tr></table></figure></p>
-<p>一个简单的HelloWorld服务实现类，接口的定义我就不展示代码了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-</pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.craneyuan.service.impl;</span>
-<span class="line"></span>
-<span class="line"><span class="keyword">import</span> com.craneyuan.annotation.AnalysisActuator;</span>
-<span class="line"><span class="keyword">import</span> com.craneyuan.service.IHelloWorldService;</span>
-<span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span>
-<span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span>
-<span class="line"></span>
-<span class="line"><span class="keyword">import</span> java.util.Optional;</span>
-<span class="line"></span>
-<span class="line"><span class="meta">@Service</span></span>
-<span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldServiceImpl</span> <span class="keyword">implements</span> <span class="title">IHelloWorldService</span> </span>&#123;</span>
-<span class="line"></span>
-<span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getHelloMessage</span><span class="params">(String name)</span> </span>&#123;</span>
-<span class="line">        <span class="keyword">return</span> <span class="string">"Hello "</span> + Optional.ofNullable(name).orElse(<span class="string">"World!"</span>);</span>
-<span class="line">    &#125;</span>
-<span class="line"></span>
-<span class="line">&#125;</span>
-</pre></td></tr></table></figure></p>
+<p>估计，你看了这个定义也是懵的，如果想深入了解可以去知乎看看大佬们是如何掰扯的<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/24863332">什么是面向切面编程AOP？</a>。我这边还是就直接上例子了吧。</p>
+<h2 id="Spring-Boot的AOP环境准备"><a href="#Spring-Boot的AOP环境准备" class="headerlink" title="Spring Boot的AOP环境准备"></a>Spring Boot的AOP环境准备</h2><p>在<code>pom.xml</code>中引入相应的依赖模块</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Spring Boot依赖包 --&gt;</span><br><span class="line">&lt;parent&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.5.1.RELEASE&lt;/version&gt;</span><br><span class="line">&lt;/parent&gt;</span><br><span class="line">&lt;dependencies&gt;</span><br><span class="line">    &lt;!-- AOP依赖模块 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-aop&lt;/artifactId&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;!-- Web依赖模块 --&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="先实现一个简单的Web请求处理"><a href="#先实现一个简单的Web请求处理" class="headerlink" title="先实现一个简单的Web请求处理"></a>先实现一个简单的Web请求处理</h2><p>一个简单的处理Web请求的Controller。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.craneyuan.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.craneyuan.service.IHelloWorldService;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMethod;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> IHelloWorldService helloWorldService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(value = &quot;/hello&quot;, method = RequestMethod.GET)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> helloWorldService.getHelloMessage(name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一个简单的HelloWorld服务实现类，接口的定义我就不展示代码了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.craneyuan.service.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.craneyuan.annotation.AnalysisActuator;</span><br><span class="line"><span class="keyword">import</span> com.craneyuan.service.IHelloWorldService;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Optional;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldServiceImpl</span> <span class="keyword">implements</span> <span class="title">IHelloWorldService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getHelloMessage</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Hello &quot;</span> + Optional.ofNullable(name).orElse(<span class="string">&quot;World!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样一个简单的Web服务就弄好了，你可以启动项目用<code>curl</code>命令调用试下，例如：<code>curl -XGET -i &quot;http://127.0.0.1:8080/hello?name=Java&quot;</code>，如果一切顺利的话，你将会得到类似下面这样的响应：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-</pre></td><td class="code"><pre><span class="line">HTTP/1.1 200</span>
-<span class="line">Content-Type: text/plain;charset=UTF-8</span>
-<span class="line">Content-Length: 11</span>
-<span class="line">Date: Thu, 11 Jan 2018 09:45:38 GMT</span>
-<span class="line"></span>
-<span class="line">Hello Java</span>
-</pre></td></tr></table></figure>
-<h2 id="使用自定义注解来统计方法的执行时间"><a href="#使用自定义注解来统计方法的执行时间" class="headerlink" title="使用自定义注解来统计方法的执行时间"></a>使用自定义注解来统计方法的执行时间</h2><p>先定义一个用来统计方法执行时间的注解。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-</pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.craneyuan.annotation;</span>
-<span class="line"></span>
-<span class="line"><span class="keyword">import</span> java.lang.annotation.ElementType;</span>
-<span class="line"><span class="keyword">import</span> java.lang.annotation.Retention;</span>
-<span class="line"><span class="keyword">import</span> java.lang.annotation.RetentionPolicy;</span>
-<span class="line"><span class="keyword">import</span> java.lang.annotation.Target;</span>
-<span class="line"></span>
-<span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span>
-<span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span>
-<span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> AnalysisActuator &#123;</span>
-<span class="line">    <span class="function">String <span class="title">note</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span>
-<span class="line">&#125;</span>
-</pre></td></tr></table></figure></p>
-<p>然后定义一个切面，来处理刚刚定义的注解。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-<span class="line">25</span>
-<span class="line">26</span>
-<span class="line">27</span>
-<span class="line">28</span>
-<span class="line">29</span>
-<span class="line">30</span>
-<span class="line">31</span>
-<span class="line">32</span>
-<span class="line">33</span>
-<span class="line">34</span>
-<span class="line">35</span>
-<span class="line">36</span>
-<span class="line">37</span>
-</pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.craneyuan.aspect;</span>
-<span class="line"></span>
-<span class="line"><span class="keyword">import</span> com.craneyuan.annotation.AnalysisActuator;</span>
-<span class="line"><span class="keyword">import</span> org.aspectj.lang.JoinPoint;</span>
-<span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.After;</span>
-<span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Aspect;</span>
-<span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Before;</span>
-<span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Pointcut;</span>
-<span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span>
-<span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span>
-<span class="line"><span class="keyword">import</span> org.springframework.core.annotation.Order;</span>
-<span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span>
-<span class="line"></span>
-<span class="line"><span class="meta">@Aspect</span></span>
-<span class="line"><span class="meta">@Component</span></span>
-<span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnalysisActuatorAspect</span> </span>&#123;</span>
-<span class="line">    <span class="keyword">final</span> <span class="keyword">static</span> Logger log = LoggerFactory.getLogger(AnalysisActuatorAspect.class);</span>
-<span class="line"></span>
-<span class="line">    ThreadLocal&lt;Long&gt; beginTime = <span class="keyword">new</span> ThreadLocal&lt;&gt;();</span>
-<span class="line"></span>
-<span class="line">    <span class="meta">@Pointcut</span>(<span class="string">"@annotation(analysisActuator)"</span>)</span>
-<span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">serviceStatistics</span><span class="params">(AnalysisActuator analysisActuator)</span> </span>&#123;</span>
-<span class="line">    &#125;</span>
-<span class="line"></span>
-<span class="line">    <span class="meta">@Before</span>(<span class="string">"serviceStatistics(analysisActuator)"</span>)</span>
-<span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doBefore</span><span class="params">(JoinPoint joinPoint, AnalysisActuator analysisActuator)</span> </span>&#123;</span>
-<span class="line">        <span class="comment">// 记录请求到达时间</span></span>
-<span class="line">        beginTime.set(System.currentTimeMillis());</span>
-<span class="line">        log.info(<span class="string">"cy666 note:&#123;&#125;"</span>, analysisActuator.note());</span>
-<span class="line">    &#125;</span>
-<span class="line"></span>
-<span class="line">    <span class="meta">@After</span>(<span class="string">"serviceStatistics(analysisActuator)"</span>)</span>
-<span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAfter</span><span class="params">(AnalysisActuator analysisActuator)</span> </span>&#123;</span>
-<span class="line">        log.info(<span class="string">"cy666 statistic time:&#123;&#125;, note:&#123;&#125;"</span>, System.currentTimeMillis() - beginTime.get(), analysisActuator.note());</span>
-<span class="line">    &#125;</span>
-<span class="line"></span>
-<span class="line">&#125;</span>
-</pre></td></tr></table></figure></p>
-<p>最后，只要在需要统计执行时间的方法上加上<code>@AnalysisActuator</code>注解就行了。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-</pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.craneyuan.service.impl;</span>
-<span class="line"></span>
-<span class="line"><span class="keyword">import</span> com.craneyuan.annotation.AnalysisActuator;</span>
-<span class="line"><span class="keyword">import</span> com.craneyuan.service.IHelloWorldService;</span>
-<span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span>
-<span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span>
-<span class="line"></span>
-<span class="line"><span class="keyword">import</span> java.util.Optional;</span>
-<span class="line"></span>
-<span class="line"><span class="meta">@Service</span></span>
-<span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldServiceImpl</span> <span class="keyword">implements</span> <span class="title">IHelloWorldService</span> </span>&#123;</span>
-<span class="line"></span>
-<span class="line">    <span class="meta">@AnalysisActuator</span>(note = <span class="string">"获取聊天信息方法"</span>)</span>
-<span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getHelloMessage</span><span class="params">(String name)</span> </span>&#123;</span>
-<span class="line">        <span class="keyword">return</span> <span class="string">"Hello "</span> + Optional.ofNullable(name).orElse(<span class="string">"World!"</span>);</span>
-<span class="line">    &#125;</span>
-<span class="line"></span>
-<span class="line">&#125;</span>
-</pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200</span><br><span class="line">Content-Type: text/plain;charset=UTF-8</span><br><span class="line">Content-Length: 11</span><br><span class="line">Date: Thu, 11 Jan 2018 09:45:38 GMT</span><br><span class="line"></span><br><span class="line">Hello Java</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用自定义注解来统计方法的执行时间"><a href="#使用自定义注解来统计方法的执行时间" class="headerlink" title="使用自定义注解来统计方法的执行时间"></a>使用自定义注解来统计方法的执行时间</h2><p>先定义一个用来统计方法执行时间的注解。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.craneyuan.annotation;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.ElementType;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Retention;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.RetentionPolicy;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Target;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Target(ElementType.METHOD)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> AnalysisActuator &#123;</span><br><span class="line">    <span class="function">String <span class="title">note</span><span class="params">()</span> <span class="keyword">default</span> &quot;&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后定义一个切面，来处理刚刚定义的注解。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.craneyuan.aspect;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.craneyuan.annotation.AnalysisActuator;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.JoinPoint;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.After;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Aspect;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Before;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Pointcut;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.core.annotation.Order;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnalysisActuatorAspect</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">static</span> Logger log = LoggerFactory.getLogger(AnalysisActuatorAspect.class);</span><br><span class="line"></span><br><span class="line">    ThreadLocal&lt;Long&gt; beginTime = <span class="keyword">new</span> ThreadLocal&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Pointcut(&quot;@annotation(analysisActuator)&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">serviceStatistics</span><span class="params">(AnalysisActuator analysisActuator)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before(&quot;serviceStatistics(analysisActuator)&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doBefore</span><span class="params">(JoinPoint joinPoint, AnalysisActuator analysisActuator)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 记录请求到达时间</span></span><br><span class="line">        beginTime.set(System.currentTimeMillis());</span><br><span class="line">        log.info(<span class="string">&quot;cy666 note:&#123;&#125;&quot;</span>, analysisActuator.note());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@After(&quot;serviceStatistics(analysisActuator)&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doAfter</span><span class="params">(AnalysisActuator analysisActuator)</span> </span>&#123;</span><br><span class="line">        log.info(<span class="string">&quot;cy666 statistic time:&#123;&#125;, note:&#123;&#125;&quot;</span>, System.currentTimeMillis() - beginTime.get(), analysisActuator.note());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后，只要在需要统计执行时间的方法上加上<code>@AnalysisActuator</code>注解就行了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.craneyuan.service.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.craneyuan.annotation.AnalysisActuator;</span><br><span class="line"><span class="keyword">import</span> com.craneyuan.service.IHelloWorldService;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Optional;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldServiceImpl</span> <span class="keyword">implements</span> <span class="title">IHelloWorldService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@AnalysisActuator(note = &quot;获取聊天信息方法&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getHelloMessage</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Hello &quot;</span> + Optional.ofNullable(name).orElse(<span class="string">&quot;World!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>启动项目，用<code>curl</code>命令随便调用一下，如果顺利的话就可以观察到切面打印的日志了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-</pre></td><td class="code"><pre><span class="line">...</span>
-<span class="line">cy666 statistic time:4, note:获取聊天信息方法</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">cy666 statistic time:4, note:获取聊天信息方法</span><br></pre></td></tr></table></figure>
+
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
-<li><a href="https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples/spring-boot-sample-aop" target="_blank" rel="noopener">Spring Boot AOP Sample</a></li>
-<li><a href="https://juejin.im/entry/5849175db123db0066048508" target="_blank" rel="noopener">Spring 中使用 AOP 切面解析处理自定义注解</a></li>
-<li><a href="https://crane-yuan.github.io/2017/12/28/java-annotations-introduction/" target="_blank" rel="noopener">Java 注解介绍</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples/spring-boot-sample-aop">Spring Boot AOP Sample</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/entry/5849175db123db0066048508">Spring 中使用 AOP 切面解析处理自定义注解</a></li>
+<li><a target="_blank" rel="noopener" href="https://crane-yuan.github.io/2017/12/28/java-annotations-introduction/">Java 注解介绍</a></li>
 </ul>
 
+      </div>
       
-    </div>
-
-    
-      
-      
-
-  <div class="post-copyright">
-    <p class="copyright-item">
-      <span>Author: </span>
-      <a href="https://craneyuan.github.io">craneyuan</a>
-    </p>
-    <p class="copyright-item">
-      <span>Link: </span>
-      <a href="https://craneyuan.github.io/2018/01/11/spring-boot-aop-custom-annotation/">https://craneyuan.github.io/2018/01/11/spring-boot-aop-custom-annotation/</a>
-    </p>
-    <p class="copyright-item">
-      <span>License: </span>
-      
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
-    </p>
-  </div>
-
-
-
-      
-      
-    
-
-    
       <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/java/">java</a>
+            </div>
         
-          <div class="post-tags">
-            
-              <a href="/tags/java/">java</a>
-            
-          </div>
-        
-        
-        
-  <nav class="post-nav">
-    
-      <a class="prev" href="/2018/02/25/hexo-code-style-redundant-blank-solution/">
+        <nav class="post-nav"><a class="prev" href="/2018/02/25/hexo-code-style-redundant-blank-solution/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">Hexo代码块前后空白行问题</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
-    
-    
-      <a class="next" href="/2017/12/28/java-annotations-introduction/">
+    <a class="next" href="/2017/12/28/java-annotations-introduction/">
         <span class="next-text nav-default">Java 注解介绍</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
-    
-  </nav>
-
-
-      </footer>
-    
-
-  </article>
-
-
-          </div>
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
-
-        </div>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
       </main>
 
-      <footer id="footer" class="footer"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-
-  <div class="social-links">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-
-    
-      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    
-  </div>
-
-
-
-<div class="copyright">
+      <footer id="footer" class="footer"><div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     Theme - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
-  <span class="copyright-year">
-    
-    &copy; 
-     
-      2016 - 
-    
-    2020
-
-    <span class="heart">
+  <span class="copyright-year">&copy;2021<span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
     <span class="author">craneyuan</span>
@@ -628,61 +152,13 @@
     </span>
   </span>
 </div>
-
-      </footer>
+</footer>
 
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div>
-
-    
-  
-  <script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = 'https://craneyuan.github.io/2018/01/11/spring-boot-aop-custom-annotation/';
-        this.page.identifier = '2018/01/11/spring-boot-aop-custom-annotation/';
-        this.page.title = '使用Spring Boot的AOP处理自定义注解';
-    };
-    (function() {
-    var d = document, s = d.createElement('script');
-
-    s.src = '//crane-yuan.disqus.com/embed.js';
-
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();  
-  </script>
-
-  
-
-  
-
-
-
-    
-
-
-
-
-
-
-  
-    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  
-
-  
-
-  
-
-  
-
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
-
-  </body>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v="></script>
+</body>
 </html>

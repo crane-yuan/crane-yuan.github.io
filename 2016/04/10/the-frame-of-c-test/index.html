@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-<meta charset="UTF-8"/>
+  <head><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -15,59 +13,13 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-
-
-  <meta name="description" content="一直有大牛在推荐测试驱动开发（TDD），那么在 C 语言中怎么写单元测试呢？本文介绍一个 C 语言的单元测试框架 Check，简单的介绍下其的基本用法。"/>
-
-
-
-
-
-
-
-
-  <meta name="google-site-verification" content="cTwCB-oVxflZBdr9iwZkcN2IsrSchykrhDWdlf8AhK8" />
-
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="CornerCat">
-
-
-
-
-
-
+<meta name="description" content="一直有大牛在推荐测试驱动开发（TDD），那么在 C 语言中怎么写单元测试呢？本文介绍一个 C 语言的单元测试框架 Check，简单的介绍下其的基本用法。"/><link rel="alternate" href="/atom.xml" title="CornerCat" type="application/atom+xml">
 <link rel="canonical" href="https://craneyuan.github.io/2016/04/10/the-frame-of-c-test/"/>
 
 
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=" />
 
-
-
-
-
-
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1" />
-
-
-
-  
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93890480-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-93890480-1');
-</script>
-
-
-  <script id="baidu_push">
+<script id="baidu_push">
 (function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -81,21 +33,12 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-
-
-
-
-
-
-
-
-
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
+  window.config = {"leancloud":"","toc":"","fancybox":"","pjax":"","latex":""};
 </script>
 
-    <title> C语言单元测试框架Check - CornerCat </title>
-  </head>
+    <title>C语言单元测试框架Check - CornerCat</title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
@@ -109,399 +52,96 @@
 </div>
 
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    
-      <a href="/categories">
-        <li class="mobile-menu-item">
-          
-          
-            Categories
-          
-        </li>
-      </a>
-    
-      <a href="/tags">
-        <li class="mobile-menu-item">
-          
-          
-            Tags
-          
-        </li>
-      </a>
-    
-  </ul>
+  <ul class="mobile-menu-list"></ul>
 </nav>
-
-    <div class="container" id="mobile-panel">
+<div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">CornerCat</a>
 </div>
 
-<nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/categories">
-            
-            
-              Categories
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/tags">
-            
-            
-              Tags
-            
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-
-      </header>
+<nav class="site-navbar"></nav>
+</header>
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  
-  <article class="post">
+          <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">
-        
-          C语言单元测试框架Check
-        
-      </h1>
+      <h1 class="post-title">C语言单元测试框架Check
+        </h1>
 
       <div class="post-meta">
         <span class="post-time">
           2016-04-10
-        </span>
-        
-          <span class="post-category">
-            
-              <a href="/categories/C语言/">C语言</a>
-            
-          </span>
-        
-        
-      </div>
+        </span><span class="post-category">
+            <a href="/categories/C%E8%AF%AD%E8%A8%80/">C语言</a>
+            </span>
+        </div>
     </header>
 
-    
-    
-
-
-    <div class="post-content">
-      
-        <h2 id="什么是Check"><a href="#什么是Check" class="headerlink" title="什么是Check"></a>什么是Check</h2><p><a href="http://libcheck.github.io/check/" target="_blank" rel="noopener">Check</a>是C语言的一个单元测试框架。它提供一个小巧的单元测试接口。测试案例运行在各自独立的地址空间，所以断言失败和代码错误造成的段错误或者其他的信号可以被捕捉到。另外，测试的结果显示也兼容以下这些格式：Subunit、TAP、XML和通用的日志格式。</p>
+    <div class="post-content"><h2 id="什么是Check"><a href="#什么是Check" class="headerlink" title="什么是Check"></a>什么是Check</h2><p><a target="_blank" rel="noopener" href="http://libcheck.github.io/check/">Check</a>是C语言的一个单元测试框架。它提供一个小巧的单元测试接口。测试案例运行在各自独立的地址空间，所以断言失败和代码错误造成的段错误或者其他的信号可以被捕捉到。另外，测试的结果显示也兼容以下这些格式：Subunit、TAP、XML和通用的日志格式。</p>
 <blockquote>
 <p>Check is a unit testing framework for C. It features a simple interface for defining unit tests, putting little in the way of the developer. Tests are run in a separate address space, so both assertion failures and code errors that cause segmentation faults or other signals can be caught. Test results are reportable in the following: Subunit, TAP, XML, and a generic logging format.</p>
 </blockquote>
 <h2 id="Check支持的平台"><a href="#Check支持的平台" class="headerlink" title="Check支持的平台"></a>Check支持的平台</h2><p>Check支持大部分的UNIX兼容平台。</p>
 <p>可以通过以下命令得到Check的最新版本。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-</pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/libcheck/check.git</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/libcheck/check.git</span><br></pre></td></tr></table></figure>
+
 <h2 id="Check使用"><a href="#Check使用" class="headerlink" title="Check使用"></a>Check使用</h2><p>本人以一个只做减法的工程来进行说明Check的使用。</p>
 <p>直接看工程目录结构：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-</pre></td><td class="code"><pre><span class="line">.</span>
-<span class="line">├── include</span>
-<span class="line">│   ├── sub.h</span>
-<span class="line">│   └── unit_test.h</span>
-<span class="line">├── makefile</span>
-<span class="line">├── sub</span>
-<span class="line">│   └── sub.c</span>
-<span class="line">└── unit_test</span>
-<span class="line">    ├── test_main.c</span>
-<span class="line">    └── test_sub.c</span>
-</pre></td></tr></table></figure>
-<h3 id="sub-c文件"><a href="#sub-c文件" class="headerlink" title="sub.c文件"></a>sub.c文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">#include "sub.h"</span></span>
-<span class="line"></span>
-<span class="line">int sub(int a, int b) &#123;</span>
-<span class="line">    <span class="built_in">return</span> 0;</span>
-<span class="line">&#125;</span>
-</pre></td></tr></table></figure>
-<h3 id="sub-h文件"><a href="#sub-h文件" class="headerlink" title="sub.h文件"></a>sub.h文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">#ifndef _SUB_H</span></span>
-<span class="line"><span class="comment">#define _SUB_H</span></span>
-<span class="line">int sub(int a, int b);</span>
-<span class="line"><span class="comment">#endif</span></span>
-</pre></td></tr></table></figure>
-<h3 id="unit-test-h文件"><a href="#unit-test-h文件" class="headerlink" title="unit_test.h文件"></a>unit_test.h文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">#ifndef _UNI_TEST_H</span></span>
-<span class="line"><span class="comment">#define _UNI_TEST_H</span></span>
-<span class="line"><span class="comment">#include "check.h"</span></span>
-<span class="line">Suite *make_sub_suite(void);</span>
-<span class="line"><span class="comment">#endif</span></span>
-</pre></td></tr></table></figure>
-<h3 id="test-sub-c文件"><a href="#test-sub-c文件" class="headerlink" title="test_sub.c文件"></a>test_sub.c文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">#include "check.h"</span></span>
-<span class="line"><span class="comment">#include "unit_test.h"</span></span>
-<span class="line"><span class="comment">#include "sub.h"</span></span>
-<span class="line">START_TEST(test_sub) &#123;</span>
-<span class="line">    fail_unless(sub(6, 2) == 4, <span class="string">"error, 6 - 2 != 4"</span>); </span>
-<span class="line">&#125;</span>
-<span class="line">END_TEST</span>
-<span class="line"></span>
-<span class="line">Suite * make_sub_suite(void) &#123;</span>
-<span class="line">    Suite *s = suite_create(<span class="string">"sub"</span>);       // 建立Suite</span>
-<span class="line">    TCase *tc_sub = tcase_create(<span class="string">"sub"</span>);  // 建立测试用例集</span>
-<span class="line">    suite_add_tcase(s, tc_sub);           // 将测试用例加到Suite中</span>
-<span class="line">    tcase_add_test(tc_sub, test_sub);     // 测试用例加到测试集中</span>
-<span class="line">    <span class="built_in">return</span> s;</span>
-<span class="line">&#125;</span>
-</pre></td></tr></table></figure>
-<h3 id="test-main-c文件"><a href="#test-main-c文件" class="headerlink" title="test_main.c文件"></a>test_main.c文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">#include "unit_test.h"</span></span>
-<span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span>
-<span class="line"></span>
-<span class="line">int main(void) &#123;</span>
-<span class="line">    int n, n1;</span>
-<span class="line">    SRunner *sr, *sr1;</span>
-<span class="line">    sr = srunner_create(make_sub_suite()); // 将Suite加入到SRunner</span>
-<span class="line">    srunner_run_all(sr, CK_NORMAL);</span>
-<span class="line">    n = srunner_ntests_failed(sr);         // 运行所有测试用例</span>
-<span class="line">    srunner_free(sr);</span>
-<span class="line">    <span class="built_in">return</span> (n == 0) ? EXIT_SUCCESS : EXIT_FAILURE;</span>
-<span class="line">&#125;</span>
-</pre></td></tr></table></figure>
-<h3 id="makefile文件"><a href="#makefile文件" class="headerlink" title="makefile文件"></a>makefile文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-</pre></td><td class="code"><pre><span class="line">vpath %.h include  <span class="comment">#vpath 指定搜索路径</span></span>
-<span class="line">vpath %.c sub add</span>
-<span class="line">vpath %.c unit_test</span>
-<span class="line"></span>
-<span class="line">objects = sub.o test_sub.o</span>
-<span class="line"><span class="built_in">test</span>: test_main.c $(objects)</span>
-<span class="line">	gcc -I include $^ -o <span class="built_in">test</span> -lcheck </span>
-<span class="line"></span>
-<span class="line">all: $(objects)</span>
-<span class="line">$(objects): %.o: %.c</span>
-<span class="line">	gcc -c -I include $&lt; -o <span class="variable">$@</span></span>
-<span class="line"></span>
-<span class="line">.PHONY: clean</span>
-<span class="line">clean:</span>
-<span class="line">	rm *.o <span class="built_in">test</span></span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── include</span><br><span class="line">│   ├── sub.h</span><br><span class="line">│   └── unit_test.h</span><br><span class="line">├── makefile</span><br><span class="line">├── sub</span><br><span class="line">│   └── sub.c</span><br><span class="line">└── unit_test</span><br><span class="line">    ├── test_main.c</span><br><span class="line">    └── test_sub.c</span><br></pre></td></tr></table></figure>
+
+<h3 id="sub-c文件"><a href="#sub-c文件" class="headerlink" title="sub.c文件"></a>sub.c文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &quot;sub.h&quot;</span></span><br><span class="line"></span><br><span class="line">int sub(int a, int b) &#123;</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="sub-h文件"><a href="#sub-h文件" class="headerlink" title="sub.h文件"></a>sub.h文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#ifndef _SUB_H</span></span><br><span class="line"><span class="comment">#define _SUB_H</span></span><br><span class="line">int sub(int a, int b);</span><br><span class="line"><span class="comment">#endif</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="unit-test-h文件"><a href="#unit-test-h文件" class="headerlink" title="unit_test.h文件"></a>unit_test.h文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#ifndef _UNI_TEST_H</span></span><br><span class="line"><span class="comment">#define _UNI_TEST_H</span></span><br><span class="line"><span class="comment">#include &quot;check.h&quot;</span></span><br><span class="line">Suite *make_sub_suite(void);</span><br><span class="line"><span class="comment">#endif</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="test-sub-c文件"><a href="#test-sub-c文件" class="headerlink" title="test_sub.c文件"></a>test_sub.c文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &quot;check.h&quot;</span></span><br><span class="line"><span class="comment">#include &quot;unit_test.h&quot;</span></span><br><span class="line"><span class="comment">#include &quot;sub.h&quot;</span></span><br><span class="line">START_TEST(test_sub) &#123;</span><br><span class="line">    fail_unless(sub(6, 2) == 4, <span class="string">&quot;error, 6 - 2 != 4&quot;</span>); </span><br><span class="line">&#125;</span><br><span class="line">END_TEST</span><br><span class="line"></span><br><span class="line">Suite * make_sub_suite(void) &#123;</span><br><span class="line">    Suite *s = suite_create(<span class="string">&quot;sub&quot;</span>);       // 建立Suite</span><br><span class="line">    TCase *tc_sub = tcase_create(<span class="string">&quot;sub&quot;</span>);  // 建立测试用例集</span><br><span class="line">    suite_add_tcase(s, tc_sub);           // 将测试用例加到Suite中</span><br><span class="line">    tcase_add_test(tc_sub, test_sub);     // 测试用例加到测试集中</span><br><span class="line">    <span class="built_in">return</span> s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="test-main-c文件"><a href="#test-main-c文件" class="headerlink" title="test_main.c文件"></a>test_main.c文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &quot;unit_test.h&quot;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"></span><br><span class="line">int main(void) &#123;</span><br><span class="line">    int n, n1;</span><br><span class="line">    SRunner *sr, *sr1;</span><br><span class="line">    sr = srunner_create(make_sub_suite()); // 将Suite加入到SRunner</span><br><span class="line">    srunner_run_all(sr, CK_NORMAL);</span><br><span class="line">    n = srunner_ntests_failed(sr);         // 运行所有测试用例</span><br><span class="line">    srunner_free(sr);</span><br><span class="line">    <span class="built_in">return</span> (n == 0) ? EXIT_SUCCESS : EXIT_FAILURE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="makefile文件"><a href="#makefile文件" class="headerlink" title="makefile文件"></a>makefile文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">vpath %.h include  <span class="comment">#vpath 指定搜索路径</span></span><br><span class="line">vpath %.c sub add</span><br><span class="line">vpath %.c unit_test</span><br><span class="line"></span><br><span class="line">objects = sub.o test_sub.o</span><br><span class="line"><span class="built_in">test</span>: test_main.c $(objects)</span><br><span class="line">	gcc -I include $^ -o <span class="built_in">test</span> -lcheck </span><br><span class="line"></span><br><span class="line">all: $(objects)</span><br><span class="line">$(objects): %.o: %.c</span><br><span class="line">	gcc -c -I include $&lt; -o <span class="variable">$@</span></span><br><span class="line"></span><br><span class="line">.PHONY: clean</span><br><span class="line">clean:</span><br><span class="line">	rm *.o <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
 <p>工程配置完成后，直接在工程目录下运行命令<code>make test</code>即可生成可执行文件test</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-</pre></td><td class="code"><pre><span class="line">gcc -c -I include sub/sub.c -o sub.o</span>
-<span class="line">gcc -c -I include unit_test/test_sub.c -o test_sub.o</span>
-<span class="line">gcc -I include unit_test/test_main.c sub.o test_sub.o -o <span class="built_in">test</span> -lcheck</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gcc -c -I include sub/sub.c -o sub.o</span><br><span class="line">gcc -c -I include unit_test/test_sub.c -o test_sub.o</span><br><span class="line">gcc -I include unit_test/test_main.c sub.o test_sub.o -o <span class="built_in">test</span> -lcheck </span><br></pre></td></tr></table></figure>
+
 <p>之后运行<code>./test</code>就可以看到测试结果了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-</pre></td><td class="code"><pre><span class="line">Running suite(s): sub</span>
-<span class="line">0%: Checks: 1, Failures: 1, Errors: 0</span>
-<span class="line">unit_test/test_sub.c:12:F:sub:test_sub:0: error, 6 - 2 != 4</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Running suite(s): sub</span><br><span class="line">0%: Checks: 1, Failures: 1, Errors: 0</span><br><span class="line">unit_test/test_sub.c:12:F:sub:test_sub:0: error, 6 - 2 != 4</span><br></pre></td></tr></table></figure>
+
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://blog.csdn.net/ZCF1002797280/article/details/50421336" target="_blank" rel="noopener">Check—强大的C语言单元测试框架</a> </li>
-<li><a href="http://libcheck.github.io/check/doc/check_html/check_3.html" target="_blank" rel="noopener">Tutorial: Basic Unit Testing</a> </li>
+<li><a target="_blank" rel="noopener" href="http://blog.csdn.net/ZCF1002797280/article/details/50421336">Check—强大的C语言单元测试框架</a> </li>
+<li><a target="_blank" rel="noopener" href="http://libcheck.github.io/check/doc/check_html/check_3.html">Tutorial: Basic Unit Testing</a> </li>
 </ul>
 
+      </div>
       
-    </div>
-
-    
-      
-      
-
-  <div class="post-copyright">
-    <p class="copyright-item">
-      <span>Author: </span>
-      <a href="https://craneyuan.github.io">craneyuan</a>
-    </p>
-    <p class="copyright-item">
-      <span>Link: </span>
-      <a href="https://craneyuan.github.io/2016/04/10/the-frame-of-c-test/">https://craneyuan.github.io/2016/04/10/the-frame-of-c-test/</a>
-    </p>
-    <p class="copyright-item">
-      <span>License: </span>
-      
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
-    </p>
-  </div>
-
-
-
-      
-      
-    
-
-    
       <footer class="post-footer">
         
-        
-        
-  <nav class="post-nav">
-    
-      <a class="prev" href="/2016/05/06/leetcode-twosum/">
+        <nav class="post-nav"><a class="prev" href="/2016/05/06/leetcode-twosum/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">LeetCode-TwoSum</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
-    
-    
-      <a class="next" href="/2016/04/05/introduction-of-general-license/">
+    <a class="next" href="/2016/04/05/introduction-of-general-license/">
         <span class="next-text nav-default">常见License辨析</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
-    
-  </nav>
-
-
-      </footer>
-    
-
-  </article>
-
-
-          </div>
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
-
-        </div>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
       </main>
 
-      <footer id="footer" class="footer"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-
-  <div class="social-links">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-
-    
-      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    
-  </div>
-
-
-
-<div class="copyright">
+      <footer id="footer" class="footer"><div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     Theme - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
-  <span class="copyright-year">
-    
-    &copy; 
-     
-      2016 - 
-    
-    2020
-
-    <span class="heart">
+  <span class="copyright-year">&copy;2021<span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
     <span class="author">craneyuan</span>
@@ -510,61 +150,13 @@
     </span>
   </span>
 </div>
-
-      </footer>
+</footer>
 
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div>
-
-    
-  
-  <script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = 'https://craneyuan.github.io/2016/04/10/the-frame-of-c-test/';
-        this.page.identifier = '2016/04/10/the-frame-of-c-test/';
-        this.page.title = 'C语言单元测试框架Check';
-    };
-    (function() {
-    var d = document, s = d.createElement('script');
-
-    s.src = '//crane-yuan.disqus.com/embed.js';
-
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();  
-  </script>
-
-  
-
-  
-
-
-
-    
-
-
-
-
-
-
-  
-    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  
-
-  
-
-  
-
-  
-
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
-
-  </body>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v="></script>
+</body>
 </html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="直播观看时长波动问题排查记录"/><link rel="alternate" href="/atom.xml" title="CornerCat" type="application/atom+xml">
+<link rel="canonical" href="https://craneyuan.github.io/2021/05/30/live-viewing-time-fluctuation-problem-troubleshooting/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=" />
+
+<script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":"","toc":"","fancybox":"","pjax":"","latex":""};
+</script>
+
+    <title>直播观看时长波动问题排查记录 - CornerCat</title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">CornerCat</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">CornerCat</a>
+</div>
+
+<nav class="site-navbar"></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">直播观看时长波动问题排查记录
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2021-05-30
+        </span><span class="post-category">
+            <a href="/categories/%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5/">故障排查</a>
+            </span>
+        </div>
+    </header>
+
+    <div class="post-content"><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>最近有主播反馈了个问题「线上直播的总观看时长在直播结束之后值变小了」，随后领导便安排我去排查问题了。</p>
+<h2 id="排查"><a href="#排查" class="headerlink" title="排查"></a>排查</h2><p>接到任务之后，我便打开代码看了下目前统计直播观看时长的代码，大概看了几遍代码之后，也没发现什么问题。</p>
+<p>先大概说下之前的统计流程：</p>
+<ol>
+<li>有个定时任务会去查出最近的直播id</li>
+<li>根据直播id及时间段在用户建/断连的表查出观看直播的用户</li>
+<li>通过用户和时间段查出用户在直播间的所有不同渠道的建/断连数据</li>
+<li>直接累加在不同渠道的建连和断连的时间段（我看到这块的时候觉得会重复统计时间段，导致统计数据变大，但是，主播却反馈数据变小了，疑惑中…）</li>
+<li>将用户在直播间下的观看时长写入到最终的统计表</li>
+</ol>
+<p>思考了一会儿之后，没有发现符合这次现象的bug；然后，我便看了下线上统计表的数据，发现这场直播有些用户的观看时长竟然为 null，并且，更新时间还是直播结束之后，我想这个应该就是导致统计的时长变小的原因吧！但是，为什么用户观看的时长会被更新为 null 呢？带着疑惑，我便查了下那个直播观看时长为 null 的用户的建/断连数据，发现这个用户在开播之前20多分钟就进入直播间了，中途有几次退出和进入，最后一次是在直播结束之后30多分钟才退出直播间。数据看起来没什么问题，但是，为什么最后统计的观看时长会被更新为 null 呢？</p>
+<p>郁闷中，我又仔细看了一遍代码，发现之前忽略掉了查询用户建/断连的表时，还带上了 id 偏移量（我想是为了加快查询速度），1个小时只查询 xxx 条数据，我一看注释中写的数值挺大的了，但是，本着谨慎的态度，我看了下线上实际配置的值，不错，好家伙，果然和注释的不一致… 至此，我心中便有了初步的猜想了，应该是最后一次统计用户观看时长的时候，查询的数据正好没有完整的建连和断连的时间段，导致统计不到观看时长，便将时长更新为 null 了；为了验证我心中的猜想，我便查了最后一次统计该直播间观看时长时候的数据量，发下查询到的数据量恰好是比配置的大了一些，导致一些用户数据没有被查到，统计的时长变少了。</p>
+<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><p>简单和领导沟通了下问题出现的原因之后，领导便同意先临时将 id 偏移量调大一些；然后，让我修复一下这个问题。</p>
+<p>我看了下之前的表结构，在创建时间字段上已经有索引了，按理说直接按照创建时间进行范围查询速度上也是很快的，为啥要用 id 偏移量呢？而且在这里预估了数据量的大小，这样数据量一上来就得调整这个 id 偏移量了，要是忘记改了又得出问题，不合理呀。首先就是把这玩意去掉了。然后真正统计用户观看时长那块也有问题，没有考虑到用户提前进入直播间和推迟离开直播间这两种情况，比如，用户提前20分钟进入直播间，然后观看了30分钟直播之后，便离开直播间了，此时只能查到用户有一个断连的数据，这样的数据直接被忽略掉了，同理，用户推迟离开直播间，也会导致用户最后一段连续观看时长没有被统计到。</p>
+<p>我此时便想到先把用户的观看时间段数据补齐，但是，如何去重不同渠道下的观看时间段呢？想了会儿，没有啥好思路，便在网上查了下相关搜索词，顺利找到 LeetCode 上的一道算法题 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-intervals/">56. 合并区间</a>，看了下解题思路，感觉很 nice。调整了下代码来适应新算法，然后，写了下单元测试，将几种边界情况挨个测了一遍。至此，问题修复完成了。又是美好的一天 :)</p>
+
+      </div>
+      
+      <footer class="post-footer">
+        
+        <nav class="post-nav"><a class="next" href="/2019/01/31/tools-choose/">
+        <span class="next-text nav-default">工作生活中常用工具汇总</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2021<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">craneyuan</span>
+    <span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+    </span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v="></script>
+</body>
+</html>

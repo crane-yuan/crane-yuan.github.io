@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-<meta charset="UTF-8"/>
+  <head><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -15,61 +13,13 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-
-
-  <meta name="description" content="本文介绍了如何解决 Hexo 博文中代码段渲染之后出现大量空白行问题。"/>
-
-
-
-
-  <meta name="keywords" content="hexo, CornerCat" />
-
-
-
-
-
-  <meta name="google-site-verification" content="cTwCB-oVxflZBdr9iwZkcN2IsrSchykrhDWdlf8AhK8" />
-
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="CornerCat">
-
-
-
-
-
-
+<meta name="description" content="本文介绍了如何解决 Hexo 博文中代码段渲染之后出现大量空白行问题。"/><meta name="keywords" content="hexo, CornerCat" /><link rel="alternate" href="/atom.xml" title="CornerCat" type="application/atom+xml">
 <link rel="canonical" href="https://craneyuan.github.io/2018/02/25/hexo-code-style-redundant-blank-solution/"/>
 
 
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=" />
 
-
-
-
-
-
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1" />
-
-
-
-  
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93890480-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-93890480-1');
-</script>
-
-
-  <script id="baidu_push">
+<script id="baidu_push">
 (function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -83,21 +33,12 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-
-
-
-
-
-
-
-
-
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
+  window.config = {"leancloud":"","toc":"","fancybox":"","pjax":"","latex":""};
 </script>
 
-    <title> Hexo代码块前后空白行问题 - CornerCat </title>
-  </head>
+    <title>Hexo代码块前后空白行问题 - CornerCat</title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
@@ -111,253 +52,73 @@
 </div>
 
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    
-      <a href="/categories">
-        <li class="mobile-menu-item">
-          
-          
-            Categories
-          
-        </li>
-      </a>
-    
-      <a href="/tags">
-        <li class="mobile-menu-item">
-          
-          
-            Tags
-          
-        </li>
-      </a>
-    
-  </ul>
+  <ul class="mobile-menu-list"></ul>
 </nav>
-
-    <div class="container" id="mobile-panel">
+<div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">CornerCat</a>
 </div>
 
-<nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/categories">
-            
-            
-              Categories
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/tags">
-            
-            
-              Tags
-            
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-
-      </header>
+<nav class="site-navbar"></nav>
+</header>
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  
-  <article class="post">
+          <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">
-        
-          Hexo代码块前后空白行问题
-        
-      </h1>
+      <h1 class="post-title">Hexo代码块前后空白行问题
+        </h1>
 
       <div class="post-meta">
         <span class="post-time">
           2018-02-25
-        </span>
-        
-        
-      </div>
+        </span></div>
     </header>
 
-    
-    
+    <div class="post-content"><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>1.找到<code>hexo-util/lib/highlight.js</code>文件<br>一般的路径为<code>$&#123;blog_path&#125;/node_modules/hexo-util/lib/highlight.js</code><br>2.修改<code>highlight.js</code>文件中的代码<br>大概在<code>35~38</code>行<br>修改前：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">numbers += <span class="string">&#x27;&lt;div class=&quot;line&quot;&gt;&#x27;</span> + (firstLine + i) + <span class="string">&#x27;&lt;/div&gt;&#x27;</span>;</span><br><span class="line">content += <span class="string">&#x27;&lt;div class=&quot;line&#x27;</span>;</span><br><span class="line">content += (mark.indexOf(firstLine + i) !== -<span class="number">1</span>) ? <span class="string">&#x27; marked&#x27;</span> : <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">content += <span class="string">&#x27;&quot;&gt;&#x27;</span> + line + <span class="string">&#x27;&lt;/div&gt;&#x27;</span>;</span><br></pre></td></tr></table></figure>
 
-
-    <div class="post-content">
-      
-        <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>1.找到<code>hexo-util/lib/highlight.js</code>文件<br>一般的路径为<code>${blog_path}/node_modules/hexo-util/lib/highlight.js</code><br>2.修改<code>highlight.js</code>文件中的代码<br>大概在<code>35~38</code>行<br>修改前：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-</pre></td><td class="code"><pre><span class="line">numbers += <span class="string">'&lt;div class="line"&gt;'</span> + (firstLine + i) + <span class="string">'&lt;/div&gt;'</span>;</span>
-<span class="line">content += <span class="string">'&lt;div class="line'</span>;</span>
-<span class="line">content += (mark.indexOf(firstLine + i) !== <span class="number">-1</span>) ? <span class="string">' marked'</span> : <span class="string">''</span>;</span>
-<span class="line">content += <span class="string">'"&gt;'</span> + line + <span class="string">'&lt;/div&gt;'</span>;</span>
-</pre></td></tr></table></figure></p>
-<p>修改后：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-</pre></td><td class="code"><pre><span class="line">numbers += <span class="string">'&lt;span class="line"&gt;'</span> + (firstLine + i) + <span class="string">'&lt;/span&gt;\n'</span>;</span>
-<span class="line">content += <span class="string">'&lt;span class="line'</span>;</span>
-<span class="line">content += (mark.indexOf(firstLine + i) !== <span class="number">-1</span>) ? <span class="string">' marked'</span> : <span class="string">''</span>;</span>
-<span class="line">content += <span class="string">'"&gt;'</span> + line + <span class="string">'&lt;/span&gt;\n'</span>;</span>
-</pre></td></tr></table></figure></p>
+<p>修改后：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">numbers += <span class="string">&#x27;&lt;span class=&quot;line&quot;&gt;&#x27;</span> + (firstLine + i) + <span class="string">&#x27;&lt;/span&gt;\n&#x27;</span>;</span><br><span class="line">content += <span class="string">&#x27;&lt;span class=&quot;line&#x27;</span>;</span><br><span class="line">content += (mark.indexOf(firstLine + i) !== -<span class="number">1</span>) ? <span class="string">&#x27; marked&#x27;</span> : <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">content += <span class="string">&#x27;&quot;&gt;&#x27;</span> + line + <span class="string">&#x27;&lt;/span&gt;\n&#x27;</span>;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>注意：主要是将<code>&lt;div&gt;</code>换成了<code>&lt;span&gt;</code></p>
 </blockquote>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
-<li><a href="https://leokongwq.github.io/2016/10/14/hexo-codeblock-multiblank.html" target="_blank" rel="noopener">hexo代码块前后空白行问题</a></li>
+<li><a target="_blank" rel="noopener" href="https://leokongwq.github.io/2016/10/14/hexo-codeblock-multiblank.html">hexo代码块前后空白行问题</a></li>
 </ul>
 
+      </div>
       
-    </div>
-
-    
-      
-      
-
-  <div class="post-copyright">
-    <p class="copyright-item">
-      <span>Author: </span>
-      <a href="https://craneyuan.github.io">craneyuan</a>
-    </p>
-    <p class="copyright-item">
-      <span>Link: </span>
-      <a href="https://craneyuan.github.io/2018/02/25/hexo-code-style-redundant-blank-solution/">https://craneyuan.github.io/2018/02/25/hexo-code-style-redundant-blank-solution/</a>
-    </p>
-    <p class="copyright-item">
-      <span>License: </span>
-      
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
-    </p>
-  </div>
-
-
-
-      
-      
-    
-
-    
       <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/hexo/">hexo</a>
+            </div>
         
-          <div class="post-tags">
-            
-              <a href="/tags/hexo/">hexo</a>
-            
-          </div>
-        
-        
-        
-  <nav class="post-nav">
-    
-      <a class="prev" href="/2018/03/29/thinking-of-log/">
+        <nav class="post-nav"><a class="prev" href="/2018/03/29/thinking-of-log/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">关于日志的一些事，我想你应该了解</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
-    
-    
-      <a class="next" href="/2018/01/11/spring-boot-aop-custom-annotation/">
+    <a class="next" href="/2018/01/11/spring-boot-aop-custom-annotation/">
         <span class="next-text nav-default">使用Spring Boot的AOP处理自定义注解</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
-    
-  </nav>
-
-
-      </footer>
-    
-
-  </article>
-
-
-          </div>
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
-
-        </div>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
       </main>
 
-      <footer id="footer" class="footer"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-
-  <div class="social-links">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-
-    
-      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    
-  </div>
-
-
-
-<div class="copyright">
+      <footer id="footer" class="footer"><div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     Theme - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
-  <span class="copyright-year">
-    
-    &copy; 
-     
-      2016 - 
-    
-    2020
-
-    <span class="heart">
+  <span class="copyright-year">&copy;2021<span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
     <span class="author">craneyuan</span>
@@ -366,61 +127,13 @@
     </span>
   </span>
 </div>
-
-      </footer>
+</footer>
 
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div>
-
-    
-  
-  <script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = 'https://craneyuan.github.io/2018/02/25/hexo-code-style-redundant-blank-solution/';
-        this.page.identifier = '2018/02/25/hexo-code-style-redundant-blank-solution/';
-        this.page.title = 'Hexo代码块前后空白行问题';
-    };
-    (function() {
-    var d = document, s = d.createElement('script');
-
-    s.src = '//crane-yuan.disqus.com/embed.js';
-
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();  
-  </script>
-
-  
-
-  
-
-
-
-    
-
-
-
-
-
-
-  
-    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  
-
-  
-
-  
-
-  
-
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
-
-  </body>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v="></script>
+</body>
 </html>

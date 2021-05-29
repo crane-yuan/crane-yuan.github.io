@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-<meta charset="UTF-8"/>
+  <head><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -15,61 +13,13 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-
-
-  <meta name="description" content="本文介绍了 autotools 工具套件的基本用法。"/>
-
-
-
-
-  <meta name="keywords" content="tools, CornerCat" />
-
-
-
-
-
-  <meta name="google-site-verification" content="cTwCB-oVxflZBdr9iwZkcN2IsrSchykrhDWdlf8AhK8" />
-
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="CornerCat">
-
-
-
-
-
-
+<meta name="description" content="本文介绍了 autotools 工具套件的基本用法。"/><meta name="keywords" content="tools, CornerCat" /><link rel="alternate" href="/atom.xml" title="CornerCat" type="application/atom+xml">
 <link rel="canonical" href="https://craneyuan.github.io/2016/04/04/how-to-use-autotools/"/>
 
 
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=" />
 
-
-
-
-
-
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1" />
-
-
-
-  
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93890480-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-93890480-1');
-</script>
-
-
-  <script id="baidu_push">
+<script id="baidu_push">
 (function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -83,21 +33,12 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-
-
-
-
-
-
-
-
-
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
+  window.config = {"leancloud":"","toc":"","fancybox":"","pjax":"","latex":""};
 </script>
 
-    <title> Autotools使用介绍 - CornerCat </title>
-  </head>
+    <title>Autotools使用介绍 - CornerCat</title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
@@ -111,91 +52,30 @@
 </div>
 
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    
-      <a href="/categories">
-        <li class="mobile-menu-item">
-          
-          
-            Categories
-          
-        </li>
-      </a>
-    
-      <a href="/tags">
-        <li class="mobile-menu-item">
-          
-          
-            Tags
-          
-        </li>
-      </a>
-    
-  </ul>
+  <ul class="mobile-menu-list"></ul>
 </nav>
-
-    <div class="container" id="mobile-panel">
+<div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">CornerCat</a>
 </div>
 
-<nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/categories">
-            
-            
-              Categories
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/tags">
-            
-            
-              Tags
-            
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-
-      </header>
+<nav class="site-navbar"></nav>
+</header>
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  
-  <article class="post">
+          <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">
-        
-          Autotools使用介绍
-        
-      </h1>
+      <h1 class="post-title">Autotools使用介绍
+        </h1>
 
       <div class="post-meta">
         <span class="post-time">
           2016-04-04
-        </span>
-        
-        
-      </div>
+        </span></div>
     </header>
 
-    
-    
-
-
-    <div class="post-content">
-      
-        <h2 id="autotools系列工具—-自动生成Makefile"><a href="#autotools系列工具—-自动生成Makefile" class="headerlink" title="autotools系列工具—-自动生成Makefile"></a>autotools系列工具—-自动生成Makefile</h2><p>在较大项目中, 如果手动维护Makefile, 那将是一件复杂并痛苦的事情. 那么, 有没有一种轻松的手段生成Makefile呢? autotools系列工具正是在这样的呼声中诞生的. 它只需用户输入简单的目标文件, 依赖文件, 文件目录等就可以轻松地生成Makefile了. 另外, 这些工具还可以完成系统配置信息的收集, 从而可以方便地处理各种移植性问题. autotools是系列工具, 它含有:</p>
+    <div class="post-content"><h2 id="autotools系列工具—-自动生成Makefile"><a href="#autotools系列工具—-自动生成Makefile" class="headerlink" title="autotools系列工具—-自动生成Makefile"></a>autotools系列工具—-自动生成Makefile</h2><p>在较大项目中, 如果手动维护Makefile, 那将是一件复杂并痛苦的事情. 那么, 有没有一种轻松的手段生成Makefile呢? autotools系列工具正是在这样的呼声中诞生的. 它只需用户输入简单的目标文件, 依赖文件, 文件目录等就可以轻松地生成Makefile了. 另外, 这些工具还可以完成系统配置信息的收集, 从而可以方便地处理各种移植性问题. autotools是系列工具, 它含有:</p>
 <ul>
 <li>autoscan</li>
 <li>aclocal</li>
@@ -204,129 +84,20 @@
 <li>automake</li>
 </ul>
 <h2 id="autotools-使用流程"><a href="#autotools-使用流程" class="headerlink" title="autotools 使用流程"></a>autotools 使用流程</h2><p>下面用一个简单的hello.c程序, 演示autotools的使用流程. hello.c如下:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-</pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ ls</span>
-<span class="line">hello.c</span>
-<span class="line">username@pc:~/automake$ cat hello.c</span>
-<span class="line"><span class="comment">#include </span></span>
-<span class="line">int main()</span>
-<span class="line">&#123;</span>
-<span class="line">  <span class="built_in">printf</span>(<span class="string">"Hello, autotools!\n"</span>);</span>
-<span class="line">  <span class="built_in">return</span> 0;</span>
-<span class="line">&#125;</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ ls</span><br><span class="line">hello.c</span><br><span class="line">username@pc:~/automake$ cat hello.c</span><br><span class="line"><span class="comment">#include </span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;Hello, autotools!\n&quot;</span>);</span><br><span class="line">  <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="使用autoscan命令自动生成configure-scan文件"><a href="#使用autoscan命令自动生成configure-scan文件" class="headerlink" title="使用autoscan命令自动生成configure.scan文件"></a>使用autoscan命令自动生成configure.scan文件</h3><p>它会在给定目录及其子目录树中检查源文件, 若没有给出目录, 就在当前目录及其子目录树中进行检查.它会搜索源文件以寻找一般的移植性问题并创建一个文件”configure.scan”, 该文件就是接下来autoconf要用到的”configure.ac”原型.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-</pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ autoscan</span>
-<span class="line">username@pc:~/automake$ ls</span>
-<span class="line">autoscan.log  configure.scan  hello.c</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ autoscan</span><br><span class="line">username@pc:~/automake$ ls</span><br><span class="line">autoscan.log  configure.scan  hello.c</span><br></pre></td></tr></table></figure>
+
 <h3 id="将configure-scan重命名为configure-in"><a href="#将configure-scan重命名为configure-in" class="headerlink" title="将configure.scan重命名为configure.in"></a>将configure.scan重命名为configure.in</h3><p>并做适当修改 configure.scan的内容:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-</pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ cat configure.scan</span>
-<span class="line"><span class="comment">#                                               -*- Autoconf -*-</span></span>
-<span class="line"><span class="comment"># Process this file with autoconf to produce a configure script.</span></span>
-<span class="line"></span>
-<span class="line">AC_PREREQ([2.65])</span>
-<span class="line">AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])</span>
-<span class="line">AC_CONFIG_SRCDIR([hello.c])</span>
-<span class="line">AC_CONFIG_HEADERS([config.h])</span>
-<span class="line"></span>
-<span class="line"><span class="comment"># Checks for programs.</span></span>
-<span class="line">AC_PROG_CC</span>
-<span class="line"></span>
-<span class="line"><span class="comment"># Checks for libraries.</span></span>
-<span class="line"></span>
-<span class="line"><span class="comment"># Checks for header files.</span></span>
-<span class="line"></span>
-<span class="line"><span class="comment"># Checks for typedefs, structures, and compiler characteristics.</span></span>
-<span class="line"></span>
-<span class="line"><span class="comment"># Checks for library functions.</span></span>
-<span class="line"></span>
-<span class="line">AC_OUTPUT</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ cat configure.scan</span><br><span class="line"><span class="comment">#                                               -*- Autoconf -*-</span></span><br><span class="line"><span class="comment"># Process this file with autoconf to produce a configure script.</span></span><br><span class="line"></span><br><span class="line">AC_PREREQ([2.65])</span><br><span class="line">AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])</span><br><span class="line">AC_CONFIG_SRCDIR([hello.c])</span><br><span class="line">AC_CONFIG_HEADERS([config.h])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for programs.</span></span><br><span class="line">AC_PROG_CC</span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for libraries.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for header files.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for typedefs, structures, and compiler characteristics.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for library functions.</span></span><br><span class="line"></span><br><span class="line">AC_OUTPUT</span><br></pre></td></tr></table></figure>
+
 <p>将configure.scan重命名为configure.ac</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-</pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ mv configure.scan configure.in</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ mv configure.scan configure.in</span><br></pre></td></tr></table></figure>
+
 <p>根据具体情况, 适当修改, 以下加粗部分是修改的内容:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-</pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ cat configure.in</span>
-<span class="line"><span class="comment">#                                               -*- Autoconf -*-</span></span>
-<span class="line"><span class="comment"># Process this file with autoconf to produce a configure script.</span></span>
-<span class="line"></span>
-<span class="line">AC_PREREQ([2.65])</span>
-<span class="line"><span class="comment">#AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS]) </span></span>
-<span class="line">AC_INIT(hello,1.0)</span>
-<span class="line">AC_CONFIG_SRCDIR([hello.c])</span>
-<span class="line">AC_CONFIG_HEADERS([config.h])</span>
-<span class="line">AM_INIT_AUTOMAKE</span>
-<span class="line"></span>
-<span class="line"><span class="comment"># Checks for programs.</span></span>
-<span class="line">AC_PROG_CC</span>
-<span class="line"></span>
-<span class="line"><span class="comment"># Checks for libraries.</span></span>
-<span class="line"></span>
-<span class="line"><span class="comment"># Checks for header files.</span></span>
-<span class="line"></span>
-<span class="line"><span class="comment"># Checks for typedefs, structures, and compiler characteristics.</span></span>
-<span class="line"></span>
-<span class="line"><span class="comment"># Checks for library functions.</span></span>
-<span class="line">AC_CONFIG_FILES([Makefile])</span>
-<span class="line">AC_OUTPUT</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ cat configure.in</span><br><span class="line"><span class="comment">#                                               -*- Autoconf -*-</span></span><br><span class="line"><span class="comment"># Process this file with autoconf to produce a configure script.</span></span><br><span class="line"></span><br><span class="line">AC_PREREQ([2.65])</span><br><span class="line"><span class="comment">#AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS]) </span></span><br><span class="line">AC_INIT(hello,1.0)</span><br><span class="line">AC_CONFIG_SRCDIR([hello.c])</span><br><span class="line">AC_CONFIG_HEADERS([config.h])</span><br><span class="line">AM_INIT_AUTOMAKE</span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for programs.</span></span><br><span class="line">AC_PROG_CC</span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for libraries.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for header files.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for typedefs, structures, and compiler characteristics.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for library functions.</span></span><br><span class="line">AC_CONFIG_FILES([Makefile])</span><br><span class="line">AC_OUTPUT</span><br></pre></td></tr></table></figure>
+
 <p>说明:</p>
 <ul>
 <li>以”#”号开始的行为注释</li>
@@ -337,38 +108,16 @@
 <li>AC_CONFIG_FILES宏用于生成相应的Makefile文件.</li>
 </ul>
 <h3 id="运行aclocal命令-生成”aclocal-m4”文件"><a href="#运行aclocal命令-生成”aclocal-m4”文件" class="headerlink" title="运行aclocal命令,生成”aclocal.m4”文件"></a>运行aclocal命令,生成”aclocal.m4”文件</h3><p>该文件主要处理本地的宏定义</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-</pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ aclocal</span>
-<span class="line">username@pc:~/automake$ ls</span>
-<span class="line">aclocal.m4 autom4te.cache  autoscan.log  configure.in  hello.c</span>
-</pre></td></tr></table></figure>
-<h3 id="运行autoconf命令生成configure可执行文件"><a href="#运行autoconf命令生成configure可执行文件" class="headerlink" title="运行autoconf命令生成configure可执行文件"></a>运行autoconf命令生成configure可执行文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-</pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ autoconf</span>
-<span class="line">username@pc:~/automake$ ls</span>
-<span class="line">aclocal.m4 autom4te.cache  autoscan.log  configure  configure.in  hello.c</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ aclocal</span><br><span class="line">username@pc:~/automake$ ls</span><br><span class="line">aclocal.m4 autom4te.cache  autoscan.log  configure.in  hello.c</span><br></pre></td></tr></table></figure>
+
+<h3 id="运行autoconf命令生成configure可执行文件"><a href="#运行autoconf命令生成configure可执行文件" class="headerlink" title="运行autoconf命令生成configure可执行文件"></a>运行autoconf命令生成configure可执行文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ autoconf</span><br><span class="line">username@pc:~/automake$ ls</span><br><span class="line">aclocal.m4 autom4te.cache  autoscan.log  configure  configure.in  hello.c</span><br></pre></td></tr></table></figure>
+
 <h3 id="运行autoheader命令-生成config-h-in文件"><a href="#运行autoheader命令-生成config-h-in文件" class="headerlink" title="运行autoheader命令, 生成config.h.in文件."></a>运行autoheader命令, 生成config.h.in文件.</h3><p>该工具通常会从”acconfig.h”文件中复制用户附加的符号定义. 本例中没有附加的符号定义, 所以不需要创建”acconfig.h”文件.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-</pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ autoheader</span>
-<span class="line">username@pc:~/automake$ ls</span>
-<span class="line">aclocal.m4 autom4te.cache  autoscan.log  config.h.in  configure  configure.in  hello.c</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ autoheader</span><br><span class="line">username@pc:~/automake$ ls</span><br><span class="line">aclocal.m4 autom4te.cache  autoscan.log  config.h.in  configure  configure.in  hello.c</span><br></pre></td></tr></table></figure>
+
 <h3 id="运行automake命令-生成Makefile-in文件"><a href="#运行automake命令-生成Makefile-in文件" class="headerlink" title="运行automake命令, 生成Makefile.in文件"></a>运行automake命令, 生成Makefile.in文件</h3><p>这一步是创建Makefile很重要的一步, automake要用的脚本配置文件是Makefile.am, 用户需要自己创建相应的文件. 之后, automake工具将自动转换成Makefile.in 本例中, 创建的文件为Makefile.am, 内容如下:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-</pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ cat Makefile.am</span>
-<span class="line">AUTOMAKE_OPTIONS=foreign</span>
-<span class="line">bin_PROGRAMS=hello</span>
-<span class="line">hello_SOURCES=hello.c</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ cat Makefile.am</span><br><span class="line">AUTOMAKE_OPTIONS=foreign</span><br><span class="line">bin_PROGRAMS=hello</span><br><span class="line">hello_SOURCES=hello.c</span><br></pre></td></tr></table></figure>
+
 <p>说明:</p>
 <ul>
 <li>其中的AUTOMAKE_OPTIONS为设置automake的选项. 由于GNU对自己发布的软件有严格的规范, 比如必须附带许可证声明文件COPYING等, 否则automake执行时会报错. automake提供了3中软件等级:foreign, gnu和gnits, 供用户选择. 默认级别是gnu. 在本例中, 使用了foreign等级, 它只检测必须的文件.</li>
@@ -376,262 +125,67 @@
 <li>hello_SOURCES 定义”hello”这个可执行程序所需的原始文件. 如果”hello”这个程序是由多个源文件所产生的, 则必须把它所用到的所有源文件都列出来, 并用空格隔开. 如果要定义多个可执行程序, 那么需要对每个可执行程序建立对应的file_SOURCES.</li>
 </ul>
 <p>在这里使用”–add-missiing”选项可以让automake自动添加一些必须的脚本文件.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-</pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ automake --add-missing</span>
-<span class="line">configure.in:7: installing `./install-sh<span class="string">'</span></span>
-<span class="line"><span class="string">configure.in:7: installing `./missing'</span></span>
-<span class="line">Makefile.am: installing `./depcomp<span class="string">'</span></span>
-<span class="line"><span class="string">username@pc:~/automake$ ls</span></span>
-<span class="line"><span class="string">aclocal.m4      autoscan.log  configure     depcomp  install-sh   Makefile.in</span></span>
-<span class="line"><span class="string">autom4te.cache  config.h.in   configure.in  hello.c  Makefile.am  missing</span></span>
-</pre></td></tr></table></figure>
-<h3 id="运行configure-生成Makfefile文件"><a href="#运行configure-生成Makfefile文件" class="headerlink" title="运行configure, 生成Makfefile文件"></a>运行configure, 生成Makfefile文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-<span class="line">25</span>
-</pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ ./configure</span>
-<span class="line">checking <span class="keyword">for</span> a BSD-compatible install... /usr/bin/install -c</span>
-<span class="line">checking whether build environment is sane... yes</span>
-<span class="line">checking <span class="keyword">for</span> a thread-safe mkdir -p... /bin/mkdir -p</span>
-<span class="line">checking <span class="keyword">for</span> gawk... gawk</span>
-<span class="line">checking whether make sets $(MAKE)... yes</span>
-<span class="line">checking <span class="keyword">for</span> gcc... gcc</span>
-<span class="line">checking whether the C compiler works... yes</span>
-<span class="line">checking <span class="keyword">for</span> C compiler default output file name... a.out</span>
-<span class="line">checking <span class="keyword">for</span> suffix of executables...</span>
-<span class="line">checking whether we are cross compiling... no</span>
-<span class="line">checking <span class="keyword">for</span> suffix of object files... o</span>
-<span class="line">checking whether we are using the GNU C compiler... yes</span>
-<span class="line">checking whether gcc accepts -g... yes</span>
-<span class="line">checking <span class="keyword">for</span> gcc option to accept ISO C89... none needed</span>
-<span class="line">checking <span class="keyword">for</span> style of include used by make... GNU</span>
-<span class="line">checking dependency style of gcc... gcc3</span>
-<span class="line">configure: creating ./config.status</span>
-<span class="line">config.status: creating Makefile</span>
-<span class="line">config.status: creating config.h</span>
-<span class="line">config.status: executing depfiles commands</span>
-<span class="line">username@pc:~/automake$ ls</span>
-<span class="line">aclocal.m4      config.h     config.status  depcomp     Makefile     missing</span>
-<span class="line">autom4te.cache  config.h.in  configure      hello.c     Makefile.am  stamp-h1</span>
-<span class="line">autoscan.log    config.log   configure.in   install-sh  Makefile.in</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ automake --add-missing</span><br><span class="line">configure.in:7: installing `./install-sh<span class="string">&#x27;</span></span><br><span class="line"><span class="string">configure.in:7: installing `./missing&#x27;</span></span><br><span class="line">Makefile.am: installing `./depcomp<span class="string">&#x27;</span></span><br><span class="line"><span class="string">username@pc:~/automake$ ls</span></span><br><span class="line"><span class="string">aclocal.m4      autoscan.log  configure     depcomp  install-sh   Makefile.in</span></span><br><span class="line"><span class="string">autom4te.cache  config.h.in   configure.in  hello.c  Makefile.am  missing</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="运行configure-生成Makfefile文件"><a href="#运行configure-生成Makfefile文件" class="headerlink" title="运行configure, 生成Makfefile文件"></a>运行configure, 生成Makfefile文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ ./configure</span><br><span class="line">checking <span class="keyword">for</span> a BSD-compatible install... /usr/bin/install -c</span><br><span class="line">checking whether build environment is sane... yes</span><br><span class="line">checking <span class="keyword">for</span> a thread-safe mkdir -p... /bin/mkdir -p</span><br><span class="line">checking <span class="keyword">for</span> gawk... gawk</span><br><span class="line">checking whether make sets $(MAKE)... yes</span><br><span class="line">checking <span class="keyword">for</span> gcc... gcc</span><br><span class="line">checking whether the C compiler works... yes</span><br><span class="line">checking <span class="keyword">for</span> C compiler default output file name... a.out</span><br><span class="line">checking <span class="keyword">for</span> suffix of executables...</span><br><span class="line">checking whether we are cross compiling... no</span><br><span class="line">checking <span class="keyword">for</span> suffix of object files... o</span><br><span class="line">checking whether we are using the GNU C compiler... yes</span><br><span class="line">checking whether gcc accepts -g... yes</span><br><span class="line">checking <span class="keyword">for</span> gcc option to accept ISO C89... none needed</span><br><span class="line">checking <span class="keyword">for</span> style of include used by make... GNU</span><br><span class="line">checking dependency style of gcc... gcc3</span><br><span class="line">configure: creating ./config.status</span><br><span class="line">config.status: creating Makefile</span><br><span class="line">config.status: creating config.h</span><br><span class="line">config.status: executing depfiles commands</span><br><span class="line">username@pc:~/automake$ ls</span><br><span class="line">aclocal.m4      config.h     config.status  depcomp     Makefile     missing</span><br><span class="line">autom4te.cache  config.h.in  configure      hello.c     Makefile.am  stamp-h1</span><br><span class="line">autoscan.log    config.log   configure.in   install-sh  Makefile.in</span><br></pre></td></tr></table></figure>
+
 <p>autotools生成Makefile流程图如下: </p>
 <p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521873647/blog/hvzguvk6qem6og4xx2hh.jpg" alt="autotools生成的Makefile流程图"><br><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521873670/blog/nn3gprh9plvypg7yijkd.jpg" alt="autotools生成Makefile的流程图"></p>
 <h2 id="使用由autotools生成的Makefile"><a href="#使用由autotools生成的Makefile" class="headerlink" title="使用由autotools生成的Makefile"></a>使用由autotools生成的Makefile</h2><p>autotools生成的Makefile具有以下主要功能: </p>
 <h3 id="make-编译源程序"><a href="#make-编译源程序" class="headerlink" title="make 编译源程序"></a>make 编译源程序</h3><p>键入make, 默认执行”make all”命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-</pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ make</span>
-<span class="line">make  all-am</span>
-<span class="line">make[1]: Entering directory <span class="string">'/home/username/automake'</span></span>
-<span class="line">gcc -DHAVE_CONFIG_H -I.     -g -O2 -MT hello.o -MD -MP -MF .deps/hello.Tpo -c -o hello.o hello.c</span>
-<span class="line">mv -f .deps/hello.Tpo .deps/hello.Po</span>
-<span class="line">gcc  -g -O2   -o hello hello.o</span>
-<span class="line">make[1]: Leaving directory `/home/username/automake<span class="string">'</span></span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ make</span><br><span class="line">make  all-am</span><br><span class="line">make[1]: Entering directory <span class="string">&#x27;/home/username/automake&#x27;</span></span><br><span class="line">gcc -DHAVE_CONFIG_H -I.     -g -O2 -MT hello.o -MD -MP -MF .deps/hello.Tpo -c -o hello.o hello.c</span><br><span class="line">mv -f .deps/hello.Tpo .deps/hello.Po</span><br><span class="line">gcc  -g -O2   -o hello hello.o</span><br><span class="line">make[1]: Leaving directory `/home/username/automake<span class="string">&#x27;</span></span><br></pre></td></tr></table></figure>
+
 <p>此时在本目录下就生成了可执行文件”hello”, 运行”./hello”就能看到程序的执行结果:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-</pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ ./hello</span>
-<span class="line">Hello, autotools!</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ ./hello</span><br><span class="line">Hello, autotools!</span><br></pre></td></tr></table></figure>
+
 <h3 id="make-install-执行该命令"><a href="#make-install-执行该命令" class="headerlink" title="make install 执行该命令"></a>make install 执行该命令</h3><p>可以把程序安装到系统目录中</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-</pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ sudo make install</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ sudo make install</span><br></pre></td></tr></table></figure>
+
 <p>此时, 直接在console输入hello, 就可以看到程序的运行结果 </p>
 <h3 id="make-clean"><a href="#make-clean" class="headerlink" title="make clean"></a>make clean</h3><p>清除之前所编译的可执行文件及目标文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-</pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ make clean</span>
-<span class="line"><span class="built_in">test</span> -z <span class="string">"hello"</span> || rm -f hello</span>
-<span class="line">rm -f *.o</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ make clean</span><br><span class="line"><span class="built_in">test</span> -z <span class="string">&quot;hello&quot;</span> || rm -f hello</span><br><span class="line">rm -f *.o</span><br></pre></td></tr></table></figure>
+
 <h3 id="make-dist"><a href="#make-dist" class="headerlink" title="make dist"></a>make dist</h3><p>将程序和相关的文档打包为一个压缩文档以供发布</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-</pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ make dist</span>
-<span class="line">username@pc:~/automake$ ls -l hello-1.0.tar.gz</span>
-<span class="line">hello-1.0.tar.gz</span>
-</pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">username@pc:~/automake$ make dist</span><br><span class="line">username@pc:~/automake$ ls -l hello-1.0.tar.gz</span><br><span class="line">hello-1.0.tar.gz</span><br></pre></td></tr></table></figure>
+
 <p>可见该命令生成了一个hello-1.0.tar.gz的压缩文档.</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://www.worldhello.net/2010/04/07/954.html" target="_blank" rel="noopener">autotools系列工具–自动生成Makefile</a></li>
-<li><a href="https://www.lrde.epita.fr/~adl/dl/autotools.pdf" target="_blank" rel="noopener">autotools官方教程文档</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.worldhello.net/2010/04/07/954.html">autotools系列工具–自动生成Makefile</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.lrde.epita.fr/~adl/dl/autotools.pdf">autotools官方教程文档</a></li>
 </ul>
 
+      </div>
       
-    </div>
-
-    
-      
-      
-
-  <div class="post-copyright">
-    <p class="copyright-item">
-      <span>Author: </span>
-      <a href="https://craneyuan.github.io">craneyuan</a>
-    </p>
-    <p class="copyright-item">
-      <span>Link: </span>
-      <a href="https://craneyuan.github.io/2016/04/04/how-to-use-autotools/">https://craneyuan.github.io/2016/04/04/how-to-use-autotools/</a>
-    </p>
-    <p class="copyright-item">
-      <span>License: </span>
-      
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
-    </p>
-  </div>
-
-
-
-      
-      
-    
-
-    
       <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/tools/">tools</a>
+            </div>
         
-          <div class="post-tags">
-            
-              <a href="/tags/tools/">tools</a>
-            
-          </div>
-        
-        
-        
-  <nav class="post-nav">
-    
-      <a class="prev" href="/2016/04/05/introduction-of-general-license/">
+        <nav class="post-nav"><a class="prev" href="/2016/04/05/introduction-of-general-license/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">常见License辨析</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
-    
-    
-      <a class="next" href="/2016/03/30/realization-of-bitmap-sort/">
+    <a class="next" href="/2016/03/30/realization-of-bitmap-sort/">
         <span class="next-text nav-default">位图排序的简单实现</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
-    
-  </nav>
-
-
-      </footer>
-    
-
-  </article>
-
-
-          </div>
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
-
-        </div>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
       </main>
 
-      <footer id="footer" class="footer"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-
-  <div class="social-links">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-
-    
-      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    
-  </div>
-
-
-
-<div class="copyright">
+      <footer id="footer" class="footer"><div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     Theme - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
-  <span class="copyright-year">
-    
-    &copy; 
-     
-      2016 - 
-    
-    2020
-
-    <span class="heart">
+  <span class="copyright-year">&copy;2021<span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
     <span class="author">craneyuan</span>
@@ -640,61 +194,13 @@
     </span>
   </span>
 </div>
-
-      </footer>
+</footer>
 
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div>
-
-    
-  
-  <script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = 'https://craneyuan.github.io/2016/04/04/how-to-use-autotools/';
-        this.page.identifier = '2016/04/04/how-to-use-autotools/';
-        this.page.title = 'Autotools使用介绍';
-    };
-    (function() {
-    var d = document, s = d.createElement('script');
-
-    s.src = '//crane-yuan.disqus.com/embed.js';
-
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();  
-  </script>
-
-  
-
-  
-
-
-
-    
-
-
-
-
-
-
-  
-    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  
-
-  
-
-  
-
-  
-
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
-
-  </body>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v="></script>
+</body>
 </html>

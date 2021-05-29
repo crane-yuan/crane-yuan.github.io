@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-<meta charset="UTF-8"/>
+  <head><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -15,61 +13,13 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
-
-
-  <meta name="description" content="如题。"/>
-
-
-
-
-  <meta name="keywords" content="sort, algorithm, CornerCat" />
-
-
-
-
-
-  <meta name="google-site-verification" content="cTwCB-oVxflZBdr9iwZkcN2IsrSchykrhDWdlf8AhK8" />
-
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="CornerCat">
-
-
-
-
-
-
+<meta name="description" content="如题。"/><meta name="keywords" content="sort, algorithm, CornerCat" /><link rel="alternate" href="/atom.xml" title="CornerCat" type="application/atom+xml">
 <link rel="canonical" href="https://craneyuan.github.io/2016/08/30/the-sort-algorithm-of-merge-sort/"/>
 
 
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=" />
 
-
-
-
-
-
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.1" />
-
-
-
-  
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93890480-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-93890480-1');
-</script>
-
-
-  <script id="baidu_push">
+<script id="baidu_push">
 (function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -83,21 +33,12 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-
-
-
-
-
-
-
-
-
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":"","fancybox":"","pjax":""};
+  window.config = {"leancloud":"","toc":"","fancybox":"","pjax":"","latex":""};
 </script>
 
-    <title> 常用排序算法总结4一一归并排序 - CornerCat </title>
-  </head>
+    <title>常用排序算法总结4一一归并排序 - CornerCat</title>
+  <meta name="generator" content="Hexo 5.4.0"></head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
@@ -111,97 +52,33 @@
 </div>
 
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    
-      <a href="/categories">
-        <li class="mobile-menu-item">
-          
-          
-            Categories
-          
-        </li>
-      </a>
-    
-      <a href="/tags">
-        <li class="mobile-menu-item">
-          
-          
-            Tags
-          
-        </li>
-      </a>
-    
-  </ul>
+  <ul class="mobile-menu-list"></ul>
 </nav>
-
-    <div class="container" id="mobile-panel">
+<div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">CornerCat</a>
 </div>
 
-<nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/categories">
-            
-            
-              Categories
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/tags">
-            
-            
-              Tags
-            
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-
-      </header>
+<nav class="site-navbar"></nav>
+</header>
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  
-  <article class="post">
+          <div id="content" class="content"><article class="post">
     <header class="post-header">
-      <h1 class="post-title">
-        
-          常用排序算法总结4一一归并排序
-        
-      </h1>
+      <h1 class="post-title">常用排序算法总结4一一归并排序
+        </h1>
 
       <div class="post-meta">
         <span class="post-time">
           2016-08-30
-        </span>
-        
-          <span class="post-category">
-            
-              <a href="/categories/算法/">算法</a>
-            
-          </span>
-        
-        
-      </div>
+        </span><span class="post-category">
+            <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+            </span>
+        </div>
     </header>
 
-    
-    
-
-
-    <div class="post-content">
-      
-        <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><blockquote>
+    <div class="post-content"><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><blockquote>
 <p>归并排序（英文：merge sort），是创建在归并操作上的一种有效的排序算法，效率为O(n log n)。<br><strong>归并操作</strong>（merge），也叫归并算法，指的是将两个已经排序的序列合并成一个序列的操作。归并排序算法依赖归并操作。</p>
 </blockquote>
 <p><img src="https://res.cloudinary.com/dvspi0fq0/image/upload/v1521872711/blog/bwt19rrqdrfpokicdhsd.gif" alt="归并排序算法演示动画"></p>
@@ -218,329 +95,48 @@
 <li>重复步骤3直到某一指针到达序列尾</li>
 <li>将另一序列剩下的所有元素直接复制到合并序列尾</li>
 </ol>
-<h2 id="代码实现（java）"><a href="#代码实现（java）" class="headerlink" title="代码实现（java）"></a>代码实现（java）</h2><h3 id="递归版"><a href="#递归版" class="headerlink" title="递归版"></a>递归版</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-<span class="line">25</span>
-<span class="line">26</span>
-<span class="line">27</span>
-<span class="line">28</span>
-<span class="line">29</span>
-<span class="line">30</span>
-<span class="line">31</span>
-<span class="line">32</span>
-<span class="line">33</span>
-<span class="line">34</span>
-<span class="line">35</span>
-<span class="line">36</span>
-<span class="line">37</span>
-<span class="line">38</span>
-<span class="line">39</span>
-<span class="line">40</span>
-<span class="line">41</span>
-<span class="line">42</span>
-<span class="line">43</span>
-<span class="line">44</span>
-<span class="line">45</span>
-<span class="line">46</span>
-<span class="line">47</span>
-<span class="line">48</span>
-<span class="line">49</span>
-<span class="line">50</span>
-<span class="line">51</span>
-<span class="line">52</span>
-<span class="line">53</span>
-<span class="line">54</span>
-<span class="line">55</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
-<span class="line"><span class="comment"> * 归并排序，递归版</span></span>
-<span class="line"><span class="comment"> */</span></span>
-<span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function">List&lt;E&gt; <span class="title">mergeSort</span><span class="params">(List&lt;E&gt; m)</span> </span>&#123;</span>
-<span class="line">    <span class="keyword">if</span> (m.size() &lt;= <span class="number">1</span>) &#123;</span>
-<span class="line">        <span class="keyword">return</span> m;</span>
-<span class="line">    &#125;</span>
-<span class="line"></span>
-<span class="line">    <span class="keyword">int</span> middle = m.size() / <span class="number">2</span>;</span>
-<span class="line">    List&lt;E&gt; left = m.subList(<span class="number">0</span>, middle);</span>
-<span class="line">    List&lt;E&gt; right = m.subList(middle, m.size());</span>
-<span class="line"></span>
-<span class="line">    right = mergeSort(right);</span>
-<span class="line">    left = mergeSort(left);</span>
-<span class="line">    List&lt;E&gt; result = merge(left, right);</span>
-<span class="line"></span>
-<span class="line">    <span class="keyword">return</span> result;</span>
-<span class="line">&#125;</span>
-<span class="line"></span>
-<span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function">List&lt;E&gt; <span class="title">merge</span><span class="params">(List&lt;E&gt; left, List&lt;E&gt; right)</span> </span>&#123;</span>
-<span class="line">    List&lt;E&gt; result = <span class="keyword">new</span> ArrayList&lt;E&gt;();</span>
-<span class="line">    Iterator&lt;E&gt; it1 = left.iterator();</span>
-<span class="line">    Iterator&lt;E&gt; it2 = right.iterator();</span>
-<span class="line"></span>
-<span class="line">    E x = it1.next();</span>
-<span class="line">    E y = it2.next();</span>
-<span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span>
-<span class="line">        <span class="comment">// change the direction of this comparison to change the direction</span></span>
-<span class="line">        <span class="comment">// of the sort</span></span>
-<span class="line">        <span class="keyword">if</span> (x.compareTo(y) &lt;= <span class="number">0</span>) &#123;</span>
-<span class="line">            result.add(x);</span>
-<span class="line">            <span class="keyword">if</span> (it1.hasNext()) &#123;</span>
-<span class="line">                x = it1.next();</span>
-<span class="line">            &#125; <span class="keyword">else</span> &#123;</span>
-<span class="line">                result.add(y);</span>
-<span class="line">                <span class="keyword">while</span> (it2.hasNext()) &#123;</span>
-<span class="line">                    result.add(it2.next());</span>
-<span class="line">                &#125;</span>
-<span class="line">                <span class="keyword">break</span>;</span>
-<span class="line">            &#125;</span>
-<span class="line">        &#125; <span class="keyword">else</span> &#123;</span>
-<span class="line">            result.add(y);</span>
-<span class="line">            <span class="keyword">if</span> (it2.hasNext()) &#123;</span>
-<span class="line">                y = it2.next();</span>
-<span class="line">            &#125; <span class="keyword">else</span> &#123;</span>
-<span class="line">                result.add(x);</span>
-<span class="line">                <span class="keyword">while</span> (it1.hasNext()) &#123;</span>
-<span class="line">                    result.add(it1.next());</span>
-<span class="line">                &#125;</span>
-<span class="line">                <span class="keyword">break</span>;</span>
-<span class="line">            &#125;</span>
-<span class="line">        &#125;</span>
-<span class="line">    &#125;</span>
-<span class="line">    <span class="keyword">return</span> result;</span>
-<span class="line">&#125;</span>
-</pre></td></tr></table></figure>
-<h3 id="迭代版"><a href="#迭代版" class="headerlink" title="迭代版"></a>迭代版</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-<span class="line">6</span>
-<span class="line">7</span>
-<span class="line">8</span>
-<span class="line">9</span>
-<span class="line">10</span>
-<span class="line">11</span>
-<span class="line">12</span>
-<span class="line">13</span>
-<span class="line">14</span>
-<span class="line">15</span>
-<span class="line">16</span>
-<span class="line">17</span>
-<span class="line">18</span>
-<span class="line">19</span>
-<span class="line">20</span>
-<span class="line">21</span>
-<span class="line">22</span>
-<span class="line">23</span>
-<span class="line">24</span>
-<span class="line">25</span>
-<span class="line">26</span>
-<span class="line">27</span>
-<span class="line">28</span>
-<span class="line">29</span>
-<span class="line">30</span>
-<span class="line">31</span>
-<span class="line">32</span>
-<span class="line">33</span>
-</pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span>
-<span class="line"><span class="comment">     * 归并排序，迭代版</span></span>
-<span class="line"><span class="comment">     */</span></span>
-<span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span>
-<span class="line">        <span class="keyword">int</span> len = nums.length;</span>
-<span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span>
-<span class="line">        <span class="keyword">int</span> block, start;</span>
-<span class="line"></span>
-<span class="line">        <span class="keyword">for</span> (block = <span class="number">1</span>; block &lt; len * <span class="number">2</span>; block *= <span class="number">2</span>) &#123;</span>
-<span class="line">            <span class="keyword">for</span> (start = <span class="number">0</span>; start &lt; len; start += <span class="number">2</span> * block) &#123;</span>
-<span class="line">                <span class="keyword">int</span> low = start;</span>
-<span class="line">                <span class="keyword">int</span> mid = (start + block) &lt; len ? (start + block) : len;</span>
-<span class="line">                <span class="keyword">int</span> high = (start + <span class="number">2</span> * block) &lt; len ? (start + <span class="number">2</span> * block) : len;</span>
-<span class="line">                <span class="comment">// 两个块的起始下标及结束下标</span></span>
-<span class="line">                <span class="keyword">int</span> start1 = low, end1 = mid;</span>
-<span class="line">                <span class="keyword">int</span> start2 = mid, end2 = high;</span>
-<span class="line">                <span class="comment">// 开始对两个block进行归并排序</span></span>
-<span class="line">                <span class="keyword">while</span> (start1 &lt; end1 &amp;&amp; start2 &lt; end2) &#123;</span>
-<span class="line">                    result[low++] = nums[start1] &lt; nums[start2] ? nums[start1++] : nums[start2++];</span>
-<span class="line">                &#125;</span>
-<span class="line">                <span class="keyword">while</span> (start1 &lt; end1) &#123;</span>
-<span class="line">                    result[low++] = nums[start1++];</span>
-<span class="line">                &#125;</span>
-<span class="line">                <span class="keyword">while</span> (start2 &lt; end2) &#123;</span>
-<span class="line">                    result[low++] = nums[start2++];</span>
-<span class="line">                &#125;</span>
-<span class="line">            &#125;</span>
-<span class="line">            <span class="keyword">int</span>[] temp = nums;</span>
-<span class="line">            nums = result;</span>
-<span class="line">            result = temp;</span>
-<span class="line">        &#125;</span>
-<span class="line">        result = nums;</span>
-<span class="line">    &#125;</span>
-</pre></td></tr></table></figure>
+<h2 id="代码实现（java）"><a href="#代码实现（java）" class="headerlink" title="代码实现（java）"></a>代码实现（java）</h2><h3 id="递归版"><a href="#递归版" class="headerlink" title="递归版"></a>递归版</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 归并排序，递归版</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function">List&lt;E&gt; <span class="title">mergeSort</span><span class="params">(List&lt;E&gt; m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (m.size() &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> m;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> middle = m.size() / <span class="number">2</span>;</span><br><span class="line">    List&lt;E&gt; left = m.subList(<span class="number">0</span>, middle);</span><br><span class="line">    List&lt;E&gt; right = m.subList(middle, m.size());</span><br><span class="line"></span><br><span class="line">    right = mergeSort(right);</span><br><span class="line">    left = mergeSort(left);</span><br><span class="line">    List&lt;E&gt; result = merge(left, right);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;E extends Comparable&lt;? <span class="keyword">super</span> E&gt;&gt; <span class="function">List&lt;E&gt; <span class="title">merge</span><span class="params">(List&lt;E&gt; left, List&lt;E&gt; right)</span> </span>&#123;</span><br><span class="line">    List&lt;E&gt; result = <span class="keyword">new</span> ArrayList&lt;E&gt;();</span><br><span class="line">    Iterator&lt;E&gt; it1 = left.iterator();</span><br><span class="line">    Iterator&lt;E&gt; it2 = right.iterator();</span><br><span class="line"></span><br><span class="line">    E x = it1.next();</span><br><span class="line">    E y = it2.next();</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">        <span class="comment">// change the direction of this comparison to change the direction</span></span><br><span class="line">        <span class="comment">// of the sort</span></span><br><span class="line">        <span class="keyword">if</span> (x.compareTo(y) &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            result.add(x);</span><br><span class="line">            <span class="keyword">if</span> (it1.hasNext()) &#123;</span><br><span class="line">                x = it1.next();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                result.add(y);</span><br><span class="line">                <span class="keyword">while</span> (it2.hasNext()) &#123;</span><br><span class="line">                    result.add(it2.next());</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            result.add(y);</span><br><span class="line">            <span class="keyword">if</span> (it2.hasNext()) &#123;</span><br><span class="line">                y = it2.next();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                result.add(x);</span><br><span class="line">                <span class="keyword">while</span> (it1.hasNext()) &#123;</span><br><span class="line">                    result.add(it1.next());</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="迭代版"><a href="#迭代版" class="headerlink" title="迭代版"></a>迭代版</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 归并排序，迭代版</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        <span class="keyword">int</span> block, start;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (block = <span class="number">1</span>; block &lt; len * <span class="number">2</span>; block *= <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (start = <span class="number">0</span>; start &lt; len; start += <span class="number">2</span> * block) &#123;</span><br><span class="line">                <span class="keyword">int</span> low = start;</span><br><span class="line">                <span class="keyword">int</span> mid = (start + block) &lt; len ? (start + block) : len;</span><br><span class="line">                <span class="keyword">int</span> high = (start + <span class="number">2</span> * block) &lt; len ? (start + <span class="number">2</span> * block) : len;</span><br><span class="line">                <span class="comment">// 两个块的起始下标及结束下标</span></span><br><span class="line">                <span class="keyword">int</span> start1 = low, end1 = mid;</span><br><span class="line">                <span class="keyword">int</span> start2 = mid, end2 = high;</span><br><span class="line">                <span class="comment">// 开始对两个block进行归并排序</span></span><br><span class="line">                <span class="keyword">while</span> (start1 &lt; end1 &amp;&amp; start2 &lt; end2) &#123;</span><br><span class="line">                    result[low++] = nums[start1] &lt; nums[start2] ? nums[start1++] : nums[start2++];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">while</span> (start1 &lt; end1) &#123;</span><br><span class="line">                    result[low++] = nums[start1++];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">while</span> (start2 &lt; end2) &#123;</span><br><span class="line">                    result[low++] = nums[start2++];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span>[] temp = nums;</span><br><span class="line">            nums = result;</span><br><span class="line">            result = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        result = nums;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="算法复杂度分析"><a href="#算法复杂度分析" class="headerlink" title="算法复杂度分析"></a>算法复杂度分析</h2><p>比较操作的次数介于(n*logn)/2(n log n)/2和n*logn?n+1。 赋值操作的次数是 n*logn。归并算法的空间复杂度为：O(n)。</p>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
-<li><a href="https://zh.wikipedia.org/wiki/归并排序" target="_blank" rel="noopener">归并排序</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F">归并排序</a></li>
 </ul>
 
+      </div>
       
-    </div>
-
-    
-      
-      
-
-  <div class="post-copyright">
-    <p class="copyright-item">
-      <span>Author: </span>
-      <a href="https://craneyuan.github.io">craneyuan</a>
-    </p>
-    <p class="copyright-item">
-      <span>Link: </span>
-      <a href="https://craneyuan.github.io/2016/08/30/the-sort-algorithm-of-merge-sort/">https://craneyuan.github.io/2016/08/30/the-sort-algorithm-of-merge-sort/</a>
-    </p>
-    <p class="copyright-item">
-      <span>License: </span>
-      
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
-    </p>
-  </div>
-
-
-
-      
-      
-    
-
-    
       <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/sort/">sort</a>
+            <a href="/tags/algorithm/">algorithm</a>
+            </div>
         
-          <div class="post-tags">
-            
-              <a href="/tags/sort/">sort</a>
-            
-              <a href="/tags/algorithm/">algorithm</a>
-            
-          </div>
-        
-        
-        
-  <nav class="post-nav">
-    
-      <a class="prev" href="/2016/08/30/the-reserved-word-of-goto/">
+        <nav class="post-nav"><a class="prev" href="/2016/08/30/the-reserved-word-of-goto/">
         <i class="iconfont icon-left"></i>
         <span class="prev-text nav-default">Java中被搁置的“goto”保留字</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
-    
-    
-      <a class="next" href="/2016/08/29/the-sort-algorithm-of-insert-sort/">
+    <a class="next" href="/2016/08/29/the-sort-algorithm-of-insert-sort/">
         <span class="next-text nav-default">常用排序算法总结3一一插入排序</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
-    
-  </nav>
-
-
-      </footer>
-    
-
-  </article>
-
-
-          </div>
-          
-  <div class="comments" id="comments">
-    
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
-  </div>
-
-
-        </div>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
       </main>
 
-      <footer id="footer" class="footer"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-
-  <div class="social-links">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-
-    
-      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    
-  </div>
-
-
-
-<div class="copyright">
+      <footer id="footer" class="footer"><div class="copyright">
   <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+    Powered by <a class="hexo-link" target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
     Theme - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+    <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
-  <span class="copyright-year">
-    
-    &copy; 
-     
-      2016 - 
-    
-    2020
-
-    <span class="heart">
+  <span class="copyright-year">&copy;2021<span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
     <span class="author">craneyuan</span>
@@ -549,61 +145,13 @@
     </span>
   </span>
 </div>
-
-      </footer>
+</footer>
 
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div>
-
-    
-  
-  <script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = 'https://craneyuan.github.io/2016/08/30/the-sort-algorithm-of-merge-sort/';
-        this.page.identifier = '2016/08/30/the-sort-algorithm-of-merge-sort/';
-        this.page.title = '常用排序算法总结4一一归并排序';
-    };
-    (function() {
-    var d = document, s = d.createElement('script');
-
-    s.src = '//crane-yuan.disqus.com/embed.js';
-
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();  
-  </script>
-
-  
-
-  
-
-
-
-    
-
-
-
-
-
-
-  
-    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  
-
-  
-
-  
-
-  
-
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.10.1"></script>
-
-  </body>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v="></script>
+</body>
 </html>
